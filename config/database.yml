@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  database: db/rally_development
+  pool: 5
+  timeout: 5000
+  username:
+  password:
+
+test:
+  adapter: postgresql
+  database: db/rally_test
+  pool: 5
+  timeout: 5000
+  username:
+  password:
+
+production:
+  adapter: postgresql
+  database: db/rally_production
+  pool: 5
+  timeout: 5000
+  username:
+  password:
