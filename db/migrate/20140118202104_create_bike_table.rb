@@ -13,7 +13,6 @@ class CreateBikeTable < ActiveRecord::Migration
       t.text :notes
       t.text :tag_info
       t.string :repaired_by
-      t.string :repaired_for
       t.string :completion_date
       t.string :price
     end
