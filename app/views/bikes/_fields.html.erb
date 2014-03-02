@@ -1,38 +1,82 @@
 <% disabled ||= false %>
 
-<%= f.label "Bike Entry Date:" %>
-<%= f.text_field :entry_date, disabled: disabled %>
-<br>
-<%= f.label "Brand:" %>
-<%= f.text_field :brand, disabled: disabled %>
-<br>
-<%= f.label "Model:" %>
-<%= f.text_field :model, disabled: disabled %>
-<br>
-<%= f.label "Type:" %>
-<%= f.text_field :bike_type, disabled: disabled %>
-<br>
-<%= f.label "Freecyclery?" %>
-<%= f.check_box :freecyclery, disabled: disabled %>
-<br>
-<%= f.label "Sale?" %>
-<%= f.check_box :sale, disabled: disabled  %>
-<br>
-<%= f.label "Serial Number" %>
-<%= f.text_field :serial_number, disabled: disabled  %>
-<br>
-<%= f.label "Notes" %>
-<%= f.text_area :notes, disabled: disabled  %>
-<br>
-<%= f.label "Tag Info" %>
-<%= f.text_area :tag_info, disabled: disabled  %>
-<br>
-<%= f.label "Repaired by:" %>
-<%= f.text_field :repaired_by, disabled: disabled  %>
-<br>
-<%= f.label "Completion Date:" %>
-<%= f.text_field :completion_date, disabled: disabled  %>
-<br>
-<%= f.label "Price" %>
-<%= f.text_field :price, disabled: disabled  %>
-<br>
+<div class="form-group">
+  <%= f.label "Bike Entry Date:", class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <%= f.text_field :entry_date, class: "form-control datepicker", disabled: disabled %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label "Brand:", class: "col-sm-2 control-label"   %>
+  <div class="col-sm-6">
+    <%= f.text_field :brand, class: "form-control", disabled: disabled %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label "Model:", class: "col-sm-2 control-label" %>
+
+  <div class="col-sm-6">
+    <%= f.text_field :model, class: "form-control", disabled: disabled %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label "Type:", class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <%= f.text_field :bike_type, class: "form-control", disabled: disabled %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label "Freecyclery?", class: "col-sm-offset-2 control-label" %>
+    <%= f.check_box :freecyclery, disabled: disabled %>
+</div>
+
+<div class="form-group">
+  <%= f.label "Sale?", class: "col-sm-offset-2 control-label" %>
+    <%= f.check_box :sale, disabled: disabled  %>
+</div>
+
+<div class="form-group">
+  <%= f.label "Serial Number", class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <%= f.text_field :serial_number, class: "form-control", disabled: disabled  %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label "Notes", class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <%= f.text_area :notes, class: "form-control", disabled: disabled  %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label "Tag Info", class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <%= f.text_area :tag_info, class: "form-control", disabled: disabled  %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label "Repaired by:", class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <%= f.text_field :repaired_by, class: "form-control", disabled: disabled  %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label "Completion Date:", class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <%= f.text_field :completion_date, class: "form-control datepicker", disabled: disabled  %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label "Price", class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <%= f.text_field :price, class: "form-control", disabled: disabled  %>
+  </div>
+</div>

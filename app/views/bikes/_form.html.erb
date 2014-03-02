@@ -1,4 +1,4 @@
-<%= form_for(@bike) do |f| %>
+<%= form_for @bike, html: {class: 'form-horizontal'} do |f| %>
   <% if @bike.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bike.errors.count, "error") %> prohibited this bike from being saved:</h2>
@@ -13,7 +13,7 @@
 
   <%= render 'fields', f: f %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions col-sm-offset-2">
+    <%= f.submit class: "btn btn-default" %>
   </div>
 <% end %>
