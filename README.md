@@ -1,9 +1,9 @@
 #bike-database
+An opensource interface for community bicycle projects to track bikes, clients, and volunteers.  
 =============
 
-An opensource interface for community bicycle projects to track bikes, clients, and volunteers.  
 
-#Tech Stack
+###Tech Stack
 Rails
 Bootstrap
 PostGres
