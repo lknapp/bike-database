@@ -17,7 +17,6 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bike_params)
-
     respond_to do |format|
       if @bike.save
         format.html { redirect_to @bike, notice: 'Bike was successfully created.' }

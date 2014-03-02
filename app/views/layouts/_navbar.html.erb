@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class='navbar-header'>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to "Bicycle Project Tracker", root_path, :class=>"navbar-brand" %>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse" id='collapse-1'>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Bike Tracker", bikes_path %></li>
+    </ul>
+  </div>
+</nav>

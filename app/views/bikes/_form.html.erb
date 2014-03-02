@@ -11,39 +11,7 @@
     </div>
   <% end %>
 
-  <%= f.label "Bike Entry Date:" %>
-  <%= f.text_field :entry_date %>
-  <br>
-  <%= f.label "Brand:" %>
-  <%= f.text_field :brand %>
-  <br>
-  <%= f.label "Type:" %>
-  <%= f.text_field :bike_type %>
-  <br>
-  <%= f.label "Freecyclery?" %>
-  <%= f.check_box :freecyclery %>
-  <br>
-  <%= f.label "Sale?" %>
-  <%= f.check_box :sale %>
-  <br>
-  <%= f.label "Serial Number" %>
-  <%= f.text_field :serial_number %>
-  <br>
-  <%= f.label "Notes" %>
-  <%= f.text_area :notes %>
-  <br>
-  <%= f.label "Tag Info" %>
-  <%= f.text_area :tag_info %>
-  <br>
-  <%= f.label "Repaired by:" %>
-  <%= f.text_field :repaired_by %>
-  <br>
-  <%= f.label "Completion Date:" %>
-  <%= f.text_field :completion_date %>
-  <br>
-  <%= f.label "Price" %>
-  <%= f.text_field :price %>
-  <br>
+  <%= render 'fields', f: f %>
 
   <div class="actions">
     <%= f.submit %>

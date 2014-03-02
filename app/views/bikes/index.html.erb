@@ -3,6 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th> Brand </th>
+      <th> Model </th>
       <th></th>
       <th></th>
       <th></th>
@@ -12,6 +14,8 @@
   <tbody>
     <% @bikes.each do |bike| %>
       <tr>
+        <td><%= bike.brand %></td>
+        <td><%= bike.model %></td>
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
