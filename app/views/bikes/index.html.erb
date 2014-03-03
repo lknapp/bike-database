@@ -1,29 +1,30 @@
-<h1>Listing bikes</h1>
+<div class="container">
 
-<table class="table table-striped table-bordered table-hover">
-  <thead>
-    <tr>
-      <th> Brand </th>
-      <th> Model </th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <h1>Listing bikes</h1>
 
-  <tbody>
-    <% @bikes.each do |bike| %>
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
       <tr>
-        <td><%= bike.brand %></td>
-        <td><%= bike.model %></td>
-        <td><%= link_to 'Show', bike %></td>
-        <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
-        <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th> Brand </th>
+        <th> Model </th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to ' + Log Bike', new_bike_path %>
+    </thead>
+    <tbody>
+      <% @bikes.each do |bike| %>
+        <tr>
+          <td><%= bike.brand %></td>
+          <td><%= bike.model %></td>
+          <td><%= link_to 'Show', bike %></td>
+          <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
+          <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br>
+  <%= link_to ' + Log Bike', new_bike_path, class: "btn btn-default" %>
+</div>

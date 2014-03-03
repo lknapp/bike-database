@@ -1,19 +1,23 @@
-<%= form_for @bike, html: {class: 'form-horizontal'} do |f| %>
-  <% if @bike.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bike.errors.count, "error") %> prohibited this bike from being saved:</h2>
-
-      <ul>
-      <% @bike.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="container">
+  <%= form_for @bike, html: {class: 'form-horizontal'} do |f| %>
+    <% if @bike.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@bike.errors.count, "error") %> prohibited this bike from being saved:</h2>
+  
+        <ul>
+        <% @bike.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <%= render 'fields', f: f %>
+  
+    <div class="row">
+      <div class="actions col-sm-offset-2">
+        <%= f.submit class: "btn btn-default" %>
+      </div>
     </div>
   <% end %>
-
-  <%= render 'fields', f: f %>
-
-  <div class="actions col-sm-offset-2">
-    <%= f.submit class: "btn btn-default" %>
-  </div>
-<% end %>
+</div>
