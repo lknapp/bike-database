@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: db/rally_development
+  database: db/bikedb_development
   pool: 5
   timeout: 5000
   username:
@@ -8,7 +8,7 @@ development:
 
 test:
   adapter: postgresql
-  database: db/rally_test
+  database: db/bikedb_test
   pool: 5
   timeout: 5000
   username:
@@ -16,7 +16,7 @@ test:
 
 production:
   adapter: postgresql
-  database: db/rally_production
+  database: db/bikedb_production
   pool: 5
   timeout: 5000
   username:
