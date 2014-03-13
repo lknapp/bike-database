@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Volunteer Listing</h1>
+  <% @volunteers.each do |volunteer| %>
+  <%= volunteer.name %>
+  <br>
+  <% end %>
+  <%= link_to '+ Add Volunteer', new_volunteer_path, class: "btn btn-default" %>
+</div>
+

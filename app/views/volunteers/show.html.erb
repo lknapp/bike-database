@@ -1,0 +1,9 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <%= form_for(@volunteer) do |f| %>
+    <%= render 'fields', f: f, disabled: true %>
+  <% end %>
+  
+  <%= link_to 'Edit', edit_volunteer_path(@volunteer) %> |
+  <%= link_to 'Back', volunteer_path %>
+</div>
