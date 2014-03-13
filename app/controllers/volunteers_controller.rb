@@ -4,27 +4,38 @@ class VolunteersController < ApplicationController
   def index 
     @volunteers = Volunteer.all
   end
+
   def show; end
+
   def new
     @volunteer = Volunteer.new
   end
+
   def edit; end
  
   def create
     @volunteer = Volunteer.new(volunteer_params)
-    respond_to do |format|
-      if @volunteer.save
-        format.html { redirect_to @volunteer, notice: 'Volunteer was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @bike }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @volunteer.errors, status: :unprocessable_entity }
-      end
+    if @volunteer.save
+      redirect_to @volunteer, notice: 'Volunteer was successfully created.'
+    else
+      render action: 'new' 
     end
   end
 
-  def update; end
-  def destroy; end
+  def update
+    if @volunteer.update(volunteer_params)
+      redirect_to @volunteer, notice: 'Volunteer was successfully updated.'
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    @volunteer.destroy
+    redirect_to volunteers_url
+  end
+
+
 
   private
     def set_volunteer
