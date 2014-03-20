@@ -1,0 +1,12 @@
+.container
+  = form_for @volunteer, html: {class: 'form-horizontal'} do |f|
+    - if @volunteer.errors.any?
+      #error_explanation
+        %h2= pluralize(@volunteer.errors.count, "error") + "prohibited this volunteer from being saved:"
+        %ul
+        - @volunteer.errors.full_messages.each do |msg|
+          %li= msg
+    = render 'fields', f: f
+    .row
+      .actions.col-sm-offset-2
+        = f.submit class: "btn btn-default"

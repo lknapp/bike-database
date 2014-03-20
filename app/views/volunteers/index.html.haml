@@ -1,0 +1,23 @@
+.container
+  %h1 Volunteers
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Phone
+        %th Email
+        %th
+        %th
+        %th
+    %tbody
+      - @volunteers.each do |volunteer|
+        %tr
+          %td= volunteer.name
+          %td= volunteer.phone
+          %td= volunteer.email
+          %td= link_to 'Show', volunteer
+          %td= link_to 'Edit', edit_volunteer_path(volunteer)
+          %td= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' }
+
+  = link_to '+ Add Volunteer', new_volunteer_path, class: "btn btn-default"
+

@@ -1,0 +1,17 @@
+- disabled ||= false
+
+.form-group
+  = f.label "Name", class: "col-sm-2 control-label"
+  .col-sm-10
+    = f.text_field :name, class: "form-control", disabled: disabled
+
+.form-group
+  = f.label "Email address:", class: "col-sm-2 control-label"
+  .col-sm-10
+    = f.text_field :email, class: "form-control", disabled: disabled
+
+.form-group
+  = f.label "Phone Number:", class: "col-sm-2 control-label"
+  .col-sm-10
+    = f.text_field :phone, class: "form-control", disabled: disabled
+
