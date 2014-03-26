@@ -12,4 +12,5 @@
  *= require bootstrap
  *= require_tree .
  *= require datepicker
+ *= require bootstrap-select 
  */

@@ -8,7 +8,7 @@
   .form-group
     = f.label "Bike Entry Date:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.text_field :entry_date, class: "form-control", disabled: disabled
+      = f.text_field :entry_date, class: "form-control datepicker", disabled: disabled
   
   .form-group
     = f.label "Brand:", class: "col-sm-2 control-label"
@@ -38,12 +38,12 @@
   .form-group
     = f.label "Type:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.text_field :bike_type, class: "form-control", disabled: disabled
+      = f.select :bike_type, [["BMX", "BMX"], ["Cruiser", "Cruiser"], ["Hybrid", "Hybrid"], ["Mountain", "Mountain"], ["Road", "Road"], ["Touring", "Touring"], ["Track", "Track"], ["Utility", "Utility"]], {}, class: "selectpicker", disabled: disabled
   
   .form-group
     = f.label "Purpose:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.select :purpose, [["Freecyclery", "Freecyclery"], ["Sale", "Sale"]], class: "selectpicker", disabled: disabled
+      = f.select :purpose, [["Freecyclery", "Freecyclery"], ["Sale", "Sale"]], {}, class: "selectpicker", disabled: disabled
   
   .form-group
     = f.label "Serial Number", class: "col-sm-2 control-label"
@@ -73,4 +73,6 @@
   .form-group
     = f.label "Price", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.text_field :price, class: "form-control", disabled: disabled
+      .input-group
+        %span.input-group-addon $
+        = f.text_field :price, class: "form-control", disabled: disabled
