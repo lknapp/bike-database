@@ -1,13 +1,16 @@
-#bike-database
+#bike-db
 =============
-###An opensource interface for community bicycle projects to track bikes, clients, and volunteers.  
+Lov2hasBike
+
+opensource interface for community bicycle projects 
+track bikes, clients, and volunteers
 
 
-###Tech Stack
+###Tech
 Rails
 Bootstrap
 PostGres
 
 
-Story list can be found at:
+Feature list:
 https://trello.com/b/ZCZ9sThH/bike-db-app
