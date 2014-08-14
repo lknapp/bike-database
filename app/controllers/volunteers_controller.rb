@@ -1,5 +1,6 @@
 class VolunteersController < ApplicationController
   before_action :set_volunteer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index 
     @volunteers = Volunteer.all

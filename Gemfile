@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 gem 'pg', '0.15.1'
 gem 'bcrypt-ruby', '3.1.2'
+gem 'devise'
 
 #SCSS & Bootstrap
 gem 'bootstrap-sass', '2.3.2.0'

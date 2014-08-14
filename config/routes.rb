@@ -1,5 +1,6 @@
 Bikedb::Application.routes.draw do
-  root "static_pages#home"
+  devise_for :users
+  root to: "static_pages#home"
   resources :bikes
   resources :volunteers
 end
