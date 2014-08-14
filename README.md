@@ -1,16 +1,11 @@
 #bike-db
 =============
-Lov2hasBike
+Bike-db is an open source project that aims to helpcommunity bicycle projects track bikes, clients, and volunteers. 
 
-opensource interface for community bicycle projects 
-track bikes, clients, and volunteers
+Bike-db is a Ruby on Rails project.  The database used is PostGres.  
 
+An instance can be seen running at http://secret-earth-4230.herokuapp.com/
 
-###Tech
-Rails
-Bootstrap
-PostGres
+The storyboard / feature list is at https://trello.com/b/ZCZ9sThH/bike-db-app
 
-
-Feature list:
-https://trello.com/b/ZCZ9sThH/bike-db-app
+Feel free to request feature additions!

@@ -15,5 +15,7 @@
 /log/*.log
 /tmp
 
-# Ignore recyclery data
+# Ignore secret assets
 /lib/assets/*
+
+.DS_Store
