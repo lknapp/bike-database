@@ -1,0 +1,59 @@
+
+* Road blocks and fixes:
+
+##- When trying to do 'vagrant plugin install vagrant-vbguest' got the follownig nokogiri error. Vagrant v1.6.3 on OSX 10.8.5.
+
+	Installing the 'vagrant-vbguest' plugin. This can take a few minutes...
+	Building nokogiri using packaged libraries.
+	Building libxml2-2.8.0 for nokogiri with the following patches applied:
+		- 0001-Fix-parser-local-buffers-size-problems.patch
+		...
+		...
+		...
+	Bundler, the underlying system Vagrant uses to install plugins,
+	reported an error. The error is shown below. These errors are usually
+	caused by misconfigured plugin installations or transient network
+	issues. The error from Bundler is:
+
+	An error occurred while installing nokogiri (1.6.3.1), and Bundler cannot continue.
+	Make sure that `gem install nokogiri -v '1.6.3.1'` succeeds before bundling.
+		...
+		...
+
+- Workaround
+$ export NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+$ vagrant plugin install vagrant vagrant-vbguest
+$ vagrant plugin list (validate install)
+
+
+##- Executing "rake db:create" you get the following errors
+	PG::Error: ERROR:  new encoding (UTF8) is incompatible with the encoding of the template database (SQL_ASCII)
+	HINT:  Use the same encoding as in the template database, or use template0 as template.
+	: CREATE DATABASE "db/bikedb_development" ENCODING = 'utf8'
+
+- Solution: follow the instructions here
+http://journal.tianhao.info/2010/12/postgresql-change-default-encoding-of-new-databases-to-utf-8-optional/
+
+
+## UPDATE - 2014.09.03 
+Implemented a simple psql script that does the exactly as the url above. Do the following inside guest-OS
+
+$ vagrant ssh
+
+$ psql -d postgres -f /vagrant/etc/postgres/enable_utf8_template.sql
+$ sudo -u postgres psql postgres
+
+postgres=# \l
+
+(The ENCODING should be UTF8 for 'template1' database)
+
+
+Original resources for the Vagrantfile.
+http://gorails.com/guides/using-vagrant-for-rails-development
+
+=========================================
+
+## TODOs ##
+- Add the etc/enable_utf8_template.sql into Vagrant provision routine. One less task to for developer to execute.
+- Create developement instructions (README.rdoc?), outlining the commands get the Vagrant/Bike-DB up and running. 
+

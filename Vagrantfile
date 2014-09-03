@@ -20,9 +20,11 @@ Vagrant.configure('2') do |config|
     v.customize ['set', :id, '--on-window-close', 'keep-running']
   end
 
+  # Enable, if you are NOT OSX.
   # config.vm.synced_folder '.', '/vagrant', type: 'rsync'
-  # Enable if you are on OSX
-  config.vm.synced_folder '/src', '/vagrant', type: 'nfs'
+
+  # Enable ,if you are on OSX for increase performance. NOTE: May require Admin password
+  config.vm.synced_folder '.', '/vagrant', type: 'nfs'
   
   config.vm.network :private_network, ip: '33.33.33.33'
   config.vm.network :forwarded_port, guest: 3000, host: 3000
