@@ -6,7 +6,6 @@ class CreateBikeTable < ActiveRecord::Migration
       t.string :model
       t.string :type
       t.string :color
-      t.string :frame_size
       t.boolean :freecyclery
       t.boolean :sale
       t.string :serial_number

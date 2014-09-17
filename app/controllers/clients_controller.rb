@@ -60,6 +60,7 @@ class ClientsController < ApplicationController
         :helmet,
         :lock,
         :agency,
-        :completion_date) 
+        :completion_date,
+        :bike_id) 
     end
 end

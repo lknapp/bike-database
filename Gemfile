@@ -11,6 +11,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'haml'
 
 group :test, :development do
+  gem 'faker'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'factory_girl'

@@ -54,7 +54,7 @@ class BikesController < ApplicationController
         :entry_date, 
         :brand, 
         :model, 
-        :type, 
+        :bike_type, 
         :color, 
         :frame_size, 
         :log_number, 
