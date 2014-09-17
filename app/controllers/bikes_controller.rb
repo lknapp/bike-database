@@ -18,30 +18,24 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bike_params)
-    respond_to do |format|
-      if @bike.save
-        format.html { redirect_to @bike, notice: 'Bike was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @bike.save
+      redirect_to @bike, notice: 'Bike was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @bike.update(bike_params)
-        format.html { redirect_to @bike, notice: 'Bike was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @bike.update(bike_params)
+      redirect_to @bike, notice: 'Bike was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @bike.destroy
-    respond_to do |format|
-      format.html { redirect_to bikes_url }
-    end
+    redirect_to bikes_url
   end
 
   private
@@ -56,7 +50,6 @@ class BikesController < ApplicationController
         :model, 
         :bike_type, 
         :color, 
-        :frame_size, 
         :log_number, 
         :purpose, 
         :serial_number, 

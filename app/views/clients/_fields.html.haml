@@ -50,8 +50,7 @@
       = f.text_field :completion_date, class: "form-control datepicker", disabled: disabled
 
   .form-group
-    = f.label "Type:", class: "col-sm-2 control-label"
+    = f.label "Bike:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.select(:bike_id, Bike.all.collect {|b| [ b.model, b.id ] }, {include_blank: 'None'})
-  
+      = f.select(:bike_id, Bike.all.collect {|b| [ b.name, b.id ] }, {include_blank: 'None'})
 
