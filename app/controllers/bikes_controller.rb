@@ -16,6 +16,15 @@ class BikesController < ApplicationController
   def edit
   end
 
+  def print_select
+    @bikes = Bike.all
+  end
+
+  def print_labels
+    bike_ids = print_params.map{|key, value| key if value == "1"}.compact
+    @bikes = Bike.find(bike_ids)
+  end
+
   def create
     @bike = Bike.new(bike_params)
     if @bike.save
@@ -62,5 +71,9 @@ class BikesController < ApplicationController
         :seat_tube_size,
         :created_at, 
         :updated_at) 
+    end
+
+    def print_params
+      params.require(:print_bikes)
     end
 end

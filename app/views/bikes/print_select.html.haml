@@ -1,0 +1,14 @@
+.container
+  %h1 Select Bikes To Print
+
+  =form_tag("/bikes/print_labels", method: "get") do
+    %table.table.table-striped.table-bordered.table-hover
+      %thead
+        %tr
+          %th Bike 
+          %th Select
+        -@bikes.each do |bike|
+          %tr
+            %td= bike.name
+            %td= check_box("print_bikes", bike.id) 
+    =submit_tag 'Generate Labels', class: "btn btn-default" 

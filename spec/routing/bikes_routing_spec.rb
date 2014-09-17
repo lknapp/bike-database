@@ -31,5 +31,9 @@ describe BikesController do
       delete("/bikes/1").should route_to("bikes#destroy", :id => "1")
     end
 
+    it "routes to #print_select" do
+      get("/bikes/print_select").should route_to("bikes#print_select")
+    end
+
   end
 end
