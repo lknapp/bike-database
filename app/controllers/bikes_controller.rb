@@ -50,12 +50,24 @@ class BikesController < ApplicationController
     end
 
     def bike_params
-      params.require(:bike).permit(:entry_date, :brand, :model, 
-                                   :type, :color, :frame_size, 
-                                   :log_number, :purpose, :serial_number, 
-                                   :notes, :tag_info, :mechanic, 
-                                   :completion_date, :price, 
-                                   :top_tube_size, :seat_tube_size,
-                                   :created_at, :updated_at) 
+      params.require(:bike).permit(
+        :entry_date, 
+        :brand, 
+        :model, 
+        :type, 
+        :color, 
+        :frame_size, 
+        :log_number, 
+        :purpose, 
+        :serial_number, 
+        :notes, 
+        :tag_info, 
+        :mechanic, 
+        :completion_date, 
+        :price, 
+        :top_tube_size, 
+        :seat_tube_size,
+        :created_at, 
+        :updated_at) 
     end
 end

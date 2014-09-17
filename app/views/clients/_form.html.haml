@@ -1,0 +1,12 @@
+.container
+  = form_for @client, html: {class: 'form-horizontal'} do |f|
+    - if @client.errors.any? 
+      #error_explanation
+        %h2= pluralize(@client.errors.count, "error") + " prohibited this bike from being saved:"
+        %ul
+          - @client.errors.full_messages.each do |msg|
+            %li= msg 
+    = render 'fields', f: f 
+    .row
+      .actions.col-sm-offset-2
+        = f.submit class: "btn btn-default"

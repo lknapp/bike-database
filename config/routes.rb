@@ -3,4 +3,5 @@ Bikedb::Application.routes.draw do
   root to: "static_pages#home"
   resources :bikes
   resources :volunteers
+  resources :clients
 end

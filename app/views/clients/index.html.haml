@@ -1,0 +1,24 @@
+.container
+  %h1 Clients
+
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th First Name 
+        %th Last Name
+        %th Agency
+        %th
+        %th
+        %th
+    %tbody
+      - @clients.each do |client|
+        %tr
+          %td= client.first_name 
+          %td= client.last_name 
+          %td= client.agency
+          %td= link_to 'Show', client
+          %td= link_to 'Edit', edit_client_path(client)
+          %td= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' }
+  
+  %br
+  = link_to ' + New Client', new_client_path, class: "btn btn-default"

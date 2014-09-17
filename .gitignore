@@ -19,3 +19,5 @@
 /lib/assets/*
 
 .DS_Store
+
+/config/initializers/secret_token.rb
