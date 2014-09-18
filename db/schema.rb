@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140917020156) do
     t.string   "model"
     t.string   "bike_type"
     t.string   "color"
+    t.string   "frame_size"
     t.string   "serial_number"
     t.text     "notes"
     t.text     "tag_info"
