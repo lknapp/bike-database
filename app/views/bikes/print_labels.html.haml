@@ -1,6 +1,5 @@
 .print-select
   - @bikes.each do |bike|
     .print-label
-      %h2=bike.price 
-      %h2=bike.name
+      %h2=bike.price + ' ' + bike.name
       %br

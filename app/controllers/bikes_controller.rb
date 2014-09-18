@@ -69,6 +69,9 @@ class BikesController < ApplicationController
         :price, 
         :top_tube_size, 
         :seat_tube_size,
+        :new_parts,
+        :work_done,
+        :date_sold,
         :created_at, 
         :updated_at) 
     end

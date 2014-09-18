@@ -54,7 +54,19 @@
     = f.label "Notes", class: "col-sm-2 control-label"
     .col-sm-10
       = f.text_area :notes, class: "form-control", disabled: disabled
+   
+  .form-group
+    = f.label "Work Done:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_area :work_done, class: "form-control", disabled: disabled
   
+
+  .form-group
+    = f.label "New Parts:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_area :new_parts, class: "form-control", disabled: disabled
+  
+
   .form-group
     = f.label "Tag Info", class: "col-sm-2 control-label"
     .col-sm-10
@@ -70,6 +82,12 @@
     .col-sm-10
       = f.text_field :completion_date, class: "form-control datepicker", disabled: disabled
   
+  .form-group
+    = f.label "Date Sold:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :date_sold, class: "form-control datepicker", disabled: disabled
+  
+ 
   .form-group
     = f.label "Price", class: "col-sm-2 control-label"
     .col-sm-10
