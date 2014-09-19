@@ -1,12 +1,30 @@
 .container
-  %h1 Bikes
 
+  = link_to ' + Log Bike', new_bike_path, class: "btn btn-default"
+  %br
+
+  %h1 Unsold Bikes
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
         %th Brand
         %th Model
         %th
+        %th
+    %tbody
+      - @unsold_bikes.each do |bike|
+        %tr
+          %td= bike.brand 
+          %td= bike.model
+          %td= link_to 'Show', bike
+          %td= link_to 'Edit', edit_bike_path(bike)
+
+  %h1 All Bikes
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Brand
+        %th Model
         %th
         %th
     %tbody
@@ -16,7 +34,4 @@
           %td= bike.model
           %td= link_to 'Show', bike
           %td= link_to 'Edit', edit_bike_path(bike)
-          %td= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' }
   
-  %br
-  = link_to ' + Log Bike', new_bike_path, class: "btn btn-default"
