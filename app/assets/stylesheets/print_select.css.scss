@@ -1,11 +1,24 @@
 .print-select{
+  h2 {
+    font-size: 18px;
+  }
   .print-label{
-    width: 400px;
-    height: 600px;
-    padding: 10px;
     margin: 10px;
-    display: inline-block;
     border: 5px solid black;
+    height: 400px;
+    text-align: center;
+    .horizontal-line{
+      width: 100%;
+      border-bottom: 5px solid black;
+    }
+    .log-number{
+      margin-top: 5px;
+    }
+    .desc {
+      margin: 10px;
+      height: 250px;
+      border: 2px dotted black;
+    }
   } 
 
 }

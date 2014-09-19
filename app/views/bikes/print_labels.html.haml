@@ -1,5 +1,19 @@
-.print-select
+.container.print-select
   - @bikes.each do |bike|
-    .print-label
-      %h2=bike.price + ' ' + bike.name
-      %br
+    .col-xs-6
+      .print-label
+        %h2
+          %strong='$' + bike.price
+          ='    ' + bike.name
+        %br
+        .horizontal-line
+        .log-number= 'Log Number: ' + bike.log_number.to_s
+        .row
+          .col-xs-6
+            .desc
+              .strong Work Done:
+              =bike.work_done
+          .col-xs-6
+            .desc
+              .strong New Parts:
+              =bike.new_parts
