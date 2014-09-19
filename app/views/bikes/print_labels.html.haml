@@ -7,7 +7,10 @@
           ='    ' + bike.name
         %br
         .horizontal-line
-        .log-number= 'Log Number: ' + bike.log_number.to_s
+        .bike-specs
+          = "Top Tube Size: " + bike.top_tube_size.to_s
+          %br
+          = "Seat Tube Size: " + bike.seat_tube_size.to_s
         .row
           .col-xs-6
             .desc
@@ -17,3 +20,5 @@
             .desc
               .strong New Parts:
               =bike.new_parts
+        .row
+          .col-xs-6.col-xs-offset-6.small= "Log Number: " + bike.log_number.to_s

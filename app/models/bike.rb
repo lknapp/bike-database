@@ -7,6 +7,7 @@ class Bike < ActiveRecord::Base
   validates :serial_number, presence: true
 
   def name
-    [self.seat_tube_size.to_s, self.brand, self.model] * ' '
+    self.brand + ' ' + self.model
   end
+
 end
