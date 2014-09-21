@@ -29,15 +29,27 @@
     = f.label "Application Date:", class: "col-sm-2 control-label"
     .col-sm-10
       = f.text_field :application_date, class: "form-control datepicker", disabled: disabled
+
+  .form-group
+    = f.label "Type of Bike Requested:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :bike_type_requested, class: "form-control", disabled: disabled
+ 
+  .form-group
+    = f.label "Will Pay 25$ for Lock & Helmet:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.check_box :bike_type_requested, disabled: disabled
   
+ 
   .form-group
     = f.label "Helmet", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.check_box :helmet, class: "form-control", disabled: disabled
+      = f.check_box :helmet, disabled: disabled
+
   .form-group
     = f.label "Lock", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.check_box :lock, class: "form-control", disabled: disabled
+      = f.check_box :lock, disabled: disabled
  
   .form-group
     = f.label "Agency", class: "col-sm-2 control-label"
