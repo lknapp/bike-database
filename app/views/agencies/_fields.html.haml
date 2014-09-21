@@ -1,0 +1,42 @@
+- disabled ||= false 
+.form-horizontal
+  .form-group
+    = f.label "Name of Agency:", class: "col-sm-2 control-label" 
+    .col-sm-10
+      = f.text_field :agency_name, class: "form-control", disabled: disabled
+
+  .form-group
+    = f.label "Contact Name:", class: "col-sm-2 control-label" 
+    .col-sm-10
+      = f.text_field :contact_name, class: "form-control", disabled: disabled
+
+  .form-group
+    = f.label "Street Address:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :street_address, class: "form-control", disabled: disabled
+ 
+  .form-group
+    = f.label "City:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :city, class: "form-control", disabled: disabled
+
+  .form-group
+    = f.label "State:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :state, class: "form-control", disabled: disabled
+ 
+  .form-group
+    = f.label "Postal Code:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :postal_code, class: "form-control", disabled: disabled
+  
+  .form-group
+    = f.label "Phone Number", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :phone_number, class: "form-control", disabled: disabled
+
+  .form-group
+    = f.label "email", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :email, class: "form-control", disabled: disabled
+

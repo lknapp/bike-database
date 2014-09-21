@@ -9,5 +9,6 @@ Bikedb::Application.routes.draw do
   end
 
   resources :volunteers
+  resources :agencies
   resources :clients
 end

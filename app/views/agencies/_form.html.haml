@@ -1,0 +1,11 @@
+= form_for @agency, html: {class: 'form-horizontal'} do |f|
+  - if @agency.errors.any? 
+    #error_explanation
+      %h2= pluralize(@agency.errors.count, "error") + " prohibited this agency from being saved:"
+      %ul
+        - @agency.errors.full_messages.each do |msg|
+          %li= msg 
+  = render 'fields', f: f 
+  .row
+    .actions.col-sm-offset-2
+      = f.submit class: "btn btn-default"

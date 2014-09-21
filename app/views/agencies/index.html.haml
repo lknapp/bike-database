@@ -1,0 +1,20 @@
+.container
+  %h1 Agencies
+
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Agency
+        %th
+        %th
+        %th
+    %tbody
+      - @agencies.each do |agency|
+        %tr
+          %td= agency.agency_name
+          %td= link_to 'Show', agency
+          %td= link_to 'Edit', edit_agency_path(agency)
+          %td= link_to 'Destroy', agency, method: :delete, data: { confirm: 'Are you sure?' }
+  
+  %br
+  = link_to ' + New Agency', new_agency_path, class: "btn btn-default"
