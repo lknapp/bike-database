@@ -50,11 +50,6 @@
     = f.label "Lock", class: "col-sm-2 control-label"
     .col-sm-10
       = f.check_box :lock, disabled: disabled
- 
-  .form-group
-    = f.label "Agency", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :agency, class: "form-control", disabled: disabled
 
   .form-group
     = f.label "Completion Date:", class: "col-sm-2 control-label"
@@ -65,4 +60,9 @@
     = f.label "Bike:", class: "col-sm-2 control-label"
     .col-sm-10
       = f.select(:bike_id, Bike.all.collect {|b| [ b.name, b.id ] }, {include_blank: 'None'})
+
+  .form-group
+    = f.label "Agency:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.select(:agency_id, Agency.all.collect {|b| [ b.agency_name, b.id ] }, {include_blank: 'None'})
 

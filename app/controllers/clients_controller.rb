@@ -59,8 +59,8 @@ class ClientsController < ApplicationController
         :weight,
         :helmet,
         :lock,
-        :agency,
         :completion_date,
-        :bike_id) 
+        :bike_id,
+        :agency_id) 
     end
 end

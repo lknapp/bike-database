@@ -15,7 +15,7 @@
         %tr
           %td= client.first_name 
           %td= client.last_name 
-          %td= client.agency
+          %td= client.agency.agency_name if client.agency
           %td= link_to 'Show', client
           %td= link_to 'Edit', edit_client_path(client)
           %td= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' }
