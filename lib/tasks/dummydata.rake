@@ -43,7 +43,7 @@ namespace :db do
         mechanic: Faker::Name.first_name
       }
     end
-  
+
     puts "creating a new user"
     user = User.new(email: "user@example.com", password: "password").save
     
