@@ -3,6 +3,7 @@ class ClientsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @waiting_list = Client.waiting_list
     @clients = Client.all
   end
 

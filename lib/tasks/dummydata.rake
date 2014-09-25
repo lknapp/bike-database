@@ -35,7 +35,7 @@ namespace :db do
         weight: rand(100) + 100,
         helmet: [true, false].sample,
         lock: [true, false].sample,
-        completion_date: rand(30.days).ago,
+        completion_date: [rand(30.days).ago, nil].sample,
         bike_type_requested: ["Cruiser", "Road", "Mountain"].sample,
         will_pay: [true, false].sample,
         notes: "A great client!",

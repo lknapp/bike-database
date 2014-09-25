@@ -1,9 +1,5 @@
 .container
   %h1 Bike &amp; Client Tracker
-  - if current_user
-    = link_to "Sign out", destroy_user_session_path, method: :delete
-  - else
-    = link_to "Sign in", new_user_session_path
   %br
   = link_to "View All Bikes", bikes_path
   %br
