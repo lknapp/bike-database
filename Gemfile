@@ -10,8 +10,9 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'haml'
 
+gem 'faker'
+
 group :test, :development do
-  gem 'faker'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'factory_girl'
