@@ -38,10 +38,6 @@ class BikesController < ApplicationController
     end
   end
 
-  def freecyclery_pickup
-    @bikes_for_pickup = Bike.bikes_ready_for_pickup
-  end
-
   def update
     if @bike.update(bike_params)
       redirect_to @bike, notice: 'Bike was successfully updated.'

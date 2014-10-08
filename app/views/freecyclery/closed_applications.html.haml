@@ -1,0 +1,19 @@
+.container
+  .row
+    %h1 Closed Applications
+
+    %table.table.table-striped.table-bordered.table-hover
+      %thead
+        %tr
+          %th Name 
+          %th Voided
+          %th Completed
+          %th Show
+      %tbody
+        - @closed_applications.each do |client|
+          %tr
+            %td= client.name 
+            %td= client.application_voided
+            %td= client.completion_date
+            %td= link_to 'Show', client
+    %br

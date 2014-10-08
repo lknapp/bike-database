@@ -13,4 +13,8 @@ class Client < ActiveRecord::Base
     self.first_name + ' ' + self.last_name
   end
 
+  def self.closed_applications
+    Client.all.select{|client| client.application_voided || client.completion_date}
+  end
+
 end

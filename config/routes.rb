@@ -12,4 +12,8 @@ Bikedb::Application.routes.draw do
   resources :volunteers
   resources :agencies
   resources :clients
+
+  get 'closed_applications' => 'freecyclery#closed_applications'
+  get 'ready_for_pickup' => 'freecyclery#ready_for_pickup'
+
 end
