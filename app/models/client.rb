@@ -9,4 +9,8 @@ class Client < ActiveRecord::Base
     waiting_list = incomplete_clients.sort_by!{|client| client.application_date}
   end
 
+  def name
+    self.first_name + ' ' + self.last_name
+  end
+
 end

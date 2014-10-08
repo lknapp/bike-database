@@ -1,0 +1,17 @@
+.container
+  %br
+
+  %h1 Freecyclery Bikes for Pickup
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Brand
+        %th Model
+        %th Client
+    %tbody
+      - @bikes_for_pickup.each do |bike|
+        %tr
+          %td= bike.brand 
+          %td= bike.model
+          %td= bike.client.name
+
