@@ -9,5 +9,8 @@ class FreecycleryController < ApplicationController
     @bikes_for_pickup = Bike.bikes_ready_for_pickup
   end
 
+  def available_bikes
+    @available_bikes = Bike.available_for_freecyclery
+  end
 
 end

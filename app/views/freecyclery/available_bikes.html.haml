@@ -1,0 +1,15 @@
+.container
+  %br
+
+  %h1 Available Freecyclery Bikes
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Brand
+        %th Model
+    %tbody
+      - @available_bikes.each do |bike|
+        %tr
+          %td= bike.brand 
+          %td= bike.model
+

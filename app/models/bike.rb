@@ -23,4 +23,8 @@ class Bike < ActiveRecord::Base
     Bike.all.select{|bike| bike.ready_for_pickup?}
   end
 
+  def self.available_for_freecyclery
+    Bike.all.select{|bike| bike.completion_date && (bike.purpose == "Freecyclery") && !bike.client }
+  end
+
 end

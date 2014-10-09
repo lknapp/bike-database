@@ -1,0 +1,27 @@
+Freecyclery Receipts
+  Prints two quarter sheet receipts -- one for client, one for Recyclery. Includes:
+    Client Name, Agency, Bike Log Number (make and model too?), Helmet Needed?, Lock Needed?, Will Pay $25 upon receipt of lock and helmet?
+    Also blanks for Client Signature, Date Received, and Recyclery Volunteer Initials.
+
+Reports
+   Number of bikes sold by year or month. (Bar graph for extra points!)
+   Number of bikes donated by year or month. (With bar graph!?)
+   Number of bikes donated according to agency. (Graph?)
+   Average bike price for year.
+
+assign a bike from the available freecyclery bikes page
+mark as picked up from the ready for pickup page
+validations around parameters that break site if incomplete
+mark as sold should be disabled after bike is sold
+  there should be nice feedback indicating that the bike was sold
+disable new users
+Improve form layouts
+make navigation always on the left side of the page
+Make customer facing bike index with pitchers
+make skizzers marks on the labels page
+make great dummy data
+refactor index - move unsold bikes to model
+make ‚recyclery‘ its own view folder, controller, etc.
+add a request-a-feature feature
+
+
