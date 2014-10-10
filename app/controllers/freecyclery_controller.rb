@@ -13,4 +13,8 @@ class FreecycleryController < ApplicationController
     @available_bikes = Bike.available_for_freecyclery
   end
 
+  def receipt
+    @client = Client.find(params[:client_id])
+  end
+
 end

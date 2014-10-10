@@ -19,22 +19,18 @@ class ClientsController < ApplicationController
 
   def create
     @client = Client.new(client_params)
-    respond_to do |format|
-      if @client.save
-        format.html { redirect_to @client, notice: 'Client was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @client.save
+      redirect_to @client, notice: 'Client was successfully created.'
+    else
+      render action: 'new' 
     end
   end
 
   def update
-    respond_to do |format|
-      if @client.update(client_params)
-        format.html { redirect_to @client, notice: 'Client was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @client.update(client_params)
+      redirect_to @client, notice: 'Client was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 

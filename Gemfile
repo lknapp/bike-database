@@ -23,6 +23,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'assert_difference'
+  gem 'binding_of_caller'
 
   # Uncomment this line on OS X.
   gem 'growl', '1.0.3'
