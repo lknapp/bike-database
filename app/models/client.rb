@@ -17,4 +17,8 @@ class Client < ActiveRecord::Base
     Client.all.select{|client| client.application_voided || client.completion_date}
   end
 
+  def bike
+    Bike.find(self.bike_id)
+  end
+
 end

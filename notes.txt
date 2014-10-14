@@ -1,7 +1,4 @@
 Freecyclery Receipts
-  Prints two quarter sheet receipts -- one for client, one for Recyclery. Includes:
-    Client Name, Agency, Bike Log Number (make and model too?), Helmet Needed?, Lock Needed?, Will Pay $25 upon receipt of lock and helmet?
-    Also blanks for Client Signature, Date Received, and Recyclery Volunteer Initials.
 
 Reports
    Number of bikes sold by year or month. (Bar graph for extra points!)
@@ -10,6 +7,8 @@ Reports
    Average bike price for year.
 
 
+get receipt from client
+style client receipts
 assign a bike from the available freecyclery bikes page
 mark as picked up from the ready for pickup page
 validations around parameters that break site if incomplete

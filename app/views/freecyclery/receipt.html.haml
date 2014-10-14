@@ -1,1 +1,75 @@
-KITTENS
+.containter.freecyclery-receipt
+  .col-xs-6
+    .receipt
+      %h2
+        %strong= @client.bike.name
+        %br 
+        = 'Log Number: ' + @client.bike.log_number.to_s
+      %br
+        .horizontal-line
+        .client-information
+        = @client.name
+        %br
+        = @client.agency.agency_name
+        .horizontal-line
+        %br
+        = 'Paid $25 for lock and helmet' if @client.will_pay 
+        %br
+        Includes:
+        %br
+        = 'Helmet' if @client.helmet
+        %br
+        = 'Lock' if @client.lock
+        %br
+        %br
+        Date Received
+        %br
+        _______________
+        %br
+        Client Signature
+        %br
+        ________________
+        %br
+        Recyclery Volunteer Initials 
+        %br
+        ___
+        %br
+        CLIENT COPY
+
+  .col-xs-6
+    .receipt
+      %h2
+        %strong= @client.bike.name
+        %br 
+        = 'Log Number: ' + @client.bike.log_number.to_s
+      %br
+        .horizontal-line
+        .client-information
+        = @client.name
+        %br
+        = @client.agency.agency_name
+        .horizontal-line
+        %br
+        = 'Paid $25 for lock and helmet' if @client.will_pay 
+        %br
+        Includes:
+        %br
+        = 'Helmet' if @client.helmet
+        %br
+        = 'Lock' if @client.lock
+        %br
+        %br
+        Date Received
+        %br
+        _______________
+        %br
+        Client Signature
+        %br
+        ________________
+        %br
+        Recyclery Volunteer Initials 
+        %br
+        ___
+        %br
+        RECYCLERY COPY
+
