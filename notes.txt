@@ -7,7 +7,7 @@ Reports
    Average bike price for year.
 
 
-get receipt from client
+Add some way to navigate to client receipts
 style client receipts
 assign a bike from the available freecyclery bikes page
 mark as picked up from the ready for pickup page
@@ -19,9 +19,8 @@ Improve form layouts
 make navigation always on the left side of the page
 Make customer facing bike index with pitchers
 make skizzers marks on the labels page
-make great dummy data
+Improve great dummy data
 refactor index - move unsold bikes to model
-make ‚recyclery‘ its own view folder, controller, etc.
 add a request-a-feature feature
 
 add pics of bikes for sale
