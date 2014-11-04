@@ -14,7 +14,6 @@ mark as picked up from the ready for pickup page
 validations around parameters that break site if incomplete
 mark as sold should be disabled after bike is sold
   there should be nice feedback indicating that the bike was sold
-disable new users
 Improve form layouts
 make navigation always on the left side of the page
 Make customer facing bike index with pitchers
