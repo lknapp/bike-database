@@ -1,0 +1,23 @@
+#This is Peat's attempt at creating a table#
+
+class CreateVolunteerOrientation < ActiveRecord::Migration
+  def change
+    create_table :VO do |t|
+      t.string :oreientation_date
+      t.string :name
+      t.string :email
+      t.string :phone
+      t.string :hours
+      #How did you hear about the recyclery?#
+      t.boolean :Facebook
+      t.boolean :Internet Search
+      t.boolean :Family or Friends
+      t.boolean :Other
+      #What is the main reason you want to volunteer at the Recyclery?#
+      t.boolean :I like bikes and helping people
+      t.boolean :I want to meet people with similar interests
+      t.boolean :I want to work for social justice and sustainability
+      t.boolean :Other
+    end
+  end
+end
