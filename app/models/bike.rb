@@ -16,7 +16,7 @@ class Bike < ActiveRecord::Base
 
   def ready_for_pickup?
     client = self.client
-    client && self.completion_date && !client.application_voided
+    client && self.completion_date && !client.application_voided && self.date_sold.nil?
   end
 
   def self.bikes_ready_for_pickup
@@ -25,6 +25,11 @@ class Bike < ActiveRecord::Base
 
   def self.available_for_freecyclery
     Bike.all.select{|bike| bike.completion_date && (bike.purpose == "Freecyclery") && !bike.client }
+  end
+
+  def mark_picked_up
+    current_date = Time.new.strftime("%Y-%m-%d")
+    self.update_attribute(:date_sold, current_date)
   end
 
 end

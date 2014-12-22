@@ -1,16 +1,18 @@
 Freecyclery Receipts
 
 Reports
-   Number of bikes sold by year or month. (Bar graph for extra points!)
-   Number of bikes donated by year or month. (With bar graph!?)
-   Number of bikes donated according to agency. (Graph?)
-   Average bike price for year.
-
+  General Reports
+    bikes donated per year
+  Yearly Reports
+    bikes sold by month. (Bar graph for extra points!)
+    bikes donated by year or month. (With bar graph!?)
+    bikes donated according to agency. (Graph?)
 
 Add some way to navigate to client receipts
 style client receipts
+
 assign a bike from the available freecyclery bikes page
-mark as picked up from the ready for pickup page
+
 validations around parameters that break site if incomplete
 mark as sold should be disabled after bike is sold
   there should be nice feedback indicating that the bike was sold
