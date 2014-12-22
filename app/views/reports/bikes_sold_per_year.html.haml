@@ -1,1 +1,14 @@
-= @bikes_sold_per_year
+.container
+  %h1 Bikes Sold Per Year
+  %table.table
+    %thead
+      %tr
+        %th Year
+        %th Number of Bikes
+        %th Average Price
+    %tbody
+      - @yearly_data.each do |year, data| 
+        %tr
+          %td= year
+          %td= data[:number]
+          %td= sprintf( "%0.02f", data[:average_price])
