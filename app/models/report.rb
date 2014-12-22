@@ -1,6 +1,6 @@
 class Report
 
-  @@years = Bike.all.each.map{|bike| Time.parse(bike.date_sold).year if bike.date_sold}
+  @@years = Bike.all.each.map{|bike| bike.date_sold.year if bike.date_sold}
 
   def self.bikes_sold_per_year
     counts = Hash.new(0)
@@ -29,6 +29,7 @@ class Report
     average_price_per_year = Report.average_price_per_year()
     yearly_data_array = unique_years.map{|year| {year => {number: bikes_sold_per_year[year], average_price: average_price_per_year[year]}}}
     yearly_data = yearly_data_array.reduce({}, :merge)
+    yearly_data.delete(nil)
     Hash[yearly_data.sort]
   end
 
