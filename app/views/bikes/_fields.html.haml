@@ -1,96 +1,87 @@
 - disabled ||= false 
-.form-horizontal
-  .form-group
-    = f.label "Log Number", class: "col-sm-2 control-label" 
-    .col-sm-10
-      = f.text_field :log_number, class: "form-control", disabled: disabled
+.row
+  .form-horizontal
+    .col-sm-6
+      .form-group
+        = f.label "Log Number", class: "col-sm-4 control-label" 
+        .col-sm-6
+          = f.text_field :log_number, class: "form-control", disabled: disabled
+       
+      .form-group
+        = f.label "Brand:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :brand, class: "form-control", disabled: disabled
+       
+      .form-group
+        = f.label "Model:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :model, class: "form-control", disabled: disabled
   
-  .form-group
-    = f.label "Bike Entry Date:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :entry_date, class: "form-control datepicker", disabled: disabled
-  
-  .form-group
-    = f.label "Brand:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :brand, class: "form-control", disabled: disabled
-  
-  .form-group
-    = f.label "Color:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :color, class: "form-control", disabled: disabled
-  
-  .form-group
-    = f.label "Top Tube Size:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :top_tube_size, class: "form-control", disabled: disabled
-  
-  .form-group
-    = f.label "Seat Tube Size:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :seat_tube_size, class: "form-control", disabled: disabled
-  
-  .form-group
-    = f.label "Model:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :model, class: "form-control", disabled: disabled
-  
-  .form-group
-    = f.label "Type:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.select :bike_type, [["BMX", "BMX"], ["Cruiser", "Cruiser"], ["Hybrid", "Hybrid"], ["Mountain", "Mountain"], ["Road", "Road"], ["Touring", "Touring"], ["Track", "Track"], ["Utility", "Utility"]], {}, class: "selectpicker", disabled: disabled
-  
-  .form-group
-    = f.label "Purpose:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.select :purpose, [["Freecyclery", "Freecyclery"], ["Sale", "Sale"]], {}, class: "selectpicker", disabled: disabled
-  
-  .form-group
-    = f.label "Serial Number", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :serial_number, class: "form-control", disabled: disabled
-  
-  .form-group
-    = f.label "Notes", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_area :notes, class: "form-control", disabled: disabled
+      .form-group
+        = f.label "Type:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.select :bike_type, [["BMX", "BMX"], ["Cruiser", "Cruiser"], ["Hybrid", "Hybrid"], ["Mountain", "Mountain"], ["Road", "Road"], ["Touring", "Touring"], ["Track", "Track"], ["Utility", "Utility"]], {}, class: "selectpicker", disabled: disabled
    
-  .form-group
-    = f.label "Work Done:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_area :work_done, class: "form-control", disabled: disabled
+      .form-group
+        = f.label "Color:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :color, class: "form-control", disabled: disabled
+          
+    
+    .col-sm-6
+      .form-group
+        = f.label "Mechanic:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :mechanic, class: "form-control", disabled: disabled
+    
+      .form-group
+        = f.label "Seat Tube Length:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :seat_tube_size, class: "form-control", disabled: disabled
+   
+      .form-group
+        = f.label "Top Tube Length:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :top_tube_size, class: "form-control", disabled: disabled
+       
+      .form-group
+        = f.label "Serial Number", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :serial_number, class: "form-control", disabled: disabled
+      
+      .form-group
+        = f.label "Date Finished:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :entry_date, class: "form-control datepicker", disabled: disabled
+          
+    .col-sm-6
+      %br
+      %br
+      .form-group
+        = f.label "Purpose:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.select :purpose, [["Freecyclery", "Freecyclery"], ["Sale", "Sale"]], {}, class: "selectpicker", disabled: disabled
   
+      .form-group
+        = f.label "Tag Info", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_area :tag_info, class: "form-control", placeholder: "+ New Component ", disabled: disabled
+   
+      .form-group
+        = f.label "Notes", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_area :notes, class: "form-control", disabled: disabled
+  
+      .form-group
+        = f.label "Date Sold:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :date_sold, class: "form-control datepicker", disabled: disabled
+   
+      .form-group
+        = f.label "Price", class: "col-sm-4 control-label"
+        .col-sm-6
+          .input-group
+            %span.input-group-addon $
+            = f.text_field :price, class: "form-control", disabled: disabled
 
-  .form-group
-    = f.label "New Parts:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_area :new_parts, class: "form-control", disabled: disabled
-  
-
-  .form-group
-    = f.label "Tag Info", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_area :tag_info, class: "form-control", disabled: disabled
-  
-  .form-group
-    = f.label "Mechanic:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :mechanic, class: "form-control", disabled: disabled
-  
-  .form-group
-    = f.label "Completion Date:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :completion_date, class: "form-control datepicker", disabled: disabled
-  
-  .form-group
-    = f.label "Date Sold:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :date_sold, class: "form-control datepicker", disabled: disabled
-  
- 
-  .form-group
-    = f.label "Price", class: "col-sm-2 control-label"
-    .col-sm-10
-      .input-group
-        %span.input-group-addon $
-        = f.text_field :price, class: "form-control", disabled: disabled
+          %a{href: "http://www.bicyclebluebook.com/SearchBikes.aspx"} Look It Up 
