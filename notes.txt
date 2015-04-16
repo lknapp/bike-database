@@ -27,4 +27,8 @@ add a request-a-feature feature
 add pics of bikes for sale
 add recyclery logos & bike memorabilia pics all over app
 
-
+do bike sales labels fit into sleeves? (sheaths are 5x3.75)
+freecyclery bikes need receipts
+when application is voided, bike should go back to pool of bikes
+when client is created without date, app breaks
+phone calls made is unnecessary - notes are usualy used

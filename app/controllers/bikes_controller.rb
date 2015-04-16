@@ -4,9 +4,9 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.all
-    @unsold_bikes = @bikes.select{|bike| 
-      !bike.date_sold && 
-      (bike.purpose == "Sale") 
+    @unsold_bikes = @bikes.select{ |bike|
+      !bike.date_sold &&
+      (bike.purpose == "Sale")
     }
   end
 
@@ -75,26 +75,26 @@ class BikesController < ApplicationController
 
     def bike_params
       params.require(:bike).permit(
-        :entry_date, 
-        :brand, 
-        :model, 
-        :bike_type, 
-        :color, 
-        :log_number, 
-        :purpose, 
-        :serial_number, 
-        :notes, 
-        :tag_info, 
-        :mechanic, 
-        :completion_date, 
-        :price, 
-        :top_tube_size, 
+        :entry_date,
+        :brand,
+        :model,
+        :bike_type,
+        :color,
+        :log_number,
+        :purpose,
+        :serial_number,
+        :notes,
+        :tag_info,
+        :mechanic,
+        :completion_date,
+        :price,
+        :top_tube_size,
         :seat_tube_size,
         :new_parts,
         :work_done,
         :date_sold,
-        :created_at, 
-        :updated_at) 
+        :created_at,
+        :updated_at)
     end
 
     def print_params

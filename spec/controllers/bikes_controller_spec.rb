@@ -1,12 +1,12 @@
 require 'spec_helper'
+
 describe BikesController do
 
   let(:user){FactoryGirl.create(:user)}
   let(:bike){FactoryGirl.create(:bike)}
 
   before :each do
-    controller.stub(:current_user).and_return(user)
-    controller.stub(:authenticate_user!).and_return true
+    sign_in user
   end
 
   describe "POST #create" do
