@@ -15,4 +15,12 @@ describe BikesController do
     end
   end
 
+  describe "GET #new" do
+    it "assigns a log number" do
+      FactoryGirl.create(:bike, log_number: 3)
+      get :new
+      expect(assigns(:log_number)).to eq(4)
+    end
+  end
+
 end

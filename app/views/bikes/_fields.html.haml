@@ -61,22 +61,22 @@
         = f.label "Purpose:", class: "col-sm-4 control-label"
         .col-sm-6
           = f.select :purpose, [["Freecyclery", "Freecyclery"], ["Sale", "Sale"]], {}, class: "selectpicker", disabled: disabled
-  
+
       .form-group
         = f.label "Tag Info", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_area :tag_info, class: "form-control", placeholder: "+ New Component ", disabled: disabled
-   
+
       .form-group
         = f.label "Notes", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_area :notes, class: "form-control", disabled: disabled
-  
+
       .form-group
         = f.label "Date Sold:", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :date_sold, class: "form-control datepicker", disabled: disabled
-   
+
       .form-group
         = f.label "Price", class: "col-sm-4 control-label"
         .col-sm-6

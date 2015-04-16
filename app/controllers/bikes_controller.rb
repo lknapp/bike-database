@@ -15,6 +15,7 @@ class BikesController < ApplicationController
 
   def new
     @bike = Bike.new
+    @log_number = Bike.order(:log_number).last.log_number + 1
   end
 
   def edit

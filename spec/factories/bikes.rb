@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :bike do
-    log_number "1234" 
-    brand "Windsor" 
-    model "Clockwork" 
-    bike_type "Fixed Gear" 
-    color "Black" 
-    serial_number "12345678" 
+    sequence(:log_number)
+    brand "Windsor"
+    model "Clockwork"
+    bike_type "Fixed Gear"
+    color "Black"
+    sequence(:serial_number)
   end
 end
