@@ -1,3 +1,5 @@
+Integrate with autocomplete to get manufacturers & models
+
 Freecyclery Receipts
 
 Reports

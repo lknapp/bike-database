@@ -14,4 +14,5 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
   config.include FactoryGirl::Syntax::Methods
   config.order = "random"
+  WebMock.disable_net_connect!(allow_localhost: true)
 end

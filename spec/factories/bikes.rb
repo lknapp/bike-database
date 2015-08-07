@@ -6,5 +6,6 @@ FactoryGirl.define do
     bike_type "Fixed Gear"
     color "Black"
     sequence(:serial_number)
+    sequence(:bike_index_id)
   end
 end
