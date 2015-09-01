@@ -12,7 +12,7 @@ class Bike < ActiveRecord::Base
   end
 
   def client
-    client = Client.find_by bike_id: self.id
+    Client.find_by bike_id: self.id
   end
 
   def ready_for_pickup?
@@ -35,22 +35,7 @@ class Bike < ActiveRecord::Base
 
   def post_to_bike_index
     return true if self.bike_index_id.present?
-
-    conn = Faraday.new(:url => "#{ENV['BIKE_INDEX_URL']}") do |faraday|
-      faraday.request  :url_encoded
-      faraday.response :logger
-      faraday.adapter  Faraday.default_adapter
-    end
-
-    response = conn.post do |req|
-      req.url "/api/v2/bikes?access_token=#{ENV['BIKE_INDEX_TOKEN']}"
-      req.headers['Content-Type'] = 'application/json'
-      req.body = BikeIndexBikeGenerator.create_bike_index_bike(self)
-    end
-
-    self.update_attribute :bike_index_id, JSON.parse(response.body)['bike']['id'] if response.status == 201
-
-
+    BikeIndexLogger.perform_async(self.id)
   end
 
 end

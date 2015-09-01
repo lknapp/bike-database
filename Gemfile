@@ -7,6 +7,7 @@ gem 'devise'
 gem 'faraday', '0.9.1'
 gem 'oauth2', '1.0.0'
 gem 'dotenv-rails'
+gem 'sidekiq'
 
 #SCSS & Bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
@@ -27,10 +28,13 @@ group :test, :development do
   gem 'better_errors'
   gem 'assert_difference'
   gem 'binding_of_caller'
-  gem 'webmock', '1.21.0'
 
   # Uncomment this line on OS X.
   gem 'growl', '1.0.3'
+end
+
+group :test do
+  gem 'webmock', '1.21.0'
 end
 
 gem 'uglifier', '2.1.1'
