@@ -1,59 +1,63 @@
-- disabled ||= false 
-.row
-  .form-horizontal
+- disabled ||= false
+.form-horizontal
+  .row
     .col-sm-6
       .form-group
-        = f.label "Log Number", class: "col-sm-4 control-label" 
+        = f.label "Log Number", class: "col-sm-4 control-label"
         .col-sm-6
-          = f.text_field :log_number, class: "form-control", disabled: disabled
-       
+          - if @log_number
+            = f.text_field :log_number, class: "form-control", disabled: disabled, value: @log_number
+          - else
+            = f.text_field :log_number, class: "form-control", disabled: disabled
+
       .form-group
         = f.label "Brand:", class: "col-sm-4 control-label"
         .col-sm-6
-          = f.text_field :brand, class: "form-control", disabled: disabled
-       
+          = f.text_field :brand, class: "col-sm-6 form-control", disabled: disabled
+
       .form-group
         = f.label "Model:", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :model, class: "form-control", disabled: disabled
-  
+
       .form-group
         = f.label "Type:", class: "col-sm-4 control-label"
         .col-sm-6
           = f.select :bike_type, [["BMX", "BMX"], ["Cruiser", "Cruiser"], ["Hybrid", "Hybrid"], ["Mountain", "Mountain"], ["Road", "Road"], ["Touring", "Touring"], ["Track", "Track"], ["Utility", "Utility"]], {}, class: "selectpicker", disabled: disabled
-   
+
       .form-group
         = f.label "Color:", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :color, class: "form-control", disabled: disabled
-          
-    
+
+
     .col-sm-6
       .form-group
         = f.label "Mechanic:", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :mechanic, class: "form-control", disabled: disabled
-    
+
       .form-group
-        = f.label "Seat Tube Length:", class: "col-sm-4 control-label"
+        = f.label "Seat Tube Length (cm):", class: "col-sm-4 control-label"
         .col-sm-6
-          = f.text_field :seat_tube_size, class: "form-control", disabled: disabled
-   
+          = f.text_field :seat_tube_size, class: "form-control seat-tube-cm", disabled: disabled
+
       .form-group
         = f.label "Top Tube Length:", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :top_tube_size, class: "form-control", disabled: disabled
-       
+
       .form-group
         = f.label "Serial Number", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :serial_number, class: "form-control", disabled: disabled
-      
+
       .form-group
         = f.label "Date Finished:", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :entry_date, class: "form-control datepicker", disabled: disabled
-          
+
+  .row
     .col-sm-6
       %br
       %br
