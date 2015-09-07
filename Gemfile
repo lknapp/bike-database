@@ -8,6 +8,7 @@ gem 'faraday', '0.9.1'
 gem 'oauth2', '1.0.0'
 gem 'dotenv-rails'
 gem 'sidekiq'
+gem 'sinatra', :require => nil
 
 #SCSS & Bootstrap
 gem 'bootstrap-sass', '2.3.2.0'

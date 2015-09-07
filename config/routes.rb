@@ -1,6 +1,10 @@
+require 'sidekiq/web'
+
 Bikedb::Application.routes.draw do
   devise_for :users
   root to: "static_pages#home"
+
+  mount Sidekiq::Web => '/sidekiq'
 
   resources :bikes do
     get 'print_select' => 'bikes#print_select', on: :collection
