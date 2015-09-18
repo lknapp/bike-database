@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807011518) do
+ActiveRecord::Schema.define(version: 20150918221119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150807011518) do
     t.string   "bike_type"
     t.string   "color"
     t.string   "serial_number"
-    t.text     "notes"
-    t.text     "tag_info"
+    t.text     "work_done"
+    t.text     "new_parts"
     t.string   "completion_date"
     t.string   "price"
     t.datetime "created_at"
@@ -45,8 +45,6 @@ ActiveRecord::Schema.define(version: 20150807011518) do
     t.integer  "log_number"
     t.text     "purpose"
     t.text     "mechanic"
-    t.text     "new_parts"
-    t.text     "work_done"
     t.date     "date_sold"
     t.integer  "bike_index_id"
   end
@@ -57,7 +55,6 @@ ActiveRecord::Schema.define(version: 20150807011518) do
     t.date     "application_date"
     t.string   "gender"
     t.integer  "age"
-    t.integer  "weight"
     t.boolean  "helmet"
     t.boolean  "lock"
     t.date     "completion_date"

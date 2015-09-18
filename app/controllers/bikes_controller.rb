@@ -51,12 +51,12 @@ class BikesController < ApplicationController
   end
 
   def mark_as_sold
-    current_date = Time.new.strftime("%Y-%m-%d") 
+    current_date = Time.new.strftime("%Y-%m-%d")
     @bike = Bike.find(params[:id])
     if @bike.update_attribute(:date_sold, current_date)
       redirect_to bikes_url, notice: @bike.name + ' was marked as sold on ' + current_date + '.'
     else
-      render action: edit, notice: 'Bike sale date could not be updated' 
+      render action: edit, notice: 'Bike sale date could not be updated'
     end
   end
 
@@ -82,7 +82,6 @@ class BikesController < ApplicationController
         :log_number,
         :purpose,
         :serial_number,
-        :notes,
         :tag_info,
         :mechanic,
         :completion_date,

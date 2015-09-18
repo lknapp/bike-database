@@ -2,6 +2,8 @@ Integrate with autocomplete to get manufacturers & models
 
 Freecyclery Receipts
 
+enable posting to bike index when a bike is created
+
 Reports
   General Reports
     bikes donated per year
@@ -10,7 +12,7 @@ Reports
     bikes donated by year or month. (With bar graph!?)
     bikes donated according to agency. (Graph?)
 
-Add some way to navigate to client receipts
+Add way to navigate to client receipts
 style client receipts
 
 assign a bike from the available freecyclery bikes page

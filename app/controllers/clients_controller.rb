@@ -22,7 +22,7 @@ class ClientsController < ApplicationController
     if @client.save
       redirect_to @client, notice: 'Client was successfully created.'
     else
-      render action: 'new' 
+      render action: 'new'
     end
   end
 
