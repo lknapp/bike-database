@@ -5,7 +5,6 @@ class Bike < ActiveRecord::Base
   validates :bike_type, presence: true
   validates :color, presence: true
   validates :serial_number, presence: true
-  after_save :post_to_bike_index
 
   def name
     self.brand + ' ' + self.model
@@ -37,5 +36,4 @@ class Bike < ActiveRecord::Base
     return true if self.bike_index_id.present?
     BikeIndexLogger.perform_async(self.id)
   end
-
 end
