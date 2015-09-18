@@ -5,10 +5,12 @@
     %table.table.table-striped.table-bordered.table-hover
       %thead
         %tr
-          %th Bike 
+          %th Bike
           %th Select
         -@bikes.each do |bike|
           %tr
             %td= bike.name
-            %td= check_box("print_bikes", bike.id) 
-    =submit_tag 'Generate Labels', class: "btn btn-default" 
+            %td= check_box("print_bikes", bike.id)
+    =will_paginate @bikes
+    %br
+    =submit_tag 'Generate Labels', class: "btn btn-default"

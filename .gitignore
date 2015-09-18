@@ -22,6 +22,7 @@ dump.rdb
 .DS_Store
 
 /config/secrets.yml
+/ignored/
 
 *.swp
 /.vagrant/*

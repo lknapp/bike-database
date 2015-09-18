@@ -3,26 +3,24 @@ class BikesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @bikes = Bike.all.order(:log_number).reverse_order
+    @bikes = Bike.all.order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
     @unsold_bikes = @bikes.select{ |bike|
       !bike.date_sold &&
       (bike.purpose == "Sale")
     }
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @bike = Bike.new
     @log_number = Bike.order(:log_number).last.log_number + 1
   end
 
-  def edit
-  end
+  def edit; end
 
   def print_select
-    @bikes = Bike.all
+    @bikes = Bike.order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
   end
 
   def print_labels
