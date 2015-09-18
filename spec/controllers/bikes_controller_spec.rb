@@ -11,7 +11,9 @@ describe BikesController do
 
   describe "POST #create" do
     it "creates a new bike with valid credentials" do
-      expect{post :create, bike: FactoryGirl.attributes_for(:bike)}.to change(Bike, :count).by(1)
+      expect{
+        post :create, bike: FactoryGirl.attributes_for(:bike)
+      }.to change(Bike, :count).by(1)
     end
   end
 

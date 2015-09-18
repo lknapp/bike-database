@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.1'
+gem 'rails', '4.2'
 gem 'pg', '0.15.1'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'devise'
@@ -41,8 +41,6 @@ end
 
 gem 'uglifier', '2.1.1'
 gem 'jquery-rails', '3.0.4'
-gem 'jquery-turbolinks'
-gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 
 group :doc do

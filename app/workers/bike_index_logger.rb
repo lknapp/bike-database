@@ -5,7 +5,6 @@ class BikeIndexLogger
 
     conn = Faraday.new(:url => "#{ENV['BIKE_INDEX_URL']}") do |faraday|
       faraday.request  :url_encoded
-      faraday.response :logger
       faraday.adapter  Faraday.default_adapter
     end
 
