@@ -3,7 +3,7 @@ class BikesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @bikes = Bike.all
+    @bikes = Bike.all.order(:log_number).reverse_order
     @unsold_bikes = @bikes.select{ |bike|
       !bike.date_sold &&
       (bike.purpose == "Sale")

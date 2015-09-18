@@ -14,7 +14,7 @@
     %tbody
       - @unsold_bikes.each do |bike|
         %tr
-          %td= bike.brand 
+          %td= bike.brand
           %td= bike.model
           %td= link_to 'Show', bike
           %td= link_to 'Edit', edit_bike_path(bike)
@@ -30,8 +30,8 @@
     %tbody
       - @bikes.each do |bike|
         %tr
-          %td= bike.brand 
+          %td= bike.brand
           %td= bike.model
           %td= link_to 'Show', bike
           %td= link_to 'Edit', edit_bike_path(bike)
-  
+
