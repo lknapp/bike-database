@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Bike do
   describe "#post_to_bike_index" do
-    xit "calls BikeIndexLogger if no bike_index_id is present" do
-      expect(BikeIndexLogger).to receive(:perform_async)
+    it "does not calls BikeIndexLogger if no bike_index_id is present" do
+      expect(BikeIndexLogger).not_to receive(:perform_async)
       create(:bike, bike_index_id: nil)
     end
 
