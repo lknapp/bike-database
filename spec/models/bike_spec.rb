@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Bike do
   describe "#post_to_bike_index" do
-    it "calls BikeIndexLogger if no bike_index_id is present" do
+    xit "calls BikeIndexLogger if no bike_index_id is present" do
       expect(BikeIndexLogger).to receive(:perform_async)
       create(:bike, bike_index_id: nil)
     end
