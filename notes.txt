@@ -1,8 +1,7 @@
-Integrate with autocomplete to get manufacturers & models
+integrate with autocomplete to get manufacturers & models
+enable posting to bike index when a bike is created
 
 Freecyclery Receipts
-
-enable posting to bike index when a bike is created
 
 Reports
   General Reports
@@ -17,16 +16,13 @@ style client receipts
 
 assign a bike from the available freecyclery bikes page
 
-validations around parameters that break site if incomplete
 mark as sold should be disabled after bike is sold
   there should be nice feedback indicating that the bike was sold
 Improve form layouts
 make navigation always on the left side of the page
 Make customer facing bike index with pitchers
-make skizzers marks on the labels page
-Improve great dummy data
+
 refactor index - move unsold bikes to model
-add a request-a-feature feature
 
 add pics of bikes for sale
 add recyclery logos & bike memorabilia pics all over app

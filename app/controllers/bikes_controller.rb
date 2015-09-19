@@ -4,10 +4,7 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.all.order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
-    @unsold_bikes = @bikes.select{ |bike|
-      !bike.date_sold &&
-      (bike.purpose == "Sale")
-    }
+    @unsold_bikes = @bikes.select{|bike| bike.date_sold.nil? && bike.purpose == "Sale"}
   end
 
   def show; end
@@ -31,7 +28,7 @@ class BikesController < ApplicationController
   def create
     @bike = Bike.new(bike_params)
     if @bike.save
-      redirect_to @bike, notice: 'Bike was successfully created.'
+      redirect_to new_bike_path, notice: 'Bike was successfully created.'
     else
       render action: 'new'
     end

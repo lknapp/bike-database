@@ -1,12 +1,12 @@
 = form_for @bike, html: {class: 'form-horizontal'} do |f|
-  - if @bike.errors.any? 
+  - if @bike.errors.any?
     #error_explanation
       %h2= pluralize(@bike.errors.count, "error") + " prohibited this bike from being saved:"
       %ul
         - @bike.errors.full_messages.each do |msg|
-          %li= msg 
-  = render 'fields', f: f 
+          %li= msg
+  = render 'fields', f: f
 
   .row
     .actions.col-sm-offset-2
-      = f.submit class: "btn btn-default"
+      = f.submit value: "Log another bike", class: "btn btn-default"

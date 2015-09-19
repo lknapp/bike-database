@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150918221119) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "agencies", force: true do |t|
+  create_table "agencies", force: :cascade do |t|
     t.string "agency_name"
     t.string "contact_name"
     t.string "street_address"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150918221119) do
     t.string "email"
   end
 
-  create_table "bikes", force: true do |t|
+  create_table "bikes", force: :cascade do |t|
     t.string   "entry_date"
     t.string   "brand"
     t.string   "model"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150918221119) do
     t.integer  "bike_index_id"
   end
 
-  create_table "clients", force: true do |t|
+  create_table "clients", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.date     "application_date"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20150918221119) do
   add_index "clients", ["agency_id"], name: "index_clients_on_agency_id", using: :btree
   add_index "clients", ["bike_id"], name: "index_clients_on_bike_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20150918221119) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "volunteers", force: true do |t|
+  create_table "volunteers", force: :cascade do |t|
     t.string  "name"
     t.string  "email"
     t.string  "phone"
