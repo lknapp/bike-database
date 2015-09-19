@@ -10,6 +10,7 @@ gem 'dotenv-rails'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'will_paginate', '~> 3.0.6'
+gem 'coffee-rails'
 
 #SCSS & Bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
