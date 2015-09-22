@@ -2,6 +2,10 @@
   %h1 Bike &amp; Client Tracker
   %br
   %h2 Bikes
+  = form_tag("bikes/search", method: "get", class: "form-inline") do
+    = label_tag(:log_number, "Search by log number:")
+    = text_field_tag :log_number, "", class: "form-control"
+    = submit_tag("Search", class: "btn btn-default")
   %br
   = link_to "Log Bikes", new_bike_path
   %br

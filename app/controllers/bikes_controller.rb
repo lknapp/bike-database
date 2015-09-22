@@ -25,6 +25,16 @@ class BikesController < ApplicationController
     @bikes = Bike.find(bike_ids)
   end
 
+  def search
+    bike = Bike.where(log_number: params[:log_number]).first
+    if bike
+      redirect_to edit_bike_path(bike)
+    else
+      flash[:notice] = 'No bike with that log number was found'
+      redirect_to action: 'home', controller: 'static_pages'
+    end
+  end
+
   def create
     @bike = Bike.new(bike_params)
     if @bike.save

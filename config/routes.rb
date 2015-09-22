@@ -7,6 +7,7 @@ Bikedb::Application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   resources :bikes do
+    get 'search' => 'bikes#search', on: :collection
     get 'print_select' => 'bikes#print_select', on: :collection
     get 'print_labels' => 'bikes#print_labels', on: :collection
     get 'freecyclery_pickup' => 'bikes#freecyclery_pickup', on: :collection
