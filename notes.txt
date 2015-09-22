@@ -1,3 +1,7 @@
+search for bike based on log #
+convert to bootstrap-less or something
+
+
 integrate with autocomplete to get manufacturers & models
 enable posting to bike index when a bike is created
 
