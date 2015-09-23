@@ -1,30 +1,25 @@
-- disabled ||= false 
+- disabled ||= false
 .form-horizontal
   .form-group
-    = f.label "First Name", class: "col-sm-2 control-label" 
+    = f.label "First Name", class: "col-sm-2 control-label"
     .col-sm-10
       = f.text_field :first_name, class: "form-control", disabled: disabled
-  
+
   .form-group
     = f.label "Last Name", class: "col-sm-2 control-label"
     .col-sm-10
       = f.text_field :last_name, class: "form-control", disabled: disabled
-  
+
   .form-group
     = f.label "Gender", class: "col-sm-2 control-label"
     .col-sm-10
       = f.text_field :gender, class: "form-control", disabled: disabled
-  
+
   .form-group
     = f.label "Age", class: "col-sm-2 control-label"
     .col-sm-10
       = f.text_field :age, class: "form-control", disabled: disabled
-  
-  .form-group
-    = f.label "Weight", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :weight, class: "form-control", disabled: disabled
-  
+
   .form-group
     = f.label "Application Date:", class: "col-sm-2 control-label"
     .col-sm-10
@@ -33,14 +28,13 @@
   .form-group
     = f.label "Type of Bike Requested:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.text_field :bike_type_requested, class: "form-control", disabled: disabled
- 
+      = f.select :bike_type_requested, [["BMX", "BMX"], ["Cruiser", "Cruiser"], ["Hybrid", "Hybrid"], ["Mountain", "Mountain"], ["Road", "Road"], ["Touring", "Touring"], ["Track", "Track"], ["Utility", "Utility"], ["Youth", "Youth"]], {}, class: "selectpicker", disabled: disabled
+
   .form-group
     = f.label "Will Pay 25$ for Lock & Helmet:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.check_box :bike_type_requested, disabled: disabled
-  
- 
+      = f.check_box :will_pay, disabled: disabled
+
   .form-group
     = f.label "Helmet", class: "col-sm-2 control-label"
     .col-sm-10
