@@ -28,7 +28,7 @@
   .form-group
     = f.label "Type of Bike Requested:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.select :bike_type_requested, [["BMX", "BMX"], ["Cruiser", "Cruiser"], ["Hybrid", "Hybrid"], ["Mountain", "Mountain"], ["Road", "Road"], ["Touring", "Touring"], ["Track", "Track"], ["Utility", "Utility"], ["Youth", "Youth"]], {}, class: "selectpicker", disabled: disabled
+      = f.select :bike_type_requested, [["No Preference", "No Preference"], ["BMX", "BMX"], ["Comfort", "Comfort"], ["Cruiser", "Cruiser"], ["Hybrid", "Hybrid"], ["Mountain", "Mountain"], ["Road", "Road"], ["Touring", "Touring"], ["Track", "Track"], ["Utility", "Utility"], ["Youth", "Youth"]], {}, class: "selectpicker", disabled: disabled
 
   .form-group
     = f.label "Will Pay 25$ for Lock & Helmet:", class: "col-sm-2 control-label"
