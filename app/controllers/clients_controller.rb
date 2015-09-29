@@ -58,12 +58,14 @@ class ClientsController < ApplicationController
         :lock,
         :completion_date,
         :bike_id,
+        :will_pay,
+        :bike_type_requested,
         :agency_id,
         :notes,
         :bike_fixed,
         :number_of_calls,
         :application_voided,
         :pickup_date,
-        :volunteer_at_pickup) 
+        :volunteer_at_pickup)
     end
 end
