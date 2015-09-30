@@ -53,6 +53,7 @@ class ClientsController < ApplicationController
         :application_date,
         :gender,
         :age,
+        :height,
         :weight,
         :helmet,
         :lock,
