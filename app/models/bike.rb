@@ -24,7 +24,7 @@ class Bike < ActiveRecord::Base
   end
 
   def self.available_for_freecyclery
-    Bike.all.select{|bike| bike.completion_date && (bike.purpose == "Freecyclery") && !bike.client }
+    Bike.order(log_number: :desc).select{|bike| bike.completion_date && (bike.purpose == "Freecyclery")}
   end
 
   def mark_picked_up
