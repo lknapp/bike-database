@@ -1,3 +1,10 @@
+print sales labels should not show freecyclery bikes
+
+show log number next to bikes (color model make lognumber)
+
+
+
+
 search for bike based on log #
 convert to bootstrap-less or something
 

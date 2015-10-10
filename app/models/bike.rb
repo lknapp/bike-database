@@ -7,7 +7,7 @@ class Bike < ActiveRecord::Base
   validates :serial_number, presence: true
 
   def name
-    self.brand + ' ' + self.model
+    self.color + " " + self.brand + ' ' + self.model + " (" + self.log_number.to_s + ")"
   end
 
   def client
