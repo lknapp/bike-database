@@ -76,15 +76,15 @@
           = f.text_area :work_done, class: "form-control", disabled: disabled
 
       .form-group
-        = f.label "Date Sold:", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.text_field :date_sold, class: "form-control datepicker", disabled: disabled
-
-      .form-group
         = f.label "Price", class: "col-sm-4 control-label"
         .col-sm-6
           .input-group
             %span.input-group-addon $
             = f.text_field :price, class: "form-control", disabled: disabled
-
           %a{href: "http://www.bicyclebluebook.com/SearchBikes.aspx"} Look It Up
+
+      .form-group
+        = f.label "Date Sold:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :date_sold, class: "form-control datepicker", disabled: disabled
+
