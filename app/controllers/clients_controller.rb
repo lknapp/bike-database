@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :set_client, only: [:edit, :update]
   before_action :authenticate_user!
 
   def index
@@ -7,20 +7,16 @@ class ClientsController < ApplicationController
     @clients = Client.all
   end
 
-  def show
-  end
-
   def new
     @client = Client.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @client = Client.new(client_params)
     if @client.save
-      redirect_to @client, notice: 'Client was successfully created.'
+      redirect_to edit_client_url(@client), notice: 'Client was successfully created.'
     else
       render action: 'new'
     end
@@ -28,16 +24,9 @@ class ClientsController < ApplicationController
 
   def update
     if @client.update(client_params)
-      redirect_to @client, notice: 'Client was successfully updated.'
+      redirect_to edit_client_url(@client), notice: 'Client was successfully updated.'
     else
       render action: 'edit'
-    end
-  end
-
-  def destroy
-    @client.destroy
-    respond_to do |format|
-      format.html { redirect_to clients_url }
     end
   end
 

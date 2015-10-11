@@ -63,7 +63,10 @@
   .form-group
     = f.label "Bike:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.select :bike_id, options_for_select( Bike.available_for_freecyclery.collect{|b| [ b.name, b.id ]}, @client.bike_id ), {include_blank: 'None'}, class: "selectpicker", disabled: disabled
+      - if @client.bike_id
+        = f.select :bike_id, options_for_select( Bike.available_for_freecyclery.collect{|b| [ b.name, b.id ]} + [[@client.bike.name, @client.bike_id]], @client.bike_id ), {include_blank: 'None'}, class: "selectpicker", disabled: disabled
+      - else
+        = f.select :bike_id, options_for_select( Bike.available_for_freecyclery.collect{|b| [ b.name, b.id ]}, @client.bike_id ), {include_blank: 'None'}, class: "selectpicker", disabled: disabled
 
   .form-group
     = f.label "Agency:", class: "col-sm-2 control-label"

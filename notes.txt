@@ -2,24 +2,16 @@ when bike gets picked up, remove it from freecyclery bike list
   when visiting user page check if they have a bike and add it to
 the list
 
-available freecyclery bikes list should have all the infos - size,
-make, model, color, etc
-
 make sure you can mark bike completion dates
-bikes ready for pickup should also include color & log number
 clients should not be on waiting list after they get assigned a bike
 
-
+Freecyclery Receipts
 print sales labels should not show freecyclery bikes
 
-search for bike based on log #
-convert to bootstrap-less or something
-
-
+convert to bootstrap-less
 integrate with autocomplete to get manufacturers & models
 enable posting to bike index when a bike is created
 
-Freecyclery Receipts
 
 Reports
   General Reports

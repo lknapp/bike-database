@@ -39,7 +39,9 @@ class Bike < ActiveRecord::Base
   end
 
   def self.available_for_freecyclery
-    Bike.order(log_number: :desc).select{|bike| bike.completion_date && (bike.purpose == "Freecyclery")}
+    assigned_bikes = Client.all.select{|c| !c.bike_id.nil?}.map(&:bike)
+    all_freecyclery_bikes = Bike.order(log_number: :desc).select{|bike| bike.completion_date && (bike.purpose == "Freecyclery")}
+    all_freecyclery_bikes - assigned_bikes
   end
 
   def mark_picked_up

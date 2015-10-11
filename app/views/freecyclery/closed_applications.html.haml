@@ -5,15 +5,15 @@
     %table.table.table-striped.table-bordered.table-hover
       %thead
         %tr
-          %th Name 
+          %th Name
           %th Voided
           %th Completed
-          %th Show
+          %th Edit
       %tbody
         - @closed_applications.each do |client|
           %tr
-            %td= client.name 
+            %td= client.name
             %td= client.application_voided
             %td= client.completion_date
-            %td= link_to 'Show', client
+            %td= link_to 'Edit', edit_client_path(client)
     %br
