@@ -12,7 +12,7 @@
   <div class="navbar-collapse collapse navbar-responsive-collapse" id='collapse-1'>
     <ul class="nav navbar-nav navbar-right">
       <li class="bike-search">
-        <%= form_tag("bikes/search", method: "get", class: "form-inline") do %>
+        <%= form_tag(search_bikes_path, method: "get", class: "form-inline") do %>
           <%= label_tag(:log_number, "Search for a bike by log number:") %>
           <%= text_field_tag :log_number, "", class: "form-control" %>
           <%= submit_tag("Search", class: "btn btn-default") %>
