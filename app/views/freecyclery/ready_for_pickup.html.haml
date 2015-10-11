@@ -5,15 +5,13 @@
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
-        %th Brand
-        %th Model
+        %th Bike
         %th Client
         %th
     %tbody
       - @bikes_for_pickup.each do |bike|
         %tr
-          %td= bike.brand 
-          %td= bike.model
+          %td= bike.name
           %td= bike.client.name
           %td= button_to "Mark as picked up", {controller: "bikes", action: "mark_picked_up", id: bike.id}, method: :patch, class: "btn btn-default"
 

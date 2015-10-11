@@ -6,6 +6,21 @@ class Bike < ActiveRecord::Base
   validates :color, presence: true
   validates :serial_number, presence: true
 
+  def self.bike_types
+    [
+      ["BMX", "BMX"],
+      ["Cruiser", "Cruiser"],
+      ["Hybrid", "Hybrid"],
+      ["Kids", "Kids"],
+      ["Mountain", "Mountain"],
+      ["Road", "Road"],
+      ["Touring", "Touring"],
+      ["Track", "Track"],
+      ["Utility", "Utility"],
+      ["Youth", "Youth"]
+    ]
+  end
+
   def name
     self.color + " " + self.brand + ' ' + self.model + " (" + self.log_number.to_s + ")"
   end

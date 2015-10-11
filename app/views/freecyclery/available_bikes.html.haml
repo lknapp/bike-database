@@ -5,11 +5,9 @@
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
-        %th Brand
-        %th Model
+        %th Bike
     %tbody
       - @available_bikes.each do |bike|
         %tr
-          %td= bike.brand 
-          %td= bike.model
+          %td= bike.name
 
