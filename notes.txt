@@ -1,7 +1,6 @@
 make sure you can mark bike completion dates
 
 Freecyclery Receipts
-print sales labels should not show freecyclery bikes
 
 convert to bootstrap-less
 integrate with autocomplete to get manufacturers & models

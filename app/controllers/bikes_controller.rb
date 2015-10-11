@@ -17,7 +17,7 @@ class BikesController < ApplicationController
   def edit; end
 
   def print_select
-    @bikes = Bike.order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
+    @bikes = Bike.where.not(purpose: "Freecyclery").order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
   end
 
   def print_labels
