@@ -7,31 +7,23 @@
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
-        %th Brand
-        %th Model
-        %th
+        %th Bike
         %th
     %tbody
       - @unsold_bikes.each do |bike|
         %tr
-          %td= bike.brand
-          %td= bike.model
-          %td= link_to 'Show', bike
+          %td= bike.name
           %td= link_to 'Edit', edit_bike_path(bike)
 
   %h1 All Bikes
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
-        %th Brand
-        %th Model
-        %th
+        %th Bike
         %th
     %tbody
       - @bikes.each do |bike|
         %tr
-          %td= bike.brand
-          %td= bike.model
-          %td= link_to 'Show', bike
+          %td= bike.name
           %td= link_to 'Edit', edit_bike_path(bike)
   =will_paginate @bikes
