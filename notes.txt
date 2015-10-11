@@ -1,9 +1,4 @@
-when bike gets picked up, remove it from freecyclery bike list
-  when visiting user page check if they have a bike and add it to
-the list
-
 make sure you can mark bike completion dates
-clients should not be on waiting list after they get assigned a bike
 
 Freecyclery Receipts
 print sales labels should not show freecyclery bikes
