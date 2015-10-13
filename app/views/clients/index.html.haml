@@ -10,6 +10,7 @@
           %th Number
           %th First Name
           %th Last Name
+          %th Height
           %th Application Date
           %th Agency
           %th
@@ -19,6 +20,7 @@
             %td= index + 1
             %td= client.first_name
             %td= client.last_name
+            %td= client.height
             %td= client.application_date
             %td= client.agency.agency_name if client.agency
             %td= link_to 'Edit', edit_client_path(client)
