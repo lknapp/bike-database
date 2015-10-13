@@ -57,7 +57,6 @@ namespace :db do
         serial_number: Faker::Number.number(10),
         notes: Faker::Lorem.sentence,
         tag_info: Faker::Lorem.sentence,
-        completion_date: rand(100.days).ago,
         price: rand(400) + 50,
         seat_tube_size: rand(45),
         top_tube_size: rand(45),

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930005913) do
+ActiveRecord::Schema.define(version: 20151013231450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20150930005913) do
     t.string   "serial_number"
     t.text     "work_done"
     t.text     "new_parts"
-    t.string   "completion_date"
     t.string   "price"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -57,7 +56,6 @@ ActiveRecord::Schema.define(version: 20150930005913) do
     t.integer  "age"
     t.boolean  "helmet"
     t.boolean  "lock"
-    t.date     "completion_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "bike_id"

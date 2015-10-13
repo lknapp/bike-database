@@ -30,8 +30,7 @@ class Bike < ActiveRecord::Base
   end
 
   def ready_for_pickup?
-    client = self.client
-    client && self.completion_date && !client.application_voided && self.date_sold.nil?
+    self.client && !client.application_voided && self.date_sold.nil?
   end
 
   def self.bikes_ready_for_pickup
@@ -40,7 +39,7 @@ class Bike < ActiveRecord::Base
 
   def self.available_for_freecyclery
     assigned_bikes = Client.all.select{|c| !c.bike_id.nil?}.map(&:bike)
-    all_freecyclery_bikes = Bike.order(log_number: :desc).select{|bike| bike.completion_date && (bike.purpose == "Freecyclery")}
+    all_freecyclery_bikes = Bike.order(log_number: :desc).select{|bike| bike.purpose == "Freecyclery"}
     all_freecyclery_bikes - assigned_bikes
   end
 

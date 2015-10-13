@@ -91,7 +91,6 @@ class BikesController < ApplicationController
         :serial_number,
         :tag_info,
         :mechanic,
-        :completion_date,
         :price,
         :top_tube_size,
         :seat_tube_size,
