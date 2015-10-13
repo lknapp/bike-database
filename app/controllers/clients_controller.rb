@@ -4,7 +4,7 @@ class ClientsController < ApplicationController
 
   def index
     @waiting_list = Client.waiting_list
-    @clients = Client.all
+    @clients = Client.all.reverse_order
   end
 
   def new
