@@ -4,7 +4,7 @@
       .print-label
         %h2
           %strong='$' + bike.price
-          ='    ' + bike.name
+          ='    ' + bike.brand + ' ' + bike.model
         %br
         .horizontal-line
         .bike-specs
@@ -21,4 +21,4 @@
               .strong New Parts:
               =simple_format(bike.new_parts)
         .row
-          .col-xs-9.col-xs-offset-3= "Log Number: " + bike.log_number.to_s
+          .col-xs-12= "Log #: " + bike.log_number.to_s + ", Serial #: " + bike.serial_number
