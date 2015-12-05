@@ -36,6 +36,11 @@
       = f.text_field :application_date, class: "form-control datepicker", disabled: disabled
 
   .form-group
+    = f.label "Agency:", class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.select :agency_id, Agency.all.collect {|b| [ b.agency_name, b.id ] }, {include_blank: 'None'}, class: "selectpicker", disabled: disabled
+
+  .form-group
     = f.label "Type of Bike Requested:", class: "col-sm-2 control-label"
     .col-sm-10
       = f.select :bike_type_requested, Bike.bike_types, {include_blank: "No Preference"}, class: "selectpicker", disabled: disabled
@@ -67,11 +72,6 @@
         = f.select :bike_id, options_for_select( Bike.available_for_freecyclery.collect{|b| [ b.name, b.id ]} + [[@client.bike.name, @client.bike_id]], @client.bike_id ), {include_blank: 'None'}, class: "selectpicker", disabled: disabled
       - else
         = f.select :bike_id, options_for_select( Bike.available_for_freecyclery.collect{|b| [ b.name, b.id ]}, @client.bike_id ), {include_blank: 'None'}, class: "selectpicker", disabled: disabled
-
-  .form-group
-    = f.label "Agency:", class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.select :agency_id, Agency.all.collect {|b| [ b.agency_name, b.id ] }, {include_blank: 'None'}, class: "selectpicker", disabled: disabled
 
   .form-group
     = f.label "Notes:", class: "col-sm-2 control-label"
