@@ -67,13 +67,6 @@ class BikesController < ApplicationController
     end
   end
 
-  def mark_picked_up
-    @bike = Bike.find(params[:id])
-    @bike.mark_picked_up
-    flash[:notice] = @bike.name + ' was marked as picked up'
-    redirect_to action: "ready_for_pickup", controller: "freecyclery"
-  end
-
   private
     def set_bike
       @bike = Bike.find(params[:id])

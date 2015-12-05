@@ -24,7 +24,11 @@ class ClientsController < ApplicationController
 
   def update
     if @client.update(client_params)
-      redirect_to edit_client_url(@client), notice: 'Client was successfully updated.'
+      notice = 'Client was successfully updated.'
+      unless @client.bike.update_attribute(:date_sold, @client.pickup_date)
+        notice = "Unable to update client's bike sale date"
+      end
+      redirect_to edit_client_url(@client), notice: notice
     else
       render action: 'edit'
     end
@@ -46,7 +50,6 @@ class ClientsController < ApplicationController
         :weight,
         :helmet,
         :lock,
-        :completion_date,
         :bike_id,
         :will_pay,
         :bike_type_requested,

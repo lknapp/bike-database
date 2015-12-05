@@ -14,7 +14,7 @@ describe Client do
 
     end
     it "does not include completed clients" do
-      create(:client, completion_date: 1.week.ago)
+      create(:client, pickup_date: 1.week.ago)
       expect(Client.waiting_list).to be_empty
     end
   end

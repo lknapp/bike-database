@@ -12,7 +12,6 @@ Bikedb::Application.routes.draw do
     get 'print_labels' => 'bikes#print_labels', on: :collection
     get 'freecyclery_pickup' => 'bikes#freecyclery_pickup', on: :collection
     patch 'mark_as_sold' => 'bikes#mark_as_sold', on: :member
-    patch 'mark_picked_up' => 'bikes#mark_picked_up', on: :member
   end
 
   resources :volunteers
