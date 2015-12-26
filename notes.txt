@@ -1,3 +1,6 @@
+on website, tailwind for tools initiative looks weird in carousel
+on mobile
+
 Freecyclery Receipts
 
 convert to bootstrap-less

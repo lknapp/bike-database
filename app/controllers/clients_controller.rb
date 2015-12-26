@@ -23,14 +23,12 @@ class ClientsController < ApplicationController
   end
 
   def update
-    if @client.update(client_params)
+    @client.update(client_params)
+    if @client.save
       notice = 'Client was successfully updated.'
-      unless @client.bike.update_attribute(:date_sold, @client.pickup_date)
-        notice = "Unable to update client's bike sale date"
-      end
-      redirect_to edit_client_url(@client), notice: notice
+      redirect_to edit_client_url(@client), notice: "Client updated"
     else
-      render action: 'edit'
+      render action: 'edit', notice: "Unable to update client"
     end
   end
 
@@ -40,6 +38,7 @@ class ClientsController < ApplicationController
     end
 
     def client_params
+      params["client"]["application_date"] = Date.strptime(params["client"]["application_date"], '%m/%d/%Y')
       params.require(:client).permit(
         :first_name,
         :last_name,

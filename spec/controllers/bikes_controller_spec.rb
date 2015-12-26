@@ -28,6 +28,7 @@ describe BikesController do
     end
   end
 
+
   describe "GET #new" do
     it "assigns a log number" do
       FactoryGirl.create(:bike, log_number: 3)
