@@ -5,10 +5,6 @@ class FreecycleryController < ApplicationController
     @closed_applications = Client.closed_applications
   end
 
-  def ready_for_pickup
-    @bikes_for_pickup = Bike.bikes_ready_for_pickup
-  end
-
   def available_bikes
     @available_bikes = Bike.available_for_freecyclery
   end

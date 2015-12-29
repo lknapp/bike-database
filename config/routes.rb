@@ -21,7 +21,6 @@ Bikedb::Application.routes.draw do
   end
 
   get 'closed_applications' => 'freecyclery#closed_applications'
-  get 'ready_for_pickup' => 'freecyclery#ready_for_pickup'
   get 'available_bikes' => 'freecyclery#available_bikes'
   get 'bikes_sold_per_year' => 'reports#bikes_sold_per_year'
 end

@@ -33,10 +33,6 @@ class Bike < ActiveRecord::Base
     self.client && !client.application_voided && self.date_sold.nil?
   end
 
-  def self.bikes_ready_for_pickup
-    Bike.all.select{|bike| bike.ready_for_pickup?}
-  end
-
   def self.available_for_freecyclery
     assigned_bikes = Client.all.select{|c| !c.bike_id.nil?}.map(&:bike)
     all_freecyclery_bikes = Bike.order(log_number: :desc).select{|bike| bike.purpose == "Freecyclery"}
