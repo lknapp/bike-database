@@ -1,4 +1,5 @@
 .container
   %h1 Edit client
+  = render 'receipt_button' if @client.bike_id
   = render 'form'
   = link_to 'Back', clients_path

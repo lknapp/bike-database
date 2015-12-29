@@ -10,7 +10,7 @@
         .client-information
         = @client.name
         %br
-        = @client.agency.agency_name
+        = @client.agency.agency_name if @client.agency
         .horizontal-line
         %br
         = 'Paid $25 for lock and helmet' if @client.will_pay
@@ -47,7 +47,7 @@
         .client-information
         = @client.name
         %br
-        = @client.agency.agency_name
+        = @client.agency.agency_name if @client.agency
         .horizontal-line
         %br
         = 'Paid $25 for lock and helmet' if @client.will_pay
