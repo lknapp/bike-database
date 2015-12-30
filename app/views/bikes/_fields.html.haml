@@ -23,7 +23,7 @@
       .form-group
         = f.label "Type:", class: "col-sm-4 control-label"
         .col-sm-6
-          = f.select :bike_type, Bike.bike_types, {}, class: "selectpicker", disabled: disabled
+          = f.select :bike_type, options_for_select( Bike.bike_types + [[@bike.bike_type, @bike.bike_type]], @bike.bike_type), {}, class: "selectpicker", disabled: disabled
 
       .form-group
         = f.label "Color:", class: "col-sm-4 control-label"
