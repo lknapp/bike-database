@@ -13,6 +13,7 @@
           %th Height
           %th Application Date
           %th Agency
+          %th Bike
           %th
       %tbody
         - @waiting_list.each_with_index do |client, index|
@@ -23,6 +24,7 @@
             %td= client.height
             %td= client.application_date
             %td= client.agency.agency_name if client.agency
+            %td= client.bike_id ? Bike.find(client.bike_id).name : "None"
             %td= link_to 'Edit', edit_client_path(client)
 
     %br
