@@ -1,4 +1,4 @@
-.freecyclery-receipt{
+.print-receipts, .freecyclery-receipt{
   h2 {
     font-size: 18px;
   }
@@ -7,6 +7,7 @@
     border-bottom: 5px solid black;
   }
   .receipt{
+    page-break-inside: avoid;
     margin: 10px;
     border: 5px solid black;
     height: 400px;

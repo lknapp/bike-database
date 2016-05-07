@@ -1,0 +1,4 @@
+.container.print-receipts
+  - @clients.each do |client|
+    .row
+      = render partial: "receipt", locals: {client: client}

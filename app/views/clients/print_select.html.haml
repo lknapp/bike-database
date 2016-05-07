@@ -1,0 +1,18 @@
+.container
+  %h1 Select the clients whose receipts you would like to print
+
+  =form_tag("/clients/print_receipts", method: "get") do
+    %table.table.table-striped.table-bordered.table-hover
+      %thead
+        %tr
+          %th Client
+          %th Bike
+          %th Select
+        -@clients.each do |client|
+          %tr
+            %td= client.name
+            %td= client.bike.name
+            %td= check_box("print_clients", client.id)
+    =will_paginate @clients
+    %br
+    =submit_tag 'Generate Receipts', class: "btn btn-default"

@@ -1,0 +1,74 @@
+.col-xs-6
+  .receipt
+    %h2
+      %strong= client.bike.name
+    %br
+      .horizontal-line
+      .client-information
+      = client.name
+      %br
+      = client.agency.agency_name if client.agency
+      .horizontal-line
+      %br
+      Includes:
+      %br
+      = 'Helmet' if client.helmet
+      %br
+      = 'Lock' if client.lock
+      %br
+      %br
+      Date Received
+      %br
+      _______________
+      %br
+      Client Signature
+      %br
+      ________________
+      %br
+      Recyclery Volunteer Initials
+      %br
+      ___
+      %br
+      CLIENT COPY
+
+.col-xs-6
+  .receipt
+    %h2
+      %strong= client.bike.name
+    %br
+      .horizontal-line
+      .client-information
+      = client.name
+      %br
+      = client.agency.agency_name if client.agency
+      .horizontal-line
+      .row
+        .col-xs-6
+          %br
+          = 'Will make 25$ payment for lock and helmet' if client.will_pay
+          %br
+          Includes:
+          %br
+          = 'Helmet' if client.helmet
+          %br
+          = 'Lock' if client.lock
+          %br
+          %br
+          Date Received
+          %br
+          _______________
+          %br
+          Client Signature
+          %br
+          ________________
+        .col-xs-6
+          .client-info-header CLIENT INFO
+          .client-email= "Agency Email: " + client.agency.email
+          .client-phone= "Agency Phone #: " + client.agency.phone_number
+          .client-photo-consent [ ] I grant consent to the Recyclery to use and publish photographs of me.
+          %br
+          Recyclery Volunteer Initials
+          %br
+          ___
+          %br
+          RECYCLERY COPY

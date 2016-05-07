@@ -18,6 +18,9 @@ Bikedb::Application.routes.draw do
   resources :agencies
   resources :clients do
     get 'receipt' => 'freecyclery#receipt'
+    get 'print_select' => 'clients#print_select', on: :collection
+    get 'print_receipts' => 'clients#print_receipts', on: :collection
+
   end
 
   get 'closed_applications' => 'freecyclery#closed_applications'

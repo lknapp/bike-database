@@ -31,6 +31,15 @@ class ClientsController < ApplicationController
     end
   end
 
+  def print_select
+    @clients = Client.includes(:bike).where.not(bike_id: nil).order(application_date: :desc).paginate(:page => params[:page], :per_page => 30)
+  end
+
+  def print_receipts
+    client_ids = print_params.map{|key, value| key if value == "1"}.compact
+    @clients = Client.find(client_ids)
+  end
+
   private
     def set_client
       @client = Client.find(params[:id])
@@ -59,5 +68,9 @@ class ClientsController < ApplicationController
         :application_voided,
         :pickup_date,
         :volunteer_at_pickup)
+    end
+
+    def print_params
+      params.require(:print_clients)
     end
 end

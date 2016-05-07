@@ -1,7 +1,7 @@
 class Client < ActiveRecord::Base
   # TODO: figure out why application_date validation is fubar
   # validates :application_date, presence: true
-  has_one :bike
+  belongs_to :bike
   belongs_to :agency
 
   def self.waiting_list
@@ -18,10 +18,6 @@ class Client < ActiveRecord::Base
 
   def self.closed_applications
     Client.all.select{|client| client.application_voided || client.pickup_date}
-  end
-
-  def bike
-    Bike.find(self.bike_id)
   end
 
 end

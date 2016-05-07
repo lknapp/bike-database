@@ -5,6 +5,7 @@ class Bike < ActiveRecord::Base
   validates :bike_type, presence: true
   validates :color, presence: true
   validates :serial_number, presence: true
+  has_one :client
 
   def self.bike_types
     [
