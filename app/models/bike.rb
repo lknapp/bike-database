@@ -7,6 +7,9 @@ class Bike < ActiveRecord::Base
   validates :serial_number, presence: true
   has_one :client
 
+  FREECYCLERY = "Freecyclery"
+  SALE = "Sale"
+
   def self.bike_types
     [
       ["BMX", "BMX"],
@@ -35,8 +38,8 @@ class Bike < ActiveRecord::Base
   end
 
   def self.available_for_freecyclery
-    assigned_bikes = Client.all.select{|c| !c.bike_id.nil?}.map(&:bike)
-    all_freecyclery_bikes = Bike.order(log_number: :desc).select{|bike| bike.purpose == "Freecyclery"}
+    assigned_bikes = Client.all.includes(:bike).select{|c| !c.bike_id.nil?}.map(&:bike)
+    all_freecyclery_bikes = Bike.where(purpose: FREECYCLERY).order(log_number: :desc)
     all_freecyclery_bikes - assigned_bikes
   end
 
