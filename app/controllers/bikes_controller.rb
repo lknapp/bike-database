@@ -45,6 +45,7 @@ class BikesController < ApplicationController
   end
 
   def update
+
     if @bike.update(bike_params)
       redirect_to @bike, notice: 'Bike was successfully updated.'
     else
@@ -73,8 +74,9 @@ class BikesController < ApplicationController
     end
 
     def bike_params
+      params[:bike][:fixed_at] = DateTime.strptime(params[:bike][:fixed_at], "%m/%d/%Y") if params[:bike][:fixed_at]
       params.require(:bike).permit(
-        :entry_date,
+        :fixed_at,
         :brand,
         :model,
         :bike_type,

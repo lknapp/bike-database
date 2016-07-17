@@ -4,8 +4,8 @@ class Report
 
   def self.bikes_fixed_per_week
     beginning_of_year = Time.now.beginning_of_year
-    bikes = Bike.where("entry_date > ?", beginning_of_year)
-    weekly_data = bikes.group_by{|b| DateTime.strptime(b.entry_date, "%m/%d/%y").beginning_of_week}
+    bikes = Bike.where("fixed_at > ? AND purpose = ?", beginning_of_year, Bike::SALE)
+    weekly_data = bikes.group_by{|b| b.fixed_at.beginning_of_week}
     weekly_data.to_a.sort!{|a, b| a.first <=> b.first}.to_h
   end
 
@@ -26,7 +26,7 @@ class Report
       average_price = float_prices.inject{ |sum, el| el + sum } / float_prices.size
       {k => average_price}
     }
-    average_prices = average_price_array.reduce({}, :merge)
+    average_price_array.reduce({}, :merge)
   end
 
   def self.yearly_data
