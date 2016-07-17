@@ -1,5 +1,21 @@
 change agency#phone_number to agency#phone
 
+store date fixed as a real date instead of a string and fix all the data
+  null values should be date_created
+  empty strings should be date created
+  strings of format mm/dd/yy
+  strings of format mm/dd/yyyy
+
+add mechanics table and change text input to a dropdown
+
+
+
+
+
+
+
+when client is created without date, app breaks
+
 on website, tailwind for tools initiative looks weird in carousel
 on mobile
 
@@ -37,5 +53,4 @@ add recyclery logos & bike memorabilia pics all over app
 do bike sales labels fit into sleeves? (sheaths are 5x3.75)
 freecyclery bikes need receipts
 when application is voided, bike should go back to pool of bikes
-when client is created without date, app breaks
 phone calls made is unnecessary - notes are usualy used

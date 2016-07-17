@@ -1,0 +1,15 @@
+.container
+  %h1 Bikes Fixed Per Week This Year
+  %p Because of some discrepancies in the way date data has been stored, this data may be off. Consider this feature *experimental* while this message persists. Contact Louis for more information.
+  %table.table
+    %thead
+      %tr
+        %th Week beginning
+        %th Number of Bikes
+        %th Mechanics Responsible
+    %tbody
+      - @weekly_data.each do |week, bikes|
+        %tr
+          %td= week.strftime("%m/%d/%y")
+          %td= bikes.length
+          %td= bikes.map(&:mechanic).uniq.to_sentence

@@ -2,6 +2,13 @@ class Report
 
   @@years = Bike.all.each.map{|bike| bike.date_sold.year if bike.date_sold}
 
+  def self.bikes_fixed_per_week
+    beginning_of_year = Time.now.beginning_of_year
+    bikes = Bike.where("entry_date > ?", beginning_of_year)
+    weekly_data = bikes.group_by{|b| DateTime.strptime(b.entry_date, "%m/%d/%y").beginning_of_week}
+    weekly_data.to_a.sort!{|a, b| a.first <=> b.first}.to_h
+  end
+
   def self.bikes_sold_per_year
     counts = Hash.new(0)
     @@years.each { |year| counts[year] += 1 }
@@ -13,7 +20,6 @@ class Report
     years_prices = @@years.each_with_index.map{|year, index| {prices[index].to_s.to_sym => year}}
     merged_years_prices = years_prices.reduce({}, :merge)
     years_prices_grouped = merged_years_prices.group_by{|k, v| v}
-    
     average_price_array = years_prices_grouped.each.map{ |k, year_values|
       year_prices = year_values.each.map{|pair| pair[0]}
       float_prices = year_prices.map{|price| price.to_s.to_f}
