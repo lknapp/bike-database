@@ -7,14 +7,16 @@ class BikesController < ApplicationController
     @unsold_bikes = @bikes.select{|bike| bike.date_sold.nil? && bike.purpose == "Sale"}
   end
 
-  def show; end
-
   def new
     @bike = Bike.new
-    @log_number = Bike.order(:log_number).last.log_number + 1
+    @previous_bike = Bike.order(:log_number).last
+    @log_number = @previous_bike.log_number + 1
   end
 
-  def edit; end
+  def edit
+    @next_bike = Bike.where(log_number: @bike.log_number + 1).first
+    @previous_bike = Bike.where(log_number: @bike.log_number - 1).first
+  end
 
   def print_select
     @bikes = Bike.where.not(purpose: "Freecyclery").order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
@@ -45,17 +47,11 @@ class BikesController < ApplicationController
   end
 
   def update
-
     if @bike.update(bike_params)
       redirect_to @bike, notice: 'Bike was successfully updated.'
     else
       render action: 'edit'
     end
-  end
-
-  def destroy
-    @bike.destroy
-    redirect_to bikes_url
   end
 
   def mark_as_sold

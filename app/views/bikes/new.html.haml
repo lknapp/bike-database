@@ -1,4 +1,6 @@
 .container
   %h1 New bike
   = render 'new_form'
-  = link_to 'Back', bikes_path
+  = link_to 'All Bikes', bikes_path
+  |
+  = link_to 'Previous Bike', edit_bike_path(@previous_bike)

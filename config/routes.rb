@@ -6,7 +6,7 @@ Bikedb::Application.routes.draw do
 
   mount Sidekiq::Web => '/sidekiq'
 
-  resources :bikes do
+  resources :bikes, except: [:show, :destroy] do
     get 'search' => 'bikes#search', on: :collection
     get 'print_select' => 'bikes#print_select', on: :collection
     get 'print_labels' => 'bikes#print_labels', on: :collection
