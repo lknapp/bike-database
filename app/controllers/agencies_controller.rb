@@ -45,13 +45,13 @@ class AgenciesController < ApplicationController
 
     def agency_params
       params.require(:agency).permit(
-        :agency_name,
+        :name,
         :contact_name,
         :street_address,
         :city,
         :state,
         :postal_code,
-        :phone_number,
-        :email) 
+        :phone,
+        :email)
     end
 end
