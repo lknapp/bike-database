@@ -38,7 +38,7 @@
   .form-group
     = f.label "Agency:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.select :agency_id, Agency.order(:agency_name).collect {|b| [ b.agency_name, b.id ] }, {include_blank: 'None'}, class: "selectpicker", disabled: disabled
+      = f.select :agency_id, Agency.order(:name).collect {|b| [ b.name, b.id ] }, {include_blank: 'None'}, class: "selectpicker", disabled: disabled
 
   .form-group
     = f.label "Type of Bike Requested:", class: "col-sm-2 control-label"

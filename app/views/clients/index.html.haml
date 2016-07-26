@@ -23,7 +23,7 @@
             %td= client.last_name
             %td= client.height
             %td= client.application_date
-            %td= client.agency.agency_name if client.agency
+            %td= client.agency.name if client.agency
             %td= client.bike_id ? Bike.find(client.bike_id).name : "None"
             %td= link_to 'Edit', edit_client_path(client)
 
@@ -43,7 +43,7 @@
           %tr
             %td= client.first_name
             %td= client.last_name
-            %td= client.agency.agency_name if client.agency
+            %td= client.agency.name if client.agency
             %td= link_to 'Edit', edit_client_path(client)
 
     %br

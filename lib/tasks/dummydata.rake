@@ -10,11 +10,10 @@ namespace :db do
     Client.destroy_all
     puts "clearing agencies"
     Agency.destroy_all
-  
 
     def random_agency
       return {
-        agency_name: Faker::Company.name,
+        name: Faker::Company.name,
         contact_name: Faker::Name.name,
         street_address: Faker::Address.street_address,
         city: Faker::Address.city,
