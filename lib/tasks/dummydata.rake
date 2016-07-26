@@ -19,7 +19,7 @@ namespace :db do
         city: Faker::Address.city,
         state: "IL",
         postal_code: Faker::Number.number(5),
-        phone_number: Faker::Number.number(7),
+        phone: Faker::Number.number(7),
         email: Faker::Internet.email
       }
     end

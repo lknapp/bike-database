@@ -9,6 +9,7 @@
 
 # Tech
 - remove bike#entry_date column because it is now fixed_at
+- add tests to ensure that pages render
 - use log number in bike url instead of id
 - paginate 'all clients' page
 - convert to bootstrap-less
