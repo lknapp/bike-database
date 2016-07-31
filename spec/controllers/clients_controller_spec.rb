@@ -19,13 +19,16 @@ describe ClientsController do
   end
 
   describe "PUT #update" do
-    xit "updates a client with an application date" do
-      put :update, id: client.id, client: {application_date: "12/21/2015"}
-      expect(client.reload.application_date.strftime('%m/%d/%Y')).to eq("12/21/2015")
+    it "updates a client with an application date" do
+      date = Time.zone.now.beginning_of_day
+      put :update, id: client.id, client: {application_date: date.strftime('%m/%d/%Y')}
+      expect(client.reload.application_date).to eq(date)
     end
-    xit "updates a client with a pickup date" do
-      put :update, id: client.id, client: {pickup_date: "12/21/2015"}
-      expect(client.reload.pickup_date.strftime('%m/%d/%Y')).to eq("12/21/2015")
+
+    it "updates a client with a pickup date" do
+      date = Time.zone.now.beginning_of_day
+      put :update, id: client.id, client: {pickup_date: date.strftime('%m/%d/%Y')}
+      expect(client.reload.pickup_date).to eq(date)
     end
   end
 end

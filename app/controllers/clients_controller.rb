@@ -49,8 +49,8 @@ class ClientsController < ApplicationController
     end
 
     def client_params
-      params["client"]["application_date"] = Date.strptime(params["client"]["application_date"], '%m/%d/%Y') unless params["client"]["application_date"].empty?
-      params["client"]["pickup_date"] = Date.strptime(params["client"]["pickup_date"], '%m/%d/%Y') unless params["client"]["pickup_date"].empty?
+      params["client"]["application_date"] = Date.strptime(params["client"]["application_date"], '%m/%d/%Y') if params["client"]["application_date"].present?
+      params["client"]["pickup_date"] = Date.strptime(params["client"]["pickup_date"], '%m/%d/%Y') if params["client"]["pickup_date"].present?
       params.require(:client).permit(
         :first_name,
         :last_name,
