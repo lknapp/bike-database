@@ -86,5 +86,5 @@
       .form-group
         = f.label "Date Sold:", class: "col-sm-4 control-label"
         .col-sm-6
-          = f.text_field :date_sold, class: "form-control datepicker", disabled: disabled
+          = f.text_field :date_sold, :value => @bike.date_sold ? @bike.date_sold.strftime("%m/%d/%Y") : "", class: "form-control datepicker", disabled: disabled
 

@@ -42,6 +42,8 @@ class BikesController < ApplicationController
     if @bike.save
       redirect_to new_bike_path, notice: 'Bike was successfully created.'
     else
+      @previous_bike = Bike.order(:log_number).last
+      @log_number = @bike.log_number
       render action: 'new'
     end
   end
@@ -70,7 +72,8 @@ class BikesController < ApplicationController
     end
 
     def bike_params
-      params[:bike][:fixed_at] = DateTime.strptime(params[:bike][:fixed_at], "%m/%d/%Y") if params[:bike][:fixed_at]
+      params[:bike][:fixed_at] = DateTime.strptime(params[:bike][:fixed_at], "%m/%d/%Y") if params[:bike][:fixed_at].present?
+      params[:bike][:date_sold] = DateTime.strptime(params[:bike][:date_sold], "%m/%d/%Y") if params[:bike][:date_sold].present?
       params.require(:bike).permit(
         :fixed_at,
         :brand,
