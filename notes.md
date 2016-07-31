@@ -13,10 +13,6 @@
 - convert to bootstrap-less
 - integrate with autocomplete to get manufacturers & models
 - enable posting to bike index when a bike is created
-- remove clients#number_of_calls
-- remove clients#application_date_bkp
-- remove clients#pickup_Date_bkp
-- bike date_sold column should be datetime
 - add tests to ensure that pages render
 
 # Bugs
