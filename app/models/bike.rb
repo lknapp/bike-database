@@ -42,8 +42,12 @@ class Bike < ActiveRecord::Base
   end
 
   def self.available_for_freecyclery
-    assigned_bikes = Client.all.includes(:bike).select{|c| !c.bike_id.nil?}.map(&:bike)
-    all_freecyclery_bikes = Bike.where(purpose: FREECYCLERY).order(log_number: :desc)
+    assigned_bikes = Client
+      .where("application_voided != ? or application_voided is null", true)
+      .includes(:bike)
+      .select{|c| !c.bike_id.nil?}.map(&:bike)
+    all_freecyclery_bikes = Bike.where(purpose: FREECYCLERY)
+                                .order(log_number: :desc)
     all_freecyclery_bikes - assigned_bikes
   end
 

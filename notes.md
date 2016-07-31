@@ -15,9 +15,6 @@
 - enable posting to bike index when a bike is created
 - add tests to ensure that pages render
 
-# Bugs
-- when application voided, bike should go back to pool of bikes
-
 # Other
 Reports
   General Reports

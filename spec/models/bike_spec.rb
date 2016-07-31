@@ -31,6 +31,11 @@ describe Bike do
       create :client, bike_id: bike.id
       expect(Bike.available_for_freecyclery).to be_empty
     end
+    it "returns bikes that were assigned to clients whose application has been voided" do
+      bike = create :bike, :freecyclery
+      create :client, bike_id: bike.id, application_voided: true
+      expect(Bike.available_for_freecyclery).to eq [bike]
+    end
     it "does not return sales bikes" do
       bike = create :bike, :sale
       create :client, bike_id: bike.id
