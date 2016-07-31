@@ -6,12 +6,12 @@
       =button_to "Mark as sold", {action: "mark_as_sold", id: @bike.id}, method: :patch, class: "btn btn-default"
   = render 'edit_form'
   .bottom-nav-links
-    - if @next_bike
-      = link_to 'Next Bike', edit_bike_path(@next_bike)
+    - if @previous_bike
+      = link_to 'Previous Bike', edit_bike_path(@previous_bike)
     - else
       = link_to 'New Bike', new_bike_path
     |
     = link_to 'All Bikes', bikes_path
-    - if @previous_bike
+    - if @next_bike
       |
-      = link_to 'Previous Bike', edit_bike_path(@previous_bike)
+      = link_to 'Next Bike', edit_bike_path(@next_bike)
