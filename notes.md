@@ -8,9 +8,6 @@
 - restyle agencies page to not have show or destroy links
 
 # Tech
-- bike date_sold column should be datetime
-- remove bike#entry_date column because it is now fixed_at
-- add tests to ensure that pages render
 - use log number in bike url instead of id
 - paginate 'all clients' page
 - convert to bootstrap-less
@@ -19,10 +16,10 @@
 - remove clients#number_of_calls
 - remove clients#application_date_bkp
 - remove clients#pickup_Date_bkp
+- bike date_sold column should be datetime
+- add tests to ensure that pages render
 
 # Bugs
-- when client is created without date, app breaks
-- mark as sold should be disabled after bike is sold
 - when application voided, bike should go back to pool of bikes
 
 # Other

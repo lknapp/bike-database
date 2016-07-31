@@ -3,7 +3,7 @@
     .col-sm-6
       %h1 Edit bike
     .col-sm-3.col-sm-offset-3
-      =button_to "Mark as sold", {action: "mark_as_sold", id: @bike.id}, method: :patch, class: "btn btn-default"
+      =button_to "Mark as sold", {action: "mark_as_sold", id: @bike.id}, method: :patch, class: "btn btn-default", disabled: @bike.sold?
   = render 'edit_form'
   .bottom-nav-links
     - if @previous_bike

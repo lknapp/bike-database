@@ -1,7 +1,0 @@
-.container
-  %p#notice= notice
-  = form_for(@bike) do |f|
-    = render 'fields', f: f, disabled: true
-  = link_to 'Edit', edit_bike_path(@bike)
-  |
-  = link_to 'Back', bikes_path
