@@ -8,6 +8,16 @@ describe ClientsController do
     sign_in user
   end
 
+  describe "#print_select" do
+    it "only assigns clients with a bike and an agency" do
+      client_with_bike_and_agency = create :client, bike: create(:bike), agency: create(:agency)
+      create :client, bike: create(:bike)
+      create :client, agency: create(:agency)
+      get :print_select
+      expect(assigns(:clients)).to eq [client_with_bike_and_agency]
+    end
+  end
+
   describe "PUT #update" do
     xit "updates a client with an application date" do
       put :update, id: client.id, client: {application_date: "12/21/2015"}

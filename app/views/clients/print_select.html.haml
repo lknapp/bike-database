@@ -1,5 +1,6 @@
 .container
   %h1 Select the clients whose receipts you would like to print
+  %p Only clients with a bike and an agency assigned are shown on this page.
 
   =form_tag("/clients/print_receipts", method: "get") do
     %table.table.table-striped.table-bordered.table-hover

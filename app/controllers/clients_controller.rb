@@ -32,7 +32,10 @@ class ClientsController < ApplicationController
   end
 
   def print_select
-    @clients = Client.includes(:bike).where.not(bike_id: nil).order(application_date: :desc).paginate(:page => params[:page], :per_page => 30)
+    @clients = Client.includes(:bike, :agency)
+                     .where.not(bike_id: nil, agency_id: nil)
+                     .order(application_date: :desc)
+                     .paginate(:page => params[:page], :per_page => 30)
   end
 
   def print_receipts
