@@ -1,6 +1,4 @@
 class Client < ActiveRecord::Base
-  # TODO: figure out why application_date validation is fubar
-  # validates :application_date, presence: true
   belongs_to :bike
   belongs_to :agency
 

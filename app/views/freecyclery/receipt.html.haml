@@ -8,7 +8,7 @@
         .client-information
         = @client.name
         %br
-        = @client.agency.agency_name if @client.agency
+        = @client.agency.name if @client.agency
         .horizontal-line
         %br
         Includes:
@@ -41,7 +41,7 @@
         .client-information
         = @client.name
         %br
-        = @client.agency.agency_name if @client.agency
+        = @client.agency.name if @client.agency
         .horizontal-line
         .row
           .col-xs-6

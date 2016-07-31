@@ -2,12 +2,15 @@
 - search bikes via brand, make, or serial number.
 - add mechanics table and change text input to a dropdown
 - freecyclery receipts should fit into sleeve and not squish data
+  currently, when you print a single receipt it fits better - why is that?
 - assign a bike from the available freecyclery bikes page
 - there should be nice feedback indicating that the bike was sold
 - order agencies by name
 - restyle agencies page to not have show or destroy links
 
 # Tech
+- clients should require a name
+- eliminate duplication between client receipts and freecyclery receipts
 - use log number in bike url instead of id
 - paginate 'all clients' page
 - convert to bootstrap-less

@@ -67,7 +67,6 @@ class ClientsController < ApplicationController
         :agency_id,
         :notes,
         :bike_fixed,
-        :number_of_calls,
         :application_voided,
         :pickup_date,
         :volunteer_at_pickup)
