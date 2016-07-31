@@ -8,6 +8,7 @@
 - restyle agencies page to not have show or destroy links
 
 # Tech
+- bike date_sold column should be datetime
 - remove bike#entry_date column because it is now fixed_at
 - add tests to ensure that pages render
 - use log number in bike url instead of id

@@ -55,4 +55,11 @@ describe BikesController do
       expect(assigns(:next_bike)).to eq(@next_bike)
     end
   end
+
+  describe "#update" do
+    it "redirects to edit bike path when bike is updated" do
+      bike = create :bike
+      expect( put :update, id: bike.id, bike: {brand: "foobar"} ).to redirect_to action: :edit, id: assigns(:bike).id
+    end
+  end
 end

@@ -48,7 +48,7 @@ class BikesController < ApplicationController
 
   def update
     if @bike.update(bike_params)
-      redirect_to @bike, notice: 'Bike was successfully updated.'
+      redirect_to edit_bike_path(@bike), notice: 'Bike was successfully updated.'
     else
       render action: 'edit'
     end
