@@ -1,78 +1,59 @@
 .col-xs-6
   .receipt
-    %h2
-      %strong= client.bike.name
+    %h2= client.bike.name
     %br
       .horizontal-line
       .client-information
-      = client.name
-      %br
-      = client.agency.name if client.agency
+        %strong= "#{client.name}#{" - " + client.agency.name if client.agency}"
       .horizontal-line
-      %br
-      Includes:
-      %br
-      = 'Helmet' if client.helmet
-      %br
-      = 'Lock' if client.lock
-      %br
-      %br
-      Date Received
-      %br
-      _______________
-      %br
-      Client Signature
-      %br
-      %br
-      ________________
-      %br
-      Recyclery Volunteer Initials
-      %br
-      %br
-      ___
-      %br
-      CLIENT COPY
+      .receipt-body
+        %p= "Includes Helmet" if client.helmet
+        %p= "Includes Lock" if client.lock
+        %p= "Owes $25" if client.will_pay
+        %br
+        %p Date ___________________
+        %br
+        %br
+        _______________________________________________
+        %br
+        Client Signature
+        %br
+        %br
+        %br
+        ____________   Recyclery Initials
 
 .col-xs-6
   .receipt
-    %h2
-      %strong= client.bike.name
+    %h2= client.bike.name
     %br
       .horizontal-line
       .client-information
-      = client.name
-      %br
-      = client.agency.name if client.agency
+        %strong= "#{client.name}#{" - " + client.agency.name if client.agency}"
       .horizontal-line
-      .row
-        .col-xs-6
-          %br
-          = 'Will make 25$ payment for lock and helmet' if client.will_pay
-          %br
-          Includes:
-          %br
-          = 'Helmet' if client.helmet
-          %br
-          = 'Lock' if client.lock
-          %br
-          %br
-          Date Received
-          %br
-          _______________
-          %br
-          Client Signature
-          %br
-          %br
-          ________________
-        .col-xs-6
-          .client-info-header CLIENT INFO
-          .client-email= "Contact Email: " + client.agency.email
-          .client-phone= "Contact Phone #: " + client.agency.phone
-          .client-photo-consent [ ] I grant consent to the Recyclery to use and publish photographs of me.
-          %br
-          Recyclery Volunteer Initials
-          %br
-          %br
-          ___
-          %br
-          RECYCLERY COPY
+      .receipt-body
+        %p= "Includes Helmet" if client.helmet
+        %p= "Includes Lock" if client.lock
+        %p= "Owes $25" if client.will_pay
+        %br
+        %p Date ___________________
+        %br
+        %br
+        _______________________________________________
+        %br
+        Client Signature
+        %br
+        %br
+        ____________ Recyclery Initials
+        %br
+        %br
+        %br
+        _______________________________________________
+        %br
+        Contact Email
+        %br
+        %br
+        _________________________________ Contact Phone
+        %br
+        %br
+        &#9634; Client grants The Recyclery Collective consent to use and publish photos.
+

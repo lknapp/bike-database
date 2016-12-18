@@ -30,7 +30,7 @@ class Bike < ActiveRecord::Base
   end
 
   def name
-    self.color + " " + self.brand + ' ' + self.model + " (" + self.log_number.to_s + ")"
+    (self.color + " " + self.brand + ' ' + self.model + " (" + self.log_number.to_s + ")").titleize
   end
 
   def client
