@@ -1,8 +1,22 @@
 # Features
 - search bikes via brand, make, or serial number.
 - add mechanics table and change text input to a dropdown
-- freecyclery receipts should fit into sleeve and not squish data
-  currently, when you print a single receipt it fits better - why is that?
+- printing a single freecyclery receipt from the client page uses the
+  old styling
+- reports are broken
+- bike receipts dont fit well - margins are too big and explanatory text
+  too small
+- Use hyphens for dates instead of backslashes
+- Autopopulate fields like model, brand, color based on what exists in
+  db
+- use fixed-bike form with checkboxes to autopopulate 'work done' and
+  'new parts' section (this is especially useful for the characteristics
+"overhauled" and below
+- ability to print a receipt from the bike page would be helpful
+- list of freecyclery clients should be chronological, ideally by date
+  of bike assignment, otherwise at least by application date
+
+
 - assign a bike from the available freecyclery bikes page
 - there should be nice feedback indicating that the bike was sold
 - order agencies by name
@@ -29,12 +43,5 @@ Reports
 
 Improve form layouts
 make navigation always on the left side of the page
-Make customer facing bike index with pitchers
-
 refactor index - move unsold bikes to model
-
-add pics of bikes for sale
 add recyclery logos & bike memorabilia pics all over app
-
-do bike sales labels fit into sleeves? (sheaths are 5x3.75)
-freecyclery bikes need receipts
