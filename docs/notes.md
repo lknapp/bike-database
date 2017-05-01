@@ -6,6 +6,9 @@
 - reports are broken
 - bike receipts dont fit well - margins are too big and explanatory text
   too small
+- flash message after a bike is logged should include the bike log
+  number
+- unique index on log number for bikes
 - Use hyphens for dates instead of backslashes
 - Autopopulate fields like model, brand, color based on what exists in
   db

@@ -16,6 +16,7 @@ class BikesController < ApplicationController
   def edit
     @next_bike = Bike.where(log_number: @bike.log_number + 1).first
     @previous_bike = Bike.where(log_number: @bike.log_number - 1).first
+    @client = @bike.client
   end
 
   def print_select

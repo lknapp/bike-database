@@ -4,6 +4,12 @@
       %h1 Edit bike
     .col-sm-3.col-sm-offset-3
       =button_to "Mark as sold", {action: "mark_as_sold", id: @bike.id}, method: :patch, class: "btn btn-default", disabled: @bike.sold?
+  - if @client
+    .row
+      .col-sm-12
+        %h4
+          %span Assigned To
+          = link_to @client.name, edit_client_path(@client)
   = render 'edit_form'
   .bottom-nav-links
     - if @previous_bike

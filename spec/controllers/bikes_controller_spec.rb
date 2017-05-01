@@ -54,6 +54,15 @@ describe BikesController do
       expect(assigns(:bike)).to eq(@current_bike)
       expect(assigns(:next_bike)).to eq(@next_bike)
     end
+    it "assigns a client if there is one" do
+      @client = create :client, bike: @current_bike
+      get :edit, id: @current_bike.id
+      expect(assigns(:client)).to eq(@client)
+    end
+    it "does not assign a client if there is none" do
+      get :edit, id: @current_bike.id
+      expect(assigns(:client)).to be_nil
+    end
   end
 
   describe "#update" do
