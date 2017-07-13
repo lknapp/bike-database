@@ -30,6 +30,11 @@
         .col-sm-6
           = f.text_field :color, class: "form-control", disabled: disabled
 
+      .form-group
+        = f.label "Purpose:", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.select :purpose, [["Freecyclery", "Freecyclery"], ["Sale", "Sale"]], {}, class: "selectpicker", disabled: disabled
+
     .col-sm-6
       .form-group
         = f.label "Mechanic:", class: "col-sm-4 control-label"
@@ -56,14 +61,13 @@
         .col-sm-6
           = f.text_field :fixed_at, class: "form-control datepicker", :value => @bike.fixed_at ? @bike.fixed_at.strftime("%m/%d/%Y") : "", disabled: disabled
 
+      .form-group
+        = f.label "Time Spent (Hours):", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.text_field :time_spent, class: "form-control", type: "number", disabled: disabled
+
   .row
     .col-sm-6
-      %br
-      %br
-      .form-group
-        = f.label "Purpose:", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.select :purpose, [["Freecyclery", "Freecyclery"], ["Sale", "Sale"]], {}, class: "selectpicker", disabled: disabled
 
       .form-group
         = f.label "New Parts", class: "col-sm-4 control-label"

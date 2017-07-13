@@ -76,6 +76,7 @@ class BikesController < ApplicationController
       params[:bike][:fixed_at] = DateTime.strptime(params[:bike][:fixed_at], "%m/%d/%Y") if params[:bike][:fixed_at].present?
       params[:bike][:date_sold] = DateTime.strptime(params[:bike][:date_sold], "%m/%d/%Y") if params[:bike][:date_sold].present?
       params.require(:bike).permit(
+        :time_spent,
         :fixed_at,
         :brand,
         :model,

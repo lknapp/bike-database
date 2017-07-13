@@ -5,6 +5,7 @@ class Bike < ActiveRecord::Base
   validates :bike_type, presence: true
   validates :color, presence: true
   validates :serial_number, presence: true
+  validates_numericality_of :time_spent, greater_than_or_equal_to: 0, allow_nil: true
   has_one :client
 
   FREECYCLERY = "Freecyclery"

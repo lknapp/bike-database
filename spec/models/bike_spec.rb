@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe Bike do
+  describe "validations" do
+    it "is invalid if time_spent is negative" do
+      bike = build :bike, time_spent: -3
+      expect(bike.valid?).to be false
+    end
+  end
 
   describe "#sold?" do
     it "returns true if the date_sold is present" do
