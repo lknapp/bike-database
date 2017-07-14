@@ -8,6 +8,14 @@ describe ClientsController do
     sign_in user
   end
 
+  describe "POST #create" do
+    it "redirects to new_client_path on success" do
+      client_attributes = attributes_for :client
+      request = post :create, client: client_attributes
+      expect(request).to redirect_to action: :new
+    end
+  end
+
   describe "#print_select" do
     it "only assigns clients with a bike and an agency" do
       client_with_bike_and_agency = create :client, bike: create(:bike), agency: create(:agency)

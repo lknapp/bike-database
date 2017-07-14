@@ -16,7 +16,7 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
     if @client.save
-      redirect_to edit_client_url(@client), notice: 'Client was successfully created.'
+      redirect_to new_client_path, notice: 'Client was successfully created.'
     else
       render action: 'new'
     end
