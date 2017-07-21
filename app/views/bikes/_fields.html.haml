@@ -3,7 +3,7 @@
   .row
     .col-sm-6
       .form-group
-        = f.label "Log Number", class: "col-sm-4 control-label"
+        = f.label "Log Number*", class: "col-sm-4 control-label"
         .col-sm-6
           - if @log_number
             = f.text_field :log_number, class: "form-control", disabled: disabled, value: @log_number
@@ -11,58 +11,58 @@
             = f.text_field :log_number, class: "form-control", disabled: disabled
 
       .form-group
-        = f.label "Brand:", class: "col-sm-4 control-label"
+        = f.label "Brand*", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :brand, class: "col-sm-6 form-control", disabled: disabled
 
       .form-group
-        = f.label "Model:", class: "col-sm-4 control-label"
+        = f.label "Model*", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :model, class: "form-control", disabled: disabled
 
       .form-group
-        = f.label "Type:", class: "col-sm-4 control-label"
+        = f.label "Type*", class: "col-sm-4 control-label"
         .col-sm-6
           = f.select :bike_type, options_for_select( Bike.bike_types + [[@bike.bike_type, @bike.bike_type]], @bike.bike_type), {}, class: "selectpicker", disabled: disabled
 
       .form-group
-        = f.label "Color:", class: "col-sm-4 control-label"
+        = f.label "Color*", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :color, class: "form-control", disabled: disabled
 
       .form-group
-        = f.label "Purpose:", class: "col-sm-4 control-label"
+        = f.label "Purpose", class: "col-sm-4 control-label"
         .col-sm-6
           = f.select :purpose, [["Freecyclery", "Freecyclery"], ["Sale", "Sale"]], {}, class: "selectpicker", disabled: disabled
 
     .col-sm-6
       .form-group
-        = f.label "Mechanic:", class: "col-sm-4 control-label"
+        = f.label "Mechanic", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :mechanic, class: "form-control", disabled: disabled
 
       .form-group
-        = f.label "Seat Tube Length (cm):", class: "col-sm-4 control-label"
+        = f.label "Seat Tube Length (cm)", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :seat_tube_size, class: "form-control seat-tube-cm", disabled: disabled
 
       .form-group
-        = f.label "Top Tube Length:", class: "col-sm-4 control-label"
+        = f.label "Top Tube Length", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :top_tube_size, class: "form-control", disabled: disabled
 
       .form-group
-        = f.label "Serial Number", class: "col-sm-4 control-label"
+        = f.label "Serial Number*", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :serial_number, class: "form-control", disabled: disabled
 
       .form-group
-        = f.label "Date Fixed:", class: "col-sm-4 control-label"
+        = f.label "Date Fixed", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :fixed_at, class: "form-control datepicker", :value => @bike.fixed_at ? @bike.fixed_at.strftime("%m/%d/%Y") : "", disabled: disabled
 
       .form-group
-        = f.label "Time Spent (Hours):", class: "col-sm-4 control-label"
+        = f.label "Time Spent (Hours)", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :time_spent, class: "form-control", type: "number", disabled: disabled
 
@@ -76,6 +76,7 @@
 
       .form-group
         = f.label "Work Done", class: "col-sm-4 control-label"
+        %span#the-usual (The Usual)
         .col-sm-6
           = f.text_area :work_done, class: "form-control", disabled: disabled
 
@@ -88,7 +89,7 @@
           %a{href: "http://www.bicyclebluebook.com/SearchBikes.aspx"} Look It Up
 
       .form-group
-        = f.label "Date Sold:", class: "col-sm-4 control-label"
+        = f.label "Date Sold", class: "col-sm-4 control-label"
         .col-sm-6
           = f.text_field :date_sold, :value => @bike.date_sold ? @bike.date_sold.strftime("%m/%d/%Y") : "", class: "form-control datepicker", disabled: disabled
 
