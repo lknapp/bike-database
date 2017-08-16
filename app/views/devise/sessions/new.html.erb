@@ -1,19 +1,11 @@
 <div class="container">
   <h2>Sign in</h2>
-  
+  <p>Note: The password for the DATABASE has been changed to be in keeping with the new password standards. This notice will be removed at some point in the future. </p>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div><%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %></div>
-  
     <div><%= f.label :password %><br />
       <%= f.password_field :password, autocomplete: "off" %></div>
-  
-    <% if devise_mapping.rememberable? -%>
-      <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-    <% end -%>
-  
     <div><%= f.submit "Sign in" %></div>
   <% end %>
-  
-  <%= render "devise/shared/links" %>
 </div>
