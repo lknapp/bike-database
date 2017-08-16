@@ -6,7 +6,7 @@
     page-break-inside: avoid;
     margin: 10px;
     border: 5px solid black;
-    height: 400px;
+    height: 425px;
     text-align: center;
     .horizontal-line{
       width: 100%;
@@ -19,7 +19,24 @@
       margin: 10px;
       height: 200px;
       border: 2px dotted black;
+      > p {
+        padding-left: 5px;
+        font-size: 0.75rem;
+        text-align: left;
+      }
+    }
+    .work-done {
+      padding-right: 0;
+    }
+    .new-parts {
+      padding-left: 0;
     }
   }
 
+}
+
+.container.print-labels {
+  margin-top: -50px;
+  width: 100%;
+  padding: 0;
 }

@@ -12,13 +12,13 @@
           %br
           = "Seat Tube Size: " + bike.seat_tube_size.to_s
         .row
-          .col-xs-6
+          .col-xs-6.work-done
             .desc
-              .strong Work Done:
+              %strong Work Done:
               =simple_format(bike.work_done)
-          .col-xs-6
+          .col-xs-6.new-parts
             .desc
-              .strong New Parts:
+              %strong New Parts:
               =simple_format(bike.new_parts)
         .row
           .col-xs-12= "Log #: " + bike.log_number.to_s + ", Serial #: " + bike.serial_number
