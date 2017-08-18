@@ -1,3 +1,6 @@
+@page {
+  margin: 0cm;
+}
 .print-labels{
   h2 {
     font-size: 24px;
@@ -6,7 +9,7 @@
     page-break-inside: avoid;
     margin: 1px;
     border: 5px solid black;
-    height: 465px;
+    height: 520px;
     text-align: center;
     .horizontal-line{
       width: 100%;
