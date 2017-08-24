@@ -64,7 +64,7 @@
       .form-group
         = f.label "Time Spent (Hours)", class: "col-sm-4 control-label"
         .col-sm-6
-          = f.text_field :time_spent, class: "form-control", type: "number", disabled: disabled
+          = f.text_field :time_spent, class: "form-control", type: "number", step: "0.01", disabled: disabled
 
   .row
     .col-sm-6

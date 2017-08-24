@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713233459) do
+ActiveRecord::Schema.define(version: 20170824154325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20170713233459) do
     t.datetime "date_sold"
     t.integer  "bike_index_id"
     t.datetime "fixed_at"
-    t.integer  "time_spent"
+    t.decimal  "time_spent",     precision: 10, scale: 2
   end
 
   create_table "clients", force: :cascade do |t|

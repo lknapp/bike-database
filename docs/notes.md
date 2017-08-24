@@ -1,4 +1,5 @@
 # Features
+- price is a string
 - search bikes via brand, make, or serial number.
 - add mechanics table and change text input to a dropdown
 - printing a single freecyclery receipt from the client page uses the
