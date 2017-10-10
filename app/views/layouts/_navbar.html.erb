@@ -6,15 +6,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to "Bikes & Clients", root_path, :class=>"navbar-brand" %>
+    <%= link_to "Recyclery Bike Database", root_path, :class=>"navbar-brand" %>
   </div>
 
   <div class="navbar-collapse collapse navbar-responsive-collapse" id='collapse-1'>
     <ul class="nav navbar-nav navbar-right">
       <li class="bike-search">
         <%= form_tag(search_bikes_path, method: "get", class: "form-inline") do %>
-          <%= label_tag(:log_number, "Search for a bike by log number:") %>
-          <%= text_field_tag :log_number, "", class: "form-control" %>
+          <%= text_field_tag :log_number, "", class: "form-control", placeholder: "(log number)" %>
           <%= submit_tag("Search", class: "btn btn-default") %>
         <% end %>
       </li>
