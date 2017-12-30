@@ -71,4 +71,21 @@ describe BikesController do
       expect( put :update, id: bike.id, bike: {brand: "foobar"} ).to redirect_to action: :edit, id: assigns(:bike).id
     end
   end
+
+  describe "#mark_as_sold" do
+    xit "marks the bike as sold" do
+      bike = create :bike, date_sold: Time.now
+      allow(bike).to receive(:mark_sold)
+      patch :mark_as_sold, id: bike.id
+      expect(bike).to have_received(:mark_sold)
+    end
+    xit "redirects to bikes url with notice if bike sells successfully" do
+
+    end
+    xit "renders edit with notice if bike.mark_sold fails" do
+
+    end
+
+  end
 end
+

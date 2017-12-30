@@ -43,7 +43,7 @@
   .form-group
     = f.label "Type of Bike Requested:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.select :bike_type_requested, Bike.bike_types, {include_blank: "No Preference"}, class: "selectpicker", disabled: disabled
+      = f.select :bike_type_requested, Bike::BIKE_TYPES.map{|t| [t, t]}, {include_blank: "No Preference"}, class: "selectpicker", disabled: disabled
 
   .form-group
     = f.label "Will Pay 25$ for Lock & Helmet:", class: "col-sm-2 control-label"

@@ -6,6 +6,10 @@ describe Bike do
       bike = build :bike, time_spent: -3
       expect(bike.valid?).to be false
     end
+    it "is invalid if location is not in the list of locations" do
+      bike = build :bike, location: "foo"
+      expect(bike.valid?).to be false
+    end
   end
 
   describe "#sold?" do
@@ -16,6 +20,23 @@ describe Bike do
     it "returns false if date_sold is not present" do
       bike = build :bike
       expect(bike.sold?).to be false
+    end
+  end
+
+  describe "#mark_sold" do
+    it "sets the date sold to the current date" do
+      bike = build :bike
+      today = Date.today
+      Timecop.freeze(today) do
+        bike.mark_sold
+        expect(bike.date_sold).to eq(today)
+      end
+    end
+
+    it "sets the location to 'sold'" do
+      bike = build :bike, location: Bike::LOCATIONS[0]
+      bike.mark_sold
+      expect(bike.location).to eq("Sold")
     end
   end
 

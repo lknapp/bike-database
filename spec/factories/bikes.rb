@@ -7,6 +7,7 @@ FactoryGirl.define do
     color "Yellow"
     sequence(:serial_number)
     sequence(:bike_index_id)
+    location Bike::SEWARD_BASEMENT
   end
 
   trait :sale do

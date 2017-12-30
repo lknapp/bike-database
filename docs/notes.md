@@ -1,12 +1,6 @@
-# Features
-- price is a string
+# Features 
 - search bikes via brand, make, or serial number.
 - add mechanics table and change text input to a dropdown
-- printing a single freecyclery receipt from the client page uses the
-  old styling
-- reports are broken
-- bike receipts dont fit well - margins are too big and explanatory text
-  too small
 - flash message after a bike is logged should include the bike log
   number
 - unique index on log number for bikes
@@ -19,12 +13,21 @@
 - ability to print a receipt from the bike page would be helpful
 - list of freecyclery clients should be chronological, ideally by date
   of bike assignment, otherwise at least by application date
-
-
 - assign a bike from the available freecyclery bikes page
 - there should be nice feedback indicating that the bike was sold
 - order agencies by name
 - restyle agencies page to not have show or destroy links
+
+# Bugs
+- printing a single freecyclery receipt from the client page uses the
+  old styling
+- reports are broken
+- parsing of date from string to datetime in controllers prevents
+  multiple calls to bike_params
+
+# Tech debt
+- price is a string
+- non restful routes (eg 'bikes/mark_as_sold')
 
 # Tech
 - clients should require a name

@@ -23,7 +23,7 @@
       .form-group
         = f.label "Type*", class: "col-sm-4 control-label"
         .col-sm-6
-          = f.select :bike_type, options_for_select( Bike.bike_types + [[@bike.bike_type, @bike.bike_type]], @bike.bike_type), {}, class: "selectpicker", disabled: disabled
+          = f.select :bike_type, options_for_select( Bike::BIKE_TYPES.map{|t| [t, t]} + [[@bike.bike_type, @bike.bike_type]], @bike.bike_type), {}, class: "selectpicker", disabled: disabled
 
       .form-group
         = f.label "Color*", class: "col-sm-4 control-label"
@@ -66,6 +66,7 @@
         .col-sm-6
           = f.text_field :time_spent, class: "form-control", type: "number", step: "0.01", disabled: disabled
 
+
   .row
     .col-sm-6
 
@@ -93,3 +94,8 @@
         .col-sm-6
           = f.text_field :date_sold, :value => @bike.date_sold ? @bike.date_sold.strftime("%m/%d/%Y") : "", class: "form-control datepicker", disabled: disabled
 
+    .col-sm-6
+      .form-group
+        = f.label "Location", class: "col-sm-4 control-label"
+        .col-sm-6
+          = f.select :location, Bike::LOCATIONS.map{|l| [l, l]}, {include_blank: '(not specified)'}, class: "selectpicker", disabled: disabled

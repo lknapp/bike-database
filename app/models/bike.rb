@@ -1,33 +1,32 @@
 class Bike < ActiveRecord::Base
+  FREECYCLERY = "Freecyclery"
+  SALE = "Sale"
+
+  SEWARD_BASEMENT = "Seward Basement"
+  PAULINA_BASEMENT = "Paulina Basement"
+  SALES_FLOOR = "Sales Floor"
+  SOLD = "Sold"
+
+  LOCATIONS = [SEWARD_BASEMENT, PAULINA_BASEMENT, SALES_FLOOR, SOLD]
+  BIKE_TYPES = ["BMX", "Cruiser", "Hybrid", "Kids", "Mountain", "Road", "Touring", "Track", "Utility", "Youth"]
+
   validates :log_number, presence: true
   validates :brand, presence: true
   validates :model, presence: true
   validates :bike_type, presence: true
   validates :color, presence: true
   validates :serial_number, presence: true
+  validates :location, inclusion: { in: LOCATIONS, allow_blank: true }
   validates_numericality_of :time_spent, greater_than_or_equal_to: 0, allow_nil: true
   has_one :client
 
-  FREECYCLERY = "Freecyclery"
-  SALE = "Sale"
-
-  def self.bike_types
-    [
-      ["BMX", "BMX"],
-      ["Cruiser", "Cruiser"],
-      ["Hybrid", "Hybrid"],
-      ["Kids", "Kids"],
-      ["Mountain", "Mountain"],
-      ["Road", "Road"],
-      ["Touring", "Touring"],
-      ["Track", "Track"],
-      ["Utility", "Utility"],
-      ["Youth", "Youth"]
-    ]
-  end
 
   def sold?
     date_sold.present?
+  end
+
+  def mark_sold
+    update_attributes(date_sold: Time.now, location: SOLD)
   end
 
   def name

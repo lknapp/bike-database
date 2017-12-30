@@ -32,6 +32,7 @@ group :test, :development do
   gem 'better_errors'
   gem 'assert_difference'
   gem 'binding_of_caller'
+  gem 'timecop'
 
   # Uncomment this line on OS X.
   gem 'growl', '1.0.3'
