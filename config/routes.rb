@@ -22,6 +22,7 @@ Bikedb::Application.routes.draw do
     get 'print_receipts' => 'clients#print_receipts', on: :collection
   end
 
+  get 'bikes_by_location' => 'static_pages#bikes_by_location'
   get 'closed_applications' => 'freecyclery#closed_applications'
   get 'available_bikes' => 'freecyclery#available_bikes'
   get 'bikes_sold_per_year' => 'reports#bikes_sold_per_year'

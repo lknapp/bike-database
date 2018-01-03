@@ -1,0 +1,15 @@
+.container
+  %h1 Sales Floor:
+  %ul
+    - @sales_floor_bikes.each do |bike|
+      %li= bike.name
+
+  %h1 Paulina basement:
+  %ul
+    - @paulina_basement_bikes.each do |bike|
+      %li= bike.name
+
+  %h1 Seward Basement:
+  %ul
+    - @seward_basement_bikes.each do |bike|
+      %li= bike.name
