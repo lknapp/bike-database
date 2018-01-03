@@ -3,10 +3,9 @@ class Report
   @@years = Bike.all.each.map{|bike| bike.date_sold.year if bike.date_sold}
 
   def self.bikes_fixed_per_week
-    beginning_of_year = Time.now.beginning_of_year
-    bikes = Bike.where("fixed_at > ? AND purpose = ?", beginning_of_year, Bike::SALE)
+    bikes = Bike.where("fixed_at > ? AND purpose = ?", Time.now - 1.year, Bike::SALE)
     weekly_data = bikes.group_by{|b| b.fixed_at.beginning_of_week}
-    weekly_data.to_a.sort!{|a, b| a.first <=> b.first}.to_h
+    weekly_data.to_a.sort!{|a, b| a.first <=> b.first}.reverse.to_h
   end
 
   def self.bikes_sold_per_year
@@ -36,7 +35,8 @@ class Report
     yearly_data_array = unique_years.map{|year| {year => {number: bikes_sold_per_year[year], average_price: average_price_per_year[year]}}}
     yearly_data = yearly_data_array.reduce({}, :merge)
     yearly_data.delete(nil)
-    Hash[yearly_data.sort]
+    yearly_data.delete(17) # dont ask
+    Hash[yearly_data.sort.reverse]
   end
 
 end
