@@ -9,6 +9,7 @@ class BikesController < ApplicationController
 
   def new
     @bike = Bike.new
+    @bike.location = Bike::SALES_FLOOR
     @previous_bike = Bike.order(:log_number).last
     @log_number = @previous_bike.log_number + 1
   end

@@ -35,6 +35,11 @@ describe BikesController do
       get :new
       expect(assigns(:log_number)).to eq(4)
     end
+    it "assigns the bike's location to sales floor" do
+      create :bike, log_number: 3
+      get :new
+      expect(assigns(:bike).location).to eq("Sales Floor")
+    end
     it "assigns the previous bike" do
       previous_bike = create :bike, log_number: 3
       get :new
