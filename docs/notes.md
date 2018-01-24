@@ -1,3 +1,12 @@
+# Freecyclery Change
+currently for a bike it states:
+Will pay 25$ for lock & helmet: []
+
+proposed change:
+
+Who will make payment? [drop down with 2 options, client/agency]
+Payment status? [drop down with 2 options, paid/unpaid]
+
 # Features 
 - search bikes via brand, make, or serial number.
 - add mechanics table and change text input to a dropdown
