@@ -12,6 +12,7 @@ gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'will_paginate', '~> 3.0.6'
 gem 'coffee-rails'
+gem 'nokogiri', '~> 1.8.1'
 
 #SCSS & Bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
@@ -20,9 +21,9 @@ gem 'haml'
 gem 'faker'
 
 group :test, :development do
-  gem 'rspec', '~> 3.2.0'
-  gem 'rspec-rails', '~> 3.0'
-  gem 'rspec-mocks', '~> 3.2.0'
+  gem 'rspec', '~> 3.7'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'rspec-mocks', '~> 3.7'
   gem 'factory_girl'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'selenium-webdriver', '2.35.1'

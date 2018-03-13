@@ -17,25 +17,25 @@ ActiveRecord::Schema.define(version: 20171230024128) do
   enable_extension "plpgsql"
 
   create_table "agencies", force: :cascade do |t|
-    t.string "name",           limit: 255
-    t.string "contact_name",   limit: 255
-    t.string "street_address", limit: 255
-    t.string "city",           limit: 255
-    t.string "state",          limit: 255
-    t.string "postal_code",    limit: 255
-    t.string "phone",          limit: 255
-    t.string "email",          limit: 255
+    t.string "name"
+    t.string "contact_name"
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.string "postal_code"
+    t.string "phone"
+    t.string "email"
   end
 
   create_table "bikes", force: :cascade do |t|
-    t.string   "brand",          limit: 255
-    t.string   "model",          limit: 255
-    t.string   "bike_type",      limit: 255
-    t.string   "color",          limit: 255
-    t.string   "serial_number",  limit: 255
+    t.string   "brand"
+    t.string   "model"
+    t.string   "bike_type"
+    t.string   "color"
+    t.string   "serial_number"
     t.text     "work_done"
     t.text     "new_parts"
-    t.string   "price",          limit: 255
+    t.string   "price"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "seat_tube_size"
@@ -46,27 +46,27 @@ ActiveRecord::Schema.define(version: 20171230024128) do
     t.datetime "date_sold"
     t.integer  "bike_index_id"
     t.datetime "fixed_at"
-    t.decimal  "time_spent",                 precision: 10, scale: 2
+    t.decimal  "time_spent",     precision: 10, scale: 2
     t.string   "location"
   end
 
   create_table "clients", force: :cascade do |t|
-    t.string   "first_name",          limit: 255
-    t.string   "last_name",           limit: 255
-    t.string   "gender",              limit: 255
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
     t.integer  "age"
     t.boolean  "helmet"
     t.boolean  "lock"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "bike_id"
-    t.string   "bike_type_requested", limit: 255
+    t.string   "bike_type_requested"
     t.boolean  "will_pay"
     t.integer  "agency_id"
     t.text     "notes"
     t.boolean  "bike_fixed"
     t.boolean  "application_voided"
-    t.string   "volunteer_at_pickup", limit: 255
+    t.string   "volunteer_at_pickup"
     t.float    "weight"
     t.float    "height"
     t.datetime "application_date"
@@ -77,16 +77,16 @@ ActiveRecord::Schema.define(version: 20171230024128) do
   add_index "clients", ["bike_id"], name: "index_clients_on_bike_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -95,9 +95,9 @@ ActiveRecord::Schema.define(version: 20171230024128) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "volunteers", force: :cascade do |t|
-    t.string  "name",                    limit: 255
-    t.string  "email",                   limit: 255
-    t.string  "phone",                   limit: 255
+    t.string  "name"
+    t.string  "email"
+    t.string  "phone"
     t.date    "orientation_date"
     t.integer "other_volunteer_hours"
     t.text    "referral"
