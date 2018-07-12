@@ -5,9 +5,10 @@ class Bike < ActiveRecord::Base
   SEWARD_BASEMENT = "Seward Basement"
   PAULINA_BASEMENT = "Paulina Basement"
   SALES_FLOOR = "Sales Floor"
+  POP_UP = "Pop Up"
   SOLD = "Sold"
 
-  LOCATIONS = [SEWARD_BASEMENT, PAULINA_BASEMENT, SALES_FLOOR, SOLD]
+  LOCATIONS = [SEWARD_BASEMENT, PAULINA_BASEMENT, POP_UP, SALES_FLOOR, SOLD]
   BIKE_TYPES = ["BMX", "Cruiser", "Hybrid", "Kids", "Mountain", "Road", "Touring", "Track", "Utility", "Youth"]
 
   validates :log_number, presence: true
