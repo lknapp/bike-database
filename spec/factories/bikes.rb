@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :bike do
     sequence(:log_number)
     brand "Schwinn"
