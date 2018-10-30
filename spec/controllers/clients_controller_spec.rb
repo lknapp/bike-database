@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe ClientsController do
-  let(:user){FactoryGirl.create(:user)}
-  let(:client){FactoryGirl.create(:client)}
+  let(:user){FactoryBot.create(:user)}
+  let(:client){FactoryBot.create(:client)}
 
   before :each do
     sign_in user

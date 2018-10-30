@@ -15,7 +15,7 @@ class Client < ActiveRecord::Base
   end
 
   def self.closed_applications
-    Client.all.select{|client| client.application_voided || client.pickup_date}
+    Client.all.order(pickup_date: :desc).select{|client| client.application_voided || client.pickup_date}
   end
 
 end

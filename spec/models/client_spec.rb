@@ -19,4 +19,13 @@ describe Client do
     end
   end
 
+  describe "#closed_applications" do
+    it "orders chronologically by date bike was picked up" do
+      client_1 = create(:client, pickup_date: 1.week.ago)
+      client_3 = create(:client, pickup_date: 3.week.ago)
+      client_2 = create(:client, pickup_date: 2.week.ago)
+      expect(Client.closed_applications).to eq([client_1, client_2, client_3])
+    end
+  end
+
 end
