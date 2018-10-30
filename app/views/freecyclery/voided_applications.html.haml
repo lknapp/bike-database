@@ -1,17 +1,15 @@
 .container
   .row
-    %h1 Closed Applications
+    %h1 Voided Applications
 
     %table.table.table-striped.table-bordered.table-hover
       %thead
         %tr
           %th Name
-          %th Pickup Date
           %th Edit
       %tbody
-        - @closed_applications.each do |client|
+        - @voided_applications.each do |client|
           %tr
             %td= client.name
-            %td= client.pickup_date
             %td= link_to 'Edit', edit_client_path(client)
     %br

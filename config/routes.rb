@@ -24,6 +24,7 @@ Bikedb::Application.routes.draw do
 
   get 'bikes_by_location' => 'static_pages#bikes_by_location'
   get 'closed_applications' => 'freecyclery#closed_applications'
+  get 'voided_applications' => 'freecyclery#voided_applications'
   get 'available_bikes' => 'freecyclery#available_bikes'
   get 'bikes_sold_per_year' => 'reports#bikes_sold_per_year'
   get 'bikes_fixed_per_week' => 'reports#bikes_fixed_per_week'
