@@ -7,4 +7,8 @@ class StaticPagesController < ApplicationController
     @paulina_basement_bikes = Bike.where(location: Bike::PAULINA_BASEMENT, purpose: Bike::SALE)
     @seward_basement_bikes = Bike.where(location: Bike::SEWARD_BASEMENT, purpose: Bike::SALE)
   end
+
+  def sale_bikes
+    @sale_bikes = Bike.where(purpose: Bike::SALE, date_sold: nil)
+  end
 end

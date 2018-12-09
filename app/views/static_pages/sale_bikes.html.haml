@@ -1,0 +1,5 @@
+.container
+  %h1 All Bikes We Have For Sale:
+  %ul
+    - @sale_bikes.each do |bike|
+      %li= bike.name

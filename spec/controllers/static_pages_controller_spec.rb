@@ -29,4 +29,14 @@ describe StaticPagesController do
 
   end
 
+  describe "GET sale_bikes" do
+    it "assigns bikes with sale purpose that are not sold" do
+      create :bike, :sale, date_sold: 2.days.ago
+      create :bike, :freecyclery
+      sale_bike = create :bike, :sale
+      get :sale_bikes
+      expect(assigns(:sale_bikes)).to eq([sale_bike])
+    end
+  end
+
 end
