@@ -1,5 +1,5 @@
 .container
-  %h1 Bike Database
+  %h1 Bikes n' Clients
   %br
   %h2 Bikes
   %br
@@ -12,6 +12,8 @@
   = link_to "Print Sale Labels", print_select_bikes_path
   %br
   = link_to "List All Sale Bikes", sale_bikes_path
+  %br
+  = link_to "Export Bikes to CSV", bikes_path(format: "csv")
   %br
   %h2 Freecyclery
   %br

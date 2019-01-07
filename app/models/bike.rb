@@ -1,3 +1,5 @@
+require 'csv'
+
 class Bike < ActiveRecord::Base
   FREECYCLERY = "Freecyclery"
   SALE = "Sale"
@@ -20,6 +22,19 @@ class Bike < ActiveRecord::Base
   validates :location, inclusion: { in: LOCATIONS, allow_blank: true }
   validates_numericality_of :time_spent, greater_than_or_equal_to: 0, allow_nil: true
   has_one :client
+
+
+  def self.to_csv
+    attributes = %w{id brand model bike_type color serial_number work_done new_parts price created_at updated_at seat_tube_size top_tube_size log_number purpose mechanic date_sold bike_index_id fixed_at time_spent location}
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |bike|
+        csv << attributes.map{ |attr| bike.send(attr) }
+      end
+    end
+  end
 
 
   def sold?

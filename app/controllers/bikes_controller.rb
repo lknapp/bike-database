@@ -5,6 +5,10 @@ class BikesController < ApplicationController
   def index
     @bikes = Bike.all.order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
     @unsold_bikes = @bikes.select{|bike| bike.date_sold.nil? && bike.purpose == "Sale"}
+    respond_to do |format|
+      format.html
+      format.csv { send_data @bikes.to_csv, filename: "bikes-#{Date.today}.csv" }
+    end
   end
 
   def new
