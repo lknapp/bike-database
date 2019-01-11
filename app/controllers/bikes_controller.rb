@@ -4,10 +4,11 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.all.order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
+    @all_bikes = Bike.all.order(:log_number).reverse_order
     @unsold_bikes = @bikes.select{|bike| bike.date_sold.nil? && bike.purpose == "Sale"}
     respond_to do |format|
       format.html
-      format.csv { send_data @bikes.to_csv, filename: "bikes-#{Date.today}.csv" }
+      format.csv { send_data @all_bikes.to_csv, filename: "bikes-#{Date.today}.csv" }
     end
   end
 
