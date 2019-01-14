@@ -10,10 +10,16 @@ describe BikesController do
   end
 
   describe "#index" do
-    it "assignes unsold bikes" do
+    it "assigns unsold bikes" do
       bike = create :bike, date_sold: nil, purpose: "Sale"
       get :index
       expect(assigns(:unsold_bikes)).to eq([bike])
+    end
+    it "assigns all bikes to @all_bikes" do
+      bike = create :bike, date_sold: nil, purpose: "Sale"
+      sold_bike = create :bike, date_sold: 1.day.ago, purpose: "Sale"
+      get :index, format: :csv
+      expect(assigns(:all_bikes)).to eq([sold_bike, bike])
     end
   end
 
