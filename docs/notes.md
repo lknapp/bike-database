@@ -7,6 +7,12 @@ proposed change:
 Who will make payment? [drop down with 2 options, client/agency]
 Payment status? [drop down with 2 options, paid/unpaid]
 
+code organization: pull out all views that just filter the bikes some
+way into their own controller, rather than cluttering up model
+controllers. 
+
+remove bike_index functionality because its unused.
+
 # Features 
 - search bikes via brand, make, or serial number.
 - add mechanics table and change text input to a dropdown
