@@ -36,6 +36,17 @@ class Bike < ActiveRecord::Base
     end
   end
 
+  def self.to_csv_for_reconciliation
+    attributes = %w{log_number color brand model bike_type}
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |bike|
+        csv << attributes.map{ |attr| bike.send(attr) }
+      end
+    end
+  end
 
   def sold?
     date_sold.present?

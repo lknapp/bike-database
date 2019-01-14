@@ -10,5 +10,9 @@ class StaticPagesController < ApplicationController
 
   def sale_bikes
     @sale_bikes = Bike.where(purpose: Bike::SALE, date_sold: nil)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @sale_bikes.to_csv_for_reconciliation, filename: "sale_bikes-#{Date.today}.csv" }
+    end
   end
 end
