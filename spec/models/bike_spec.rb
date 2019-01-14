@@ -74,4 +74,15 @@ describe Bike do
     end
 
   end
+
+  describe "CSV exports" do
+    it "exports with log number, color, model, brand, type for reconciliation" do
+      bike = create :bike
+      expect(Bike.to_csv_for_reconciliation).to eq("log_number,color,brand,model,bike_type\n#{bike.log_number},#{bike.color},#{bike.brand},#{bike.model},#{bike.bike_type}\n")
+    end
+    it "exports with all attributes for generic export" do
+      bike = create :bike
+      expect(Bike.to_csv).to eq("id,brand,model,bike_type,color,serial_number,work_done,new_parts,price,created_at,updated_at,seat_tube_size,top_tube_size,log_number,purpose,mechanic,date_sold,bike_index_id,fixed_at,time_spent,location\n#{bike.id},Schwinn,Madison,Fixed Gear,Yellow,#{bike.serial_number},,,,01/14/2019,01/14/2019,,,#{bike.log_number},,,,#{bike.bike_index_id},,,Seward Basement\n")
+    end
+  end
 end
