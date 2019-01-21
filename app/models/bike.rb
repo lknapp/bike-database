@@ -21,6 +21,7 @@ class Bike < ActiveRecord::Base
   validates :serial_number, presence: true
   validates :location, inclusion: { in: LOCATIONS, allow_blank: true }
   validates_numericality_of :time_spent, greater_than_or_equal_to: 0, allow_nil: true
+  validates_numericality_of :price, greater_than_or_equal_to: 0, allow_nil: true
   has_one :client
 
 

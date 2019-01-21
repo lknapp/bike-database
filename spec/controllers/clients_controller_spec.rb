@@ -3,6 +3,7 @@ require 'spec_helper'
 describe ClientsController do
   let(:user){FactoryBot.create(:user)}
   let(:client){FactoryBot.create(:client)}
+  let(:bike){FactoryBot.create(:bike)}
 
   before :each do
     sign_in user
@@ -24,6 +25,14 @@ describe ClientsController do
       get :print_select
       expect(assigns(:clients)).to eq [client_with_bike_and_agency]
     end
+    it "orders by assigned_bike_at if present" do
+      client_0 = create :client, bike: create(:bike), agency: create(:agency), assigned_bike_at: 3.days.ago, application_date: 1.day.ago
+      client_1 = create :client, bike: create(:bike), agency: create(:agency), assigned_bike_at: 2.days.ago, application_date: 2.days.ago
+      client_2 = create :client, bike: create(:bike), agency: create(:agency), assigned_bike_at: 1.day.ago, application_date: 5.days.ago
+      client_3 = create :client, bike: create(:bike), agency: create(:agency), assigned_bike_at: nil, application_date: 4.day.ago
+      get :print_select
+      expect(assigns(:clients)).to eq [client_2, client_1, client_0, client_3]
+    end
   end
 
   describe "PUT #update" do
@@ -38,5 +47,6 @@ describe ClientsController do
       put :update, id: client.id, client: {pickup_date: date.strftime('%m/%d/%Y')}
       expect(client.reload.pickup_date).to eq(date)
     end
+
   end
 end

@@ -34,7 +34,7 @@ class ClientsController < ApplicationController
   def print_select
     @clients = Client.includes(:bike, :agency)
                      .where.not(bike_id: nil, agency_id: nil)
-                     .order(application_date: :desc)
+                     .order('assigned_bike_at DESC NULLS LAST')
                      .paginate(:page => params[:page], :per_page => 30)
   end
 

@@ -28,4 +28,26 @@ describe Client do
     end
   end
 
+  describe "on update" do
+
+    it "updates client's bike_assigned_date if a bike is assigned" do
+      date = Time.zone.now.beginning_of_day
+      client = create :client
+      bike = create :bike
+      Timecop.freeze(date) do
+        client.update_attribute(:bike, bike)
+        expect(client.reload.assigned_bike_at).to eq(date)
+      end
+    end
+
+    it "does not update client's bike_assigned_date if a bike is assigned" do
+      date = Time.zone.now.beginning_of_day
+      client = create :client
+      Timecop.freeze(date) do
+        client.update_attribute(:first_name, "freddy")
+        expect(client.reload.assigned_bike_at).to eq(nil)
+      end
+    end
+  end
+
 end

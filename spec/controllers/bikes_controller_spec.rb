@@ -87,6 +87,7 @@ describe BikesController do
     xit "marks the bike as sold" do
       bike = create :bike, date_sold: Time.now
       allow(bike).to receive(:mark_sold)
+      allow(Bike).to receive(:find).and_return(bike)
       patch :mark_as_sold, id: bike.id
       expect(bike).to have_received(:mark_sold)
     end

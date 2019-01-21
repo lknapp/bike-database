@@ -10,6 +10,14 @@ describe Bike do
       bike = build :bike, location: "foo"
       expect(bike.valid?).to be false
     end
+    it "is invalid if price is not a number" do
+      bike = build :bike, price: "foo"
+      expect(bike.valid?).to be false
+    end
+    it "is invalid if price is negative" do
+      bike = build :bike, price: "-5"
+      expect(bike.valid?).to be false
+    end
   end
 
   describe "#sold?" do
@@ -82,7 +90,7 @@ describe Bike do
     end
     it "exports with all attributes for generic export" do
       bike = create :bike
-      expect(Bike.to_csv).to eq("id,brand,model,bike_type,color,serial_number,work_done,new_parts,price,created_at,updated_at,seat_tube_size,top_tube_size,log_number,purpose,mechanic,date_sold,bike_index_id,fixed_at,time_spent,location\n#{bike.id},Schwinn,Madison,Fixed Gear,Yellow,#{bike.serial_number},,,,01/14/2019,01/14/2019,,,#{bike.log_number},,,,#{bike.bike_index_id},,,Seward Basement\n")
+      expect(Bike.to_csv).to eq("id,brand,model,bike_type,color,serial_number,work_done,new_parts,price,created_at,updated_at,seat_tube_size,top_tube_size,log_number,purpose,mechanic,date_sold,bike_index_id,fixed_at,time_spent,location\n#{bike.id},Schwinn,Madison,Fixed Gear,Yellow,#{bike.serial_number},,,,#{bike.created_at},#{bike.updated_at},,,#{bike.log_number},,,,#{bike.bike_index_id},,,Seward Basement\n")
     end
   end
 end

@@ -2,6 +2,8 @@ class Client < ActiveRecord::Base
   belongs_to :bike
   belongs_to :agency
 
+  before_update :stamp_assigned_date, if: proc { !bike_id_was && bike_id_changed? }
+
   def self.waiting_list
     clients = Client.all
     nonvoided_clients = clients.select{|client| !client.application_voided}
@@ -20,6 +22,12 @@ class Client < ActiveRecord::Base
 
   def self.voided_applications
     Client.all.where(application_voided: true)
+  end
+
+  private
+
+  def stamp_assigned_date
+    self.assigned_bike_at = Time.zone.now
   end
 
 end

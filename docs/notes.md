@@ -12,6 +12,7 @@ way into their own controller, rather than cluttering up model
 controllers. 
 
 remove bike_index functionality because its unused.
+bike_assigned_at update should be in callback, not in clients controller
 
 # Features 
 - search bikes via brand, make, or serial number.
