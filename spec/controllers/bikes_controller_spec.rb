@@ -99,5 +99,23 @@ describe BikesController do
     end
 
   end
+
+  describe "#print_select" do
+    it "omits freecyclery bikes" do
+      bike = create :bike, purpose: Bike::FREECYCLERY
+      get :print_select
+      expect(assigns(:bikes).to_a).to eq([])
+    end
+    it "omits sold bikes" do
+      bike = create :bike, date_sold: Time.now
+      get :print_select
+      expect(assigns(:bikes).to_a).to eq([])
+    end
+    it "includes unsold sale bikes" do
+      bike = create :bike, purpose: Bike::SALE
+      get :print_select
+      expect(assigns(:bikes).to_a).to eq([bike])
+    end
+  end
 end
 

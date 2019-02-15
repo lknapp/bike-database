@@ -29,7 +29,7 @@ class BikesController < ApplicationController
   end
 
   def print_select
-    @bikes = Bike.where.not(purpose: "Freecyclery").order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
+    @bikes = Bike.where(purpose: Bike::SALE, date_sold: nil).order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
   end
 
   def print_labels
