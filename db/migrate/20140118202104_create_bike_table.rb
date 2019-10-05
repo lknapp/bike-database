@@ -1,4 +1,4 @@
-class CreateBikeTable < ActiveRecord::Migration
+class CreateBikeTable < ActiveRecord::Migration[5.0]
   def change
     create_table :bikes do |t|
       t.string :entry_date

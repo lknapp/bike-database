@@ -1,4 +1,4 @@
-class ChangeClientApplicationDateToString < ActiveRecord::Migration
+class ChangeClientApplicationDateToString < ActiveRecord::Migration[5.0]
   def up
     add_column :clients, :application_datetime, :datetime
     Client.all.to_a.each{ |client|

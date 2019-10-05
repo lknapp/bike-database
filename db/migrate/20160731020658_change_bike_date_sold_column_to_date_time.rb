@@ -1,4 +1,4 @@
-class ChangeBikeDateSoldColumnToDateTime < ActiveRecord::Migration
+class ChangeBikeDateSoldColumnToDateTime < ActiveRecord::Migration[5.0]
   def up
     change_column :bikes, :date_sold, :datetime
   end

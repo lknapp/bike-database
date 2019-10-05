@@ -1,4 +1,4 @@
-class ChangePickupDateToDateTime < ActiveRecord::Migration
+class ChangePickupDateToDateTime < ActiveRecord::Migration[5.0]
   def up
     add_column :clients, :pickup_datetime, :datetime
     Client.all.to_a.each{ |client|

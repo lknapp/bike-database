@@ -1,5 +1,5 @@
 class Client < ActiveRecord::Base
-  belongs_to :bike
+  belongs_to :bike, optional: true
   belongs_to :agency
 
   before_update :stamp_assigned_date, if: proc { !bike_id_was && bike_id_changed? }

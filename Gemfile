@@ -1,40 +1,42 @@
 source 'https://rubygems.org'
-ruby "2.3.1"
+ruby "2.6.4"
 
-gem 'rails', '4.2'
-gem 'pg', '0.15.1'
+gem 'rails', '~> 5.2'
+gem 'pg', '1.1.4'
 gem 'bcrypt-ruby', '3.1.2'
-gem 'devise'
-gem 'faraday', '0.9.1'
-gem 'oauth2', '1.0.0'
-gem 'dotenv-rails'
-gem 'sidekiq'
-gem 'sinatra', :require => nil
-gem 'will_paginate', '~> 3.0.6'
+gem 'devise', '~> 4.7.1'
+gem 'faraday', '~> 0.15.4'
+gem 'oauth2', '~> 1.4.1'
+gem 'dotenv-rails', '2.7.5'
+gem 'sidekiq', '6.0.0'
+gem 'will_paginate', '~> 3.1.0'
 gem 'coffee-rails'
-gem 'nokogiri', '~> 1.8.1'
-gem 'sprockets', '~> 2.12.5'
-gem 'rack-protection', '~> 1.5.5'
+gem 'nokogiri', '~> 1.10.4'
+gem 'sprockets', '3.5.2'
+gem 'rack-protection', '2.0.7'
+gem 'bootsnap'
+
 
 #SCSS & Bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '5.1.0'
 gem 'haml'
 gem 'faker'
 
 group :test, :development do
   gem 'rspec', '~> 3.7'
-  gem 'rspec-rails', '~> 3.7'
+  gem 'rspec-rails', '3.8.2'
   gem 'rspec-mocks', '~> 3.7'
   gem 'factory_bot_rails', '~> 4.0'
   gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.2.0'
+  gem 'capybara', '3.29.0'
   gem 'pry'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'assert_difference'
   gem 'binding_of_caller'
   gem 'timecop'
+  gem 'listen', '~> 3.0'
 
   # Uncomment this line on OS X.
   gem 'growl', '1.0.3'
@@ -45,12 +47,8 @@ group :test do
 end
 
 gem 'uglifier', '2.1.1'
-gem 'jquery-rails', '3.0.4'
-gem 'jbuilder', '1.0.2'
-
-group :doc do
-  gem 'sdoc', '0.3.20', require: false
-end
+gem 'jquery-rails', '4.3.5'
+gem 'jbuilder', '2.9.1'
 
 group :production do
   gem 'rails_12factor', '0.0.2'

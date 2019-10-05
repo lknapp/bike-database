@@ -14,6 +14,7 @@
           %th Height
           %th Application Date
           %th Agency
+          %th Type Requested
           %th Bike
           %th
       %tbody
@@ -25,6 +26,7 @@
             %td= client.height
             %td= client.application_date
             %td= client.agency.name if client.agency
+            %td= client.bike_type_requested
             %td= client.bike_id ? Bike.find(client.bike_id).name : "None"
             %td= link_to 'Edit', edit_client_path(client)
 

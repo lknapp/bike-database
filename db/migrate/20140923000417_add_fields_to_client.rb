@@ -1,4 +1,4 @@
-class AddFieldsToClient < ActiveRecord::Migration
+class AddFieldsToClient < ActiveRecord::Migration[5.0]
   def change
     add_column(:clients, :notes, :text)
     add_column(:clients, :bike_fixed, :boolean)

@@ -1,10 +1,6 @@
-require 'sidekiq/web'
-
-Bikedb::Application.routes.draw do
+Rails.application.routes.draw do
   devise_for :users
   root to: "static_pages#home"
-
-  mount Sidekiq::Web => '/sidekiq'
 
   resources :bikes, except: [:show, :destroy] do
     get 'search' => 'bikes#search', on: :collection

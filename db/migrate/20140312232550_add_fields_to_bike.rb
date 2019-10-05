@@ -1,7 +1,7 @@
-class AddFieldsToBike < ActiveRecord::Migration
+class AddFieldsToBike < ActiveRecord::Migration[5.0]
   def change
-    add_column :bikes, :seat_tube_size, :float 
-    add_column :bikes, :top_tube_size, :float 
+    add_column :bikes, :seat_tube_size, :float
+    add_column :bikes, :top_tube_size, :float
     add_column :bikes, :log_number, :int
     add_column :bikes, :purpose, :text
     add_column :bikes, :mechanic, :text
