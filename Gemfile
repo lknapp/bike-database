@@ -46,7 +46,7 @@ group :test do
   gem 'webmock', '1.21.0'
 end
 
-gem 'uglifier', '2.1.1'
+gem 'uglifier', '~> 2.7'
 gem 'jquery-rails', '4.3.5'
 gem 'jbuilder', '2.9.1'
 
