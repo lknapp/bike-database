@@ -12,7 +12,7 @@ gem 'sidekiq', '6.0.0'
 gem 'will_paginate', '~> 3.1.0'
 gem 'coffee-rails'
 gem 'nokogiri', '~> 1.10.4'
-gem 'sprockets', '3.5.2'
+gem 'sprockets', '3.7.2'
 gem 'rack-protection', '2.0.7'
 gem 'bootsnap'
 
