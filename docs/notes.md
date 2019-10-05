@@ -1,4 +1,25 @@
 # Freecyclery Change
+
+Feature Request:
+integrate functionality from the application program:
+  - caseworkers can log into a dashboard
+  - caseworkers get a fixed number of applicatnts
+  - anyone can create a user
+  - users might need to be merged
+  - admin (tz) can view a dashboard of applications
+  - currently admin copies things from vapply to bikes n clients
+  - caseworker should tell us how we will get the $ for the lock and
+    helmet - there are about five different scenarios
+  - generate a template for the caseworker when the bike is done that
+    reiterates expectations for helmet and lock $
+  - enter pronouns in application
+  - don't make price a necessary field on freecyclery applications
+
+being able to export clients to CSV with associated bike info would be
+nice
+cursor starts in 'brand' field when creating a new bike
+tabbing through the bike form skips the select fields in safari
+
 currently for a bike it states:
 Will pay 25$ for lock & helmet: []
 
