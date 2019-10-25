@@ -33,7 +33,7 @@ class BikesController < ApplicationController
   end
 
   def print_labels
-    bike_ids = print_params.map{|key, value| key if value == "1"}.compact
+    bike_ids = print_params.to_unsafe_hash.map{|key, value| key if value == "1"}.compact
     @bikes = Bike.find(bike_ids)
   end
 
