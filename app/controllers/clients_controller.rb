@@ -39,7 +39,7 @@ class ClientsController < ApplicationController
   end
 
   def print_receipts
-    client_ids = print_params.map{|key, value| key if value == "1"}.compact
+    client_ids = print_params.to_unsafe_hash.map{|key, value| key if value == "1"}.compact
     @clients = Client.find(client_ids)
   end
 
