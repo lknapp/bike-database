@@ -33,7 +33,7 @@
   .form-group
     = f.label "Application Date:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.text_field :application_date, value: @client.application_date && @client.application_date.strftime('%m/%d/%Y'), class: "form-control datepicker", disabled: disabled
+      = f.date_field :application_date, value: @client.application_date && @client.application_date.strftime("%Y-%m-%d"), class: "form-control", disabled: disabled
 
   .form-group
     = f.label "Agency:", class: "col-sm-2 control-label"
@@ -86,7 +86,7 @@
   .form-group
     = f.label "Bike Picked Up On:", class: "col-sm-2 control-label"
     .col-sm-10
-      = f.text_field :pickup_date, value: @client.pickup_date && @client.pickup_date.strftime('%m/%d/%Y'), class: "form-control datepicker", disabled: disabled
+      = f.date_field :pickup_date, value: @client.pickup_date && @client.pickup_date.strftime('%Y-%m-%d'), class: "form-control", disabled: disabled
 
   .form-group
     = f.label "Volunteer Present at Pickup:", class: "col-sm-2 control-label"

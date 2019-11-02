@@ -59,7 +59,7 @@
       .form-group
         = f.label "Date Fixed", class: "col-sm-4 control-label"
         .col-sm-6
-          = f.text_field :fixed_at, class: "form-control datepicker", :value => @bike.fixed_at ? @bike.fixed_at.strftime("%m/%d/%Y") : "", disabled: disabled
+          = f.date_field :fixed_at, class: "form-control", :value => @bike.fixed_at && @bike.fixed_at.strftime("%Y-%m-%d"), disabled: disabled
 
       .form-group
         = f.label "Time Spent (Hours)", class: "col-sm-4 control-label"
@@ -92,7 +92,7 @@
       .form-group
         = f.label "Date Sold", class: "col-sm-4 control-label"
         .col-sm-6
-          = f.text_field :date_sold, :value => @bike.date_sold ? @bike.date_sold.strftime("%m/%d/%Y") : "", class: "form-control datepicker", disabled: disabled
+          = f.date_field :date_sold, :value => @bike.date_sold && @bike.date_sold.strftime("%Y-%m-%d"), class: "form-control", disabled: disabled
 
     .col-sm-6
       .form-group
