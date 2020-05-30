@@ -1,23 +1,23 @@
 .container
-  .row
-    .col-sm-6
+  .col-sm-2
+    .row
       %h1 Edit bike
-    .col-sm-3.col-sm-offset-3
+    .row
       =button_to "Mark as sold", {action: "mark_as_sold", id: @bike.id}, method: :patch, class: "btn btn-default", disabled: @bike.sold?
   - if @client
     .row
-      .col-sm-12
-        %h4
-          %span Assigned To
-          = link_to @client.name, edit_client_path(@client)
+      %h4
+        %span Assigned To
+        = link_to @client.name, edit_client_path(@client)
   = render 'edit_form'
-  .bottom-nav-links
-    - if @previous_bike
-      = link_to 'Previous Bike', edit_bike_path(@previous_bike)
-    - else
-      = link_to 'New Bike', new_bike_path
-    |
-    = link_to 'All Bikes', bikes_path
-    - if @next_bike
+  .row
+    .bottom-nav-links.col-sm-offset-8
+      - if @previous_bike
+        = link_to 'Previous Bike', edit_bike_path(@previous_bike)
+      - else
+        = link_to 'New Bike', new_bike_path
       |
-      = link_to 'Next Bike', edit_bike_path(@next_bike)
+      = link_to 'All Bikes', bikes_path
+      - if @next_bike
+        |
+        = link_to 'Next Bike', edit_bike_path(@next_bike)

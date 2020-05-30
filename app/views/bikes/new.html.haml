@@ -1,6 +1,10 @@
 .container
-  %h1 New bike
+  .col-sm-2
+    .row
+      %h1 New bike
   = render 'new_form'
-  = link_to 'All Bikes', bikes_path
-  |
-  = link_to 'Previous Bike', edit_bike_path(@previous_bike)
+  .row
+    .col-sm-offset-8
+      = link_to 'All Bikes', bikes_path
+      |
+      = link_to 'Previous Bike', edit_bike_path(@previous_bike)

@@ -1,101 +1,101 @@
 - disabled ||= false
-.form-horizontal
-  .row
-    .col-sm-6
-      .form-group
-        = f.label "Log Number*", class: "col-sm-4 control-label"
-        .col-sm-6
-          - if @log_number
-            = f.text_field :log_number, class: "form-control", disabled: disabled, value: @log_number
-          - else
-            = f.text_field :log_number, class: "form-control", disabled: disabled
+.col-sm-10
+  .form-horizontal
+    .row
+      .col-sm-6
+        .form-group
+          = f.label "Log Number*", class: "col-sm-4 control-label"
+          .col-sm-6
+            - if @log_number
+              = f.text_field :log_number, class: "form-control", disabled: disabled, value: @log_number
+            - else
+              = f.text_field :log_number, class: "form-control", disabled: disabled
 
-      .form-group
-        = f.label "Brand*", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.text_field :brand, class: "col-sm-6 form-control", disabled: disabled
+        .form-group
+          = f.label "Brand*", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.text_field :brand, class: "col-sm-6 form-control", disabled: disabled
 
-      .form-group
-        = f.label "Model*", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.text_field :model, class: "form-control", disabled: disabled
+        .form-group
+          = f.label "Model*", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.text_field :model, class: "form-control", disabled: disabled
 
-      .form-group
-        = f.label "Type*", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.select :bike_type, options_for_select( Bike::BIKE_TYPES.map{|t| [t, t]} + [[@bike.bike_type, @bike.bike_type]], @bike.bike_type), {}, class: "selectpicker", disabled: disabled
+        .form-group
+          = f.label "Type*", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.select :bike_type, options_for_select( Bike::BIKE_TYPES.map{|t| [t, t]} + [[@bike.bike_type, @bike.bike_type]], @bike.bike_type), {}, class: "selectpicker", disabled: disabled
 
-      .form-group
-        = f.label "Color*", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.text_field :color, class: "form-control", disabled: disabled
+        .form-group
+          = f.label "Color*", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.text_field :color, class: "form-control", disabled: disabled
 
-      .form-group
-        = f.label "Purpose", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.select :purpose, [["Freecyclery", "Freecyclery"], ["Sale", "Sale"]], {}, class: "selectpicker", disabled: disabled
+        .form-group
+          = f.label "Purpose", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.select :purpose, [["Freecyclery", "Freecyclery"], ["Sale", "Sale"]], {}, class: "selectpicker", disabled: disabled
 
-    .col-sm-6
-      .form-group
-        = f.label "Mechanic", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.text_field :mechanic, class: "form-control", disabled: disabled
+      .col-sm-6
+        .form-group
+          = f.label "Mechanic", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.text_field :mechanic, class: "form-control", disabled: disabled
 
-      .form-group
-        = f.label "Seat Tube Length (cm)", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.text_field :seat_tube_size, class: "form-control seat-tube-cm", disabled: disabled
+        .form-group
+          = f.label "Seat Tube Length (cm)", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.text_field :seat_tube_size, class: "form-control seat-tube-cm", disabled: disabled
 
-      .form-group
-        = f.label "Top Tube Length", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.text_field :top_tube_size, class: "form-control", disabled: disabled
+        .form-group
+          = f.label "Top Tube Length", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.text_field :top_tube_size, class: "form-control", disabled: disabled
 
-      .form-group
-        = f.label "Serial Number*", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.text_field :serial_number, class: "form-control", disabled: disabled
+        .form-group
+          = f.label "Serial Number*", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.text_field :serial_number, class: "form-control", disabled: disabled
 
-      .form-group
-        = f.label "Date Fixed", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.date_field :fixed_at, class: "form-control", :value => @bike.fixed_at && @bike.fixed_at.strftime("%Y-%m-%d"), disabled: disabled
+        .form-group
+          = f.label "Date Fixed", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.date_field :fixed_at, class: "form-control", :value => @bike.fixed_at && @bike.fixed_at.strftime("%Y-%m-%d"), disabled: disabled
 
-      .form-group
-        = f.label "Time Spent (Hours)", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.text_field :time_spent, class: "form-control", type: "number", step: "0.01", disabled: disabled
+        .form-group
+          = f.label "Time Spent (Hours)", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.text_field :time_spent, class: "form-control", type: "number", step: "0.01", disabled: disabled
 
+    .row
+      .col-sm-6
 
-  .row
-    .col-sm-6
+        .form-group
+          = f.label "New Parts", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.text_area :new_parts, class: "form-control", placeholder: "+ New Component ", disabled: disabled
 
-      .form-group
-        = f.label "New Parts", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.text_area :new_parts, class: "form-control", placeholder: "+ New Component ", disabled: disabled
+        .form-group
+          = f.label "Work Done", class: "col-sm-4 control-label"
+          %span#the-usual (The Usual)
+          .col-sm-6
+            = f.text_area :work_done, class: "form-control", disabled: disabled
 
-      .form-group
-        = f.label "Work Done", class: "col-sm-4 control-label"
-        %span#the-usual (The Usual)
-        .col-sm-6
-          = f.text_area :work_done, class: "form-control", disabled: disabled
+        .form-group
+          = f.label "Price", class: "col-sm-4 control-label"
+          .col-sm-6
+            .input-group
+              %span.input-group-addon $
+              = f.text_field :price, class: "form-control", disabled: disabled
+            %a{href: "http://www.bicyclebluebook.com/SearchBikes.aspx"} Look It Up
 
-      .form-group
-        = f.label "Price", class: "col-sm-4 control-label"
-        .col-sm-6
-          .input-group
-            %span.input-group-addon $
-            = f.text_field :price, class: "form-control", disabled: disabled
-          %a{href: "http://www.bicyclebluebook.com/SearchBikes.aspx"} Look It Up
+        .form-group
+          = f.label "Date Sold", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.date_field :date_sold, :value => @bike.date_sold && @bike.date_sold.strftime("%Y-%m-%d"), class: "form-control", disabled: disabled
 
-      .form-group
-        = f.label "Date Sold", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.date_field :date_sold, :value => @bike.date_sold && @bike.date_sold.strftime("%Y-%m-%d"), class: "form-control", disabled: disabled
-
-    .col-sm-6
-      .form-group
-        = f.label "Location", class: "col-sm-4 control-label"
-        .col-sm-6
-          = f.select :location, Bike::LOCATIONS.map{|l| [l, l]}, {include_blank: '(not specified)'}, class: "selectpicker", disabled: disabled
+      .col-sm-6
+        .form-group
+          = f.label "Location", class: "col-sm-4 control-label"
+          .col-sm-6
+            = f.select :location, Bike::LOCATIONS.map{|l| [l, l]}, {include_blank: '(not specified)'}, class: "selectpicker", disabled: disabled
