@@ -23,4 +23,7 @@
               %strong New Parts:
               =simple_format(bike.new_parts)
         .row
-          .col-xs-12= "Log #: " + bike.log_number.to_s + ", Serial #: " + bike.serial_number
+          .col-xs-12
+            Log #:
+            .log-number=bike.log_number.to_s
+            =", Serial #: " + bike.serial_number
