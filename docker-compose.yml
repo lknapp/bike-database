@@ -1,0 +1,16 @@
+---
+version: "3.3"
+
+services:
+  database:
+    build:
+      context: ./db
+      dockerfile: Dockerfile.postgres
+    environment:
+      - POSTGRES_MULTIPLE_DATABASES=test
+      - POSTGRES_USER=postgres
+    volumes:
+      - ./.postgresql:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+

@@ -3,8 +3,8 @@ development:
   database: db/bikedb_development
   pool: 5
   timeout: 5000
-  username:
-  password:
+  username: postgres
+  password: postgres
 
 test:
   adapter: postgresql
