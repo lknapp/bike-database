@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Bike do
-  describe "validations" do
+RSpec.describe "Bike" do
+  context "validations" do
     it "is invalid if time_spent is negative" do
       bike = build :bike, time_spent: -3
       expect(bike.valid?).to be false
@@ -20,7 +20,7 @@ describe Bike do
     end
   end
 
-  describe "#sold?" do
+  context "#sold?" do
     it "returns true if the date_sold is present" do
       bike = build :bike, date_sold: Time.zone.now
       expect(bike.sold?).to be true
@@ -31,7 +31,7 @@ describe Bike do
     end
   end
 
-  describe "#mark_sold" do
+  context "#mark_sold" do
     it "sets the date sold to the current date" do
       bike = build :bike
       today = Date.today
@@ -48,7 +48,7 @@ describe Bike do
     end
   end
 
-  describe "#post_to_bike_index" do
+  context "#post_to_bike_index" do
     it "does not calls BikeIndexLogger if no bike_index_id is present" do
       expect(BikeIndexLogger).not_to receive(:perform_async)
       create(:bike, bike_index_id: nil)
@@ -60,20 +60,23 @@ describe Bike do
     end
   end
 
-  describe "#available_for_freecyclery" do
+  context "#available_for_freecyclery" do
     it "does not return bikes that are assigned to clients" do
       bike = create :bike, :freecyclery
-      create :client, bike_id: bike.id
+      agency = create :agency
+      create :client, bike_id: bike.id, agency: agency
       expect(Bike.available_for_freecyclery).to be_empty
     end
     it "returns bikes that were assigned to clients whose application has been voided" do
       bike = create :bike, :freecyclery
-      create :client, bike_id: bike.id, application_voided: true
+      agency = create :agency
+      create :client, bike_id: bike.id, agency: agency, application_voided: true
       expect(Bike.available_for_freecyclery).to eq [bike]
     end
     it "does not return sales bikes" do
       bike = create :bike, :sale
-      create :client, bike_id: bike.id
+      agency = create :agency
+      create :client, bike_id: bike.id, agency: agency
       expect(Bike.available_for_freecyclery).to be_empty
     end
     it "does return bikes without clients" do
@@ -83,7 +86,7 @@ describe Bike do
 
   end
 
-  describe "CSV exports" do
+  context "CSV exports" do
     it "exports with log number, color, model, brand, type for reconciliation" do
       bike = create :bike
       expect(Bike.to_csv_for_reconciliation).to eq("log_number,color,brand,model,bike_type\n#{bike.log_number},#{bike.color},#{bike.brand},#{bike.model},#{bike.bike_type}\n")

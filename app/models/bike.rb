@@ -54,7 +54,7 @@ class Bike < ActiveRecord::Base
   end
 
   def mark_sold
-    update_attributes(date_sold: Time.now, location: SOLD)
+    update(date_sold: Time.now, location: SOLD)
   end
 
   def name

@@ -1,13 +1,12 @@
 /.bundle
 .postgresql/
 node_modules/
+spec/examples.txt
 
-# Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
 dump.rdb
 
-# Ignore secret assets
 /lib/assets/*
 
 .DS_Store

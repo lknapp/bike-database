@@ -20,10 +20,8 @@ gem 'haml'
 gem 'faker'
 
 group :test, :development do
-  gem 'rspec', '~> 3.7'
-  gem 'rspec-rails', '3.8.2'
-  gem 'rspec-mocks', '~> 3.7'
-  gem 'factory_bot_rails', '~> 4.0'
+  gem 'rspec-rails', '5.0'
+  gem 'factory_bot_rails', '5.2.0'
   gem 'selenium-webdriver', '2.35.1'
   gem 'pry'
   gem 'pry-rails'
