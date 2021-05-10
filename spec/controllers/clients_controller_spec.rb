@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ClientsController do
+RSpec.describe ClientsController do
   let(:user){FactoryBot.create(:user)}
   let(:client){FactoryBot.create(:client)}
   let(:bike){FactoryBot.create(:bike)}
@@ -9,7 +9,7 @@ describe ClientsController do
     sign_in user
   end
 
-  describe "POST #create" do
+  context "POST #create" do
     it "redirects to new_client_path on success" do
       client_attributes = attributes_for :client
       request = post :create, client: client_attributes
@@ -17,7 +17,7 @@ describe ClientsController do
     end
   end
 
-  describe "#print_select" do
+  context "#print_select" do
     it "only assigns clients with a bike and an agency" do
       client_with_bike_and_agency = create :client, bike: create(:bike), agency: create(:agency)
       create :client, bike: create(:bike)
@@ -35,7 +35,7 @@ describe ClientsController do
     end
   end
 
-  describe "PUT #update" do
+  context "PUT #update" do
     it "updates a client with an application date" do
       date = Time.zone.now.beginning_of_day
       put :update, id: client.id, client: {application_date: date.strftime('%m/%d/%Y')}

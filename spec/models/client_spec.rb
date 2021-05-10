@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Client do
-  describe "#waiting_list" do
+RSpec.describe "Client" do
+  context "#waiting_list" do
     it "does not include voided clients" do
       create(:client, application_voided: true)
       expect(Client.waiting_list).to be_empty
@@ -19,7 +19,7 @@ describe Client do
     end
   end
 
-  describe "#closed_applications" do
+  context "#closed_applications" do
     it "orders chronologically by date bike was picked up" do
       client_1 = create(:client, pickup_date: 1.week.ago)
       client_3 = create(:client, pickup_date: 3.week.ago)
@@ -28,7 +28,7 @@ describe Client do
     end
   end
 
-  describe "on update" do
+  context "on update" do
 
     it "updates client's bike_assigned_date if a bike is assigned" do
       date = Time.zone.now.beginning_of_day

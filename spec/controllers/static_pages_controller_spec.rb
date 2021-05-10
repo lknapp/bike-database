@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe StaticPagesController do
+RSpec.describe StaticPagesController do
   let(:user){FactoryBot.create(:user)}
 
   before :each do
     sign_in user
   end
 
-  describe "GET bikes_by_location" do
+  context "GET bikes_by_location" do
     it "assigns bikes on sales floor excluding freecyclery" do
       create :bike, purpose: Bike::FREECYCLERY, location: Bike::SALES_FLOOR
       sales_bike = create :bike, purpose: Bike::SALE, location: Bike::SALES_FLOOR
@@ -29,7 +29,7 @@ describe StaticPagesController do
 
   end
 
-  describe "GET sale_bikes" do
+  context "GET sale_bikes" do
     it "assigns bikes with sale purpose that are not sold" do
       create :bike, :sale, date_sold: 2.days.ago
       create :bike, :freecyclery

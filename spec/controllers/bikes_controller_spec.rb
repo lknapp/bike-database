@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe BikesController do
+RSpec.describe BikesController do
 
   let(:user){ create :user }
   let(:bike){ create :bike }
@@ -9,7 +9,7 @@ describe BikesController do
     sign_in user
   end
 
-  describe "#index" do
+  context "#index" do
     it "assigns unsold bikes" do
       bike = create :bike, date_sold: nil, purpose: "Sale"
       get :index
@@ -23,7 +23,7 @@ describe BikesController do
     end
   end
 
-  describe "#create" do
+  context "#create" do
     it "creates a new bike with valid credentials" do
       expect{
         post :create, bike: attributes_for(:bike)
@@ -35,7 +35,7 @@ describe BikesController do
   end
 
 
-  describe "#new" do
+  context "#new" do
     it "assigns a log number" do
       create :bike, log_number: 3
       get :new
@@ -53,7 +53,7 @@ describe BikesController do
     end
   end
 
-  describe "#edit" do
+  context "#edit" do
     before do
       @previous_bike = create :bike, log_number: 2
       @current_bike = create :bike, log_number: 3
@@ -76,14 +76,14 @@ describe BikesController do
     end
   end
 
-  describe "#update" do
+  context "#update" do
     it "redirects to edit bike path when bike is updated" do
       bike = create :bike
       expect( put :update, id: bike.id, bike: {brand: "foobar"} ).to redirect_to action: :edit, id: assigns(:bike).id
     end
   end
 
-  describe "#mark_as_sold" do
+  context "#mark_as_sold" do
     xit "marks the bike as sold" do
       bike = create :bike, date_sold: Time.now
       allow(bike).to receive(:mark_sold)
@@ -100,7 +100,7 @@ describe BikesController do
 
   end
 
-  describe "#print_select" do
+  context "#print_select" do
     it "omits freecyclery bikes" do
       bike = create :bike, purpose: Bike::FREECYCLERY
       get :print_select

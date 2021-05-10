@@ -79,8 +79,4 @@ class Bike < ActiveRecord::Base
     all_freecyclery_bikes - assigned_bikes
   end
 
-  def post_to_bike_index
-    return true if self.bike_index_id.present?
-    BikeIndexLogger.perform_async(self.id)
-  end
 end
