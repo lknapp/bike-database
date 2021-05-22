@@ -24,6 +24,7 @@ group :test, :development do
   gem 'factory_bot_rails', '5.2.0'
   gem 'selenium-webdriver', '2.35.1'
   gem 'pry'
+  gem 'rails-controller-testing'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'assert_difference'

@@ -3,8 +3,7 @@ require 'rails_helper'
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
-
-
+  config.include Devise::TestHelpers, type: :controller
   config.filter_run_when_matching :focus
 
   # Allows RSpec to persist some state between runs in order to support
