@@ -26,11 +26,13 @@ RSpec.describe BikesController do
   context "#create" do
     it "creates a new bike with valid credentials" do
       expect{
-        post :create, bike: attributes_for(:bike)
+        post :create, params: { bike: attributes_for(:bike)}
       }.to change(Bike, :count).by(1)
     end
     it "redirects to new bike path" do
-      expect(post :create, bike: attributes_for(:bike)).to redirect_to(new_bike_path)
+      expect(
+        post :create, params: {bike: attributes_for(:bike)}
+      ).to redirect_to(new_bike_path)
     end
   end
 
@@ -58,20 +60,21 @@ RSpec.describe BikesController do
       @previous_bike = create :bike, log_number: 2
       @current_bike = create :bike, log_number: 3
       @next_bike = create :bike, log_number: 4
+      @agency = create :agency
     end
     it "assigns the current, previous, and next bikes" do
-      get :edit, id: @current_bike.id
+      get :edit, params: {id: @current_bike.id}
       expect(assigns(:previous_bike)).to eq(@previous_bike)
       expect(assigns(:bike)).to eq(@current_bike)
       expect(assigns(:next_bike)).to eq(@next_bike)
     end
     it "assigns a client if there is one" do
-      @client = create :client, bike: @current_bike
-      get :edit, id: @current_bike.id
+      @client = create :client, bike: @current_bike, agency: @agency
+      get :edit, params: {id: @current_bike.id}
       expect(assigns(:client)).to eq(@client)
     end
     it "does not assign a client if there is none" do
-      get :edit, id: @current_bike.id
+      get :edit, params: {id: @current_bike.id}
       expect(assigns(:client)).to be_nil
     end
   end
@@ -79,7 +82,9 @@ RSpec.describe BikesController do
   context "#update" do
     it "redirects to edit bike path when bike is updated" do
       bike = create :bike
-      expect( put :update, id: bike.id, bike: {brand: "foobar"} ).to redirect_to action: :edit, id: assigns(:bike).id
+      expect(
+       put :update, params: {id: bike.id, bike: {brand: "foobar"} }
+      ).to redirect_to action: :edit, id: assigns(:bike).id
     end
   end
 
