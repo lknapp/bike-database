@@ -35,7 +35,7 @@ class ClientsController < ApplicationController
     @clients = Client.includes(:bike, :agency)
                      .where.not(bike_id: nil, agency_id: nil)
                      .order('assigned_bike_at DESC NULLS LAST')
-                     .paginate(:page => params[:page], :per_page => 30)
+                     .page(params[:page]).per(30)
   end
 
   def print_receipts

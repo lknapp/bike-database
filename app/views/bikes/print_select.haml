@@ -11,6 +11,6 @@
           %tr
             %td= bike.name
             %td= check_box("print_bikes", bike.id)
-    =will_paginate @bikes
+    =paginate @bikes
     %br
     =submit_tag 'Generate Labels', class: "btn btn-default"

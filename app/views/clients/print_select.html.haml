@@ -12,8 +12,8 @@
         -@clients.each do |client|
           %tr
             %td= client.name
-            %td= client.bike.name
+            %td= client.bike ? client.bike.name : ""
             %td= check_box("print_clients", client.id)
-    =will_paginate @clients
+    =paginate @clients
     %br
     =submit_tag 'Generate Receipts', class: "btn btn-default"

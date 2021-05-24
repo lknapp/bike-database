@@ -5,7 +5,7 @@ class BikesController < ApplicationController
   def index
     respond_to do |format|
       format.html {
-        @bikes = Bike.all.order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
+        @bikes = Bike.all.order(:log_number).reverse_order.page(params[:page]).per(30)
         @unsold_bikes = @bikes.select{|bike| bike.date_sold.nil? && bike.purpose == "Sale"}
       }
       format.csv {
@@ -29,7 +29,7 @@ class BikesController < ApplicationController
   end
 
   def print_select
-    @bikes = Bike.where(purpose: Bike::SALE, date_sold: nil).order(:log_number).reverse_order.paginate(:page => params[:page], :per_page => 30)
+    @bikes = Bike.where(purpose: Bike::SALE, date_sold: nil).order(:log_number).reverse_order.page(params[:page]).per(30)
   end
 
   def print_labels

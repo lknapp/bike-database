@@ -138,6 +138,18 @@ GEM
       thor (>= 0.14, < 2.0)
     json (2.5.1)
     jwt (2.2.3)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -288,7 +300,6 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    will_paginate (3.1.8)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -312,6 +323,7 @@ DEPENDENCIES
   haml
   jbuilder (= 2.9.1)
   jquery-rails (= 4.3.5)
+  kaminari
   listen (~> 3.0)
   nokogiri (~> 1.11.4)
   oauth2 (~> 1.4.1)
@@ -330,7 +342,6 @@ DEPENDENCIES
   timecop
   uglifier (~> 2.7)
   webmock (= 1.21.0)
-  will_paginate (~> 3.1.0)
 
 RUBY VERSION
    ruby 3.0.1p64
