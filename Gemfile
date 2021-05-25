@@ -22,7 +22,6 @@ gem 'faker'
 group :test, :development do
   gem 'rspec-rails', '5.0'
   gem 'factory_bot_rails', '5.2.0'
-  gem 'selenium-webdriver', '2.35.1'
   gem 'pry'
   gem 'rails-controller-testing'
   gem 'pry-rails'
