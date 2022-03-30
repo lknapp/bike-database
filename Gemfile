@@ -3,7 +3,7 @@ ruby "3.0.1"
 
 gem 'rails', '~> 6.1'
 gem 'pg', '1.2.3'
-gem 'puma', '~> 5.3'
+gem 'puma', '~> 5.6'
 gem 'bcrypt', '3.1.12'
 gem 'devise', '~> 4.7.3'
 gem 'faraday', '~> 1.4.1'
